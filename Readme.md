@@ -7,11 +7,11 @@ Descripcion:
     Sebastián: Ingeniero Industrial, con experiencia en Marketing Digital
 
 
-    https://compragamer.com/
-    https://www.venex.com.ar/
-    https://pronotebooks.com.ar/
-    https://www.cyberpuerta.mx/
-    https://www.gezatek.com.ar/
-    https://www.armytech.com.ar/
-    https://www.maxtecno.com.ar/
-    https://www.fullh4rd.com.ar/
+    https://compragamer.com/ : Lo elegimos porque es uno de los principales proveedores de tecnologia
+    https://www.venex.com.ar/ : Un ejemplo simple 
+    https://pronotebooks.com.ar/ : otro ejemplo. Nos gusto la orgnizacion del sitio pero no la gama de colores
+    https://www.cyberpuerta.mx/ : Un ejemplo de otro pais (Mexico)
+    https://www.gezatek.com.ar/ : Muy buena gama de colores
+    https://www.armytech.com.ar/ : Simple, muy grande
+    https://www.maxtecno.com.ar/ :
+    https://www.fullh4rd.com.ar/ : Muy alineado a la gama y estilo buscado
