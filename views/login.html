@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Login - ProNotebooks</title>        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--Font-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+        <!--Ligado a Fontawesome-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+
+        <!--Ligado al CSS-->
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>
+        
+        <header>
+            <div class="HEADERPRUEBA">
+                <p>AQUI VA EL HEADER</p>
+            </div>
+        </header>
+
+    <div class="flexDeskL">
+        <article class="bordeLogin2">
+                <h1>¿No tienes cuenta?</h1> 
+                <p><a href="/register">¡Regístrate!</a></p>
+        </article>
+        
+        <main>
+        <article class="bordeLogin1">
+            <h1>Inicia sesión</h1>
+            <form action="/" method="POST">
+                <div class="formulario">
+                    <img class="img" src="/img/ppdefecto.png" alt="Foto de perfil">
+                    <div class="centrado">
+                        <p class="bordesAbajoL">
+                            <label  for="usuario">Usuario:</label>
+                        </p>
+                        <input class="bordesArriba" type="text" id="usuario" name="usuario">
+                        <br>
+                        <p class="bordesAbajoL">
+                            <label for="password">Contraseña:</label>
+                        </p>
+                        <input  class="bordesArriba" type="password" id="password" name="password">
+                        <br>
+                        <br>
+                    </div>
+                        <input  class="boton" type="submit" value="Acceder">
+
+                </div>
+            </form>
+
+            <br>
+            <br>
+
+            <article class="links">
+                <p class="borde"><a href="#">Crea tu cuenta</a></p>
+                <p class="borde"><a href="#">¿Olvidaste tu contraseña?</a></p>
+            </article>
+        </article>
+        </main>
+    </div>
+        <footer>
+            <div class="FOOTERPRUEBA">
+                <p>AQUI VA EL FOOTER</p>
+            </div>
+        </footer>
+
+    </body>
+</html>
