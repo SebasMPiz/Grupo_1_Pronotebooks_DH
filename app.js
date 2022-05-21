@@ -1,11 +1,26 @@
-const express = require("express");
+const express = require('express');
 const app = express();
-const path = require('path');
 
-app.listen(3030, () => console.log("El servidor esta corriendo en puerto 3030"))
+//Creamos la carpeta estática
+app.use(express.static('public'));
 
-app.use(express.static("/public"))
 
-app.get ("/", (req,res) => {
-    res.sendFile(path.join(__dirname, "./views/home.html"))})
-    
+app.listen(3300, ()=>{
+    console.log('Sin problemas...');
+});
+
+app.get('/', (req,res)=>{
+    res.sendFile(__dirname + '/views/home.html');
+});
+
+app.post('/', (req,res)=>{
+    res.sendFile(__dirname + '/views/home.html');
+});
+
+app.get('/login', (req,res)=>{
+    res.sendFile(__dirname + '/views/login.html');
+});
+
+app.get('/register', (req,res)=>{
+    res.sendFile(__dirname + '/views/register.html');
+});
