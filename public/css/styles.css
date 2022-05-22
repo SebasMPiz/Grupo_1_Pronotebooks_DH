@@ -10,8 +10,17 @@
     margin: 0px;
   box-sizing: border-box;}
 
+  a { outline: none;
+    text-decoration: none;
+    padding: 2px 1px 0;
+    color: white
 
-
+}
+a:hover {color: lightblue;
+}
+h5{
+    text-align: center;
+}
 
   /* CSS Home */
 
@@ -52,12 +61,75 @@
 .Titulo{
     margin: 0 auto;    
 }
-.swiffy-slider {
-    width:100%;
+
+footer .fondo{
+    background-image: url("/img/BackgroundFooter.jpg") ;
+    background-repeat: repeat-y;
+    background-size: cover;
+    font-size: 18px;
+    padding: 15px;
+    color: white;
+}
+footer .titulosfooter {
+    background-color: darkblue;
+    width: 100%;
+    padding: 7px;
+    font-style: italic;
+}
+footer section{
+    margin-top:10px;
+    margin-bottom: 10px;
+}
+footer .newsletter{
+    background-color: #AE00FB;
+    height: 40px;
+}
+footer .logoafip{
+    margin: 10px;
+    width: 50px;
+}
+footer p{
+    padding:6px;
+    font-size: 15px;
+    margin-left: 3px;
+}
+footer li {
+    list-style: none;
+    font-size: 15px;
+    margin-left: 15px;
+    padding-top: 6px;
     }
+footer ul{
+    font-size: 15px;
+    padding: 6px;
+    margin-left: 3px;
+}
+footer .titulomenu{
+    font-weight: bold;
+    font-style: italic;
+}
 
-
-
+footer section p c {
+    color: lightblue;
+    font-weight: bold;
+    padding-right: 5px;
+}
+footer .cajalogos{
+    width:30px; 
+}
+footer .logosredes{
+    width: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+footer .cajacontacto{
+    display:flex;
+    justify-content: space-between;
+    padding-right:10px;
+}
+footer .textocontacto{
+    width:70%
+}
 
 /* CSS Register y Login */
 
@@ -74,7 +146,7 @@ article.links{
     border: none;
     color: white;
     padding: 10px 16px;
-    text-decoration: none;
+
     cursor: pointer;
     transition: 0.5s;
 }
@@ -263,9 +335,7 @@ main h1{
         font-size: 20px;
         margin-bottom: 0px;
     }
-
-
-
+ 
     .bordeRegister1{
         border: 2px solid black;
         width: 200%;
@@ -396,6 +466,14 @@ main h1{
 
     .profilePic{
         font-size: 20px;
+    }
+
+    footer .cajasfooter{
+        display:flex;
+        margin:10px;
+    }
+    footer section {
+        width: 33vw;
     }
 
 
