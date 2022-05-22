@@ -5,9 +5,61 @@
     --lightblue: #B5FFD9;
 }
 
-body{
-    font-family: 'Lato', sans-serif;
+*{font-family: 'Lato', sans-serif;
+    padding: 0px;
+    margin: 0px;
+  box-sizing: border-box;}
+
+
+
+
+  /* CSS Home */
+
+  .barra{
+    font-size: 8px;
+    background-color: #FFF;
+    border: 1px solid #000;
+    outline: none;
+    color: #666;
+    width: 20%;
+    height: 15px;
+    margin-top: 10px;
+  }
+
+  .contenedor{
+      background-color: #170055;
+  }
+
+  .iconos{
+    display: flex;
+    font-size: 30px;
+    justify-content: space-between;
+    margin: 10px;
+    color:#ffffff;
+    background-color: var(--darkblue);
 }
+
+  .flexheader{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: var(--darkblue);
+    justify-content: flex-start;
+    color: #ffffff;
+    width:100%
+}
+
+.Titulo{
+    margin: 0 auto;    
+}
+.swiffy-slider {
+    width:100%;
+    }
+
+
+
+
+/* CSS Register y Login */
 
 article.links{
     display: flex;
@@ -156,17 +208,6 @@ main h1{
 }
 
 
-
-
-
-
-.HEADERPRUEBA {
-    padding: 50px;
-    display: flex;
-    justify-content: center;
-    font-size: 100px;
-}
-
 .FOOTERPRUEBA {
     padding: 50px;
     display: flex;
@@ -206,6 +247,9 @@ main h1{
         font-size: 16px;
     }
 }
+
+
+
 
 /* ------------------------MEDIA QUERY PARA COMPUTADORA-------------------------- */
 @media (min-width: 1023px){

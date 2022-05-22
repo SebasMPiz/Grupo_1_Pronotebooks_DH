@@ -5,8 +5,8 @@ const app = express();
 app.use(express.static('public'));
 
 
-app.listen(3300, ()=>{
-    console.log('Sin problemas...');
+app.listen(3040, ()=>{
+    console.log('Servidor corriendo en peurto 3040');
 });
 
 app.get('/', (req,res)=>{

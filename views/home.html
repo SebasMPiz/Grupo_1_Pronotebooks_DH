@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>ProNotebooks</title>        
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" 
+    rel="stylesheet">
+    
+        <!--Ligado a Fontawesome-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        rel="stylesheet" />
+
+        <!-- Carrusel -->
+        <script src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.5.3/dist/js/swiffy-slider.min.js" crossorigin="anonymous" defer></script>
+        <link href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.5.3/dist/css/swiffy-slider.min.css" rel="stylesheet" crossorigin="anonymous">
+
+        <!--Ligado al CSS-->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+        <header>
+            <div class="flexheader">
+            <p class="Logo"> <img src="/img/Logo_pronotebooks.jpg" alt="Logo"></p>
+            <h2 class="Titulo">ProNotebooks</h2>
+            </div>
+
+            <div class="contenedor">
+            <p class="iconos">
+                <a><i class="fa-solid fa-bars"></i></a>
+                <a><i class="fa-solid fa-tags"></i></a>
+                <a class="barra"><i class="fa fa-search"></i> Buscar</a>
+                <a href ="carrito.html"><i class="fa-solid fa-cart-arrow-down"></i></a>
+                <a href ="login.html"><i class="fa-solid fa-circle-user"></i></a>
+            </p>
+            </div>
+        </header>
+
+        <main>
+            <div class="swiffy-slider">
+                <ul class="slider-container">
+                    <li><img src="/img/imagen_carrusel_1.jpg" style="max-width: 100%;height: auto;"></li>
+                    <li><img src="/img/imagen_carrusel_2.jpg" style="max-width: 100%;height: auto;"></li>
+                    <li><img src="/img/imagen_carrusel_3.jpg" style="max-width: 100%;height: auto;"></li>
+                </ul>
+            
+                <button type="button" class="slider-nav"></button>
+                <button type="button" class="slider-nav slider-nav-next"></button>
+            
+                <div class="slider-indicators">
+                    <button class="active"></button>
+                    <button></button>
+                    <button></button>
+                </div>
+            </div>
+        </main>
+
+    
+    </body>
+</html>
