@@ -3,11 +3,11 @@
     --blue: #3E00FF;
     --purple: #AE00FB;
     --lightblue: #B5FFD9;
+    --Otroazul: #093569;
 }
 
 *{font-family: 'Lato', sans-serif;
-    padding: 0px;
-    margin: 0px;
+
   box-sizing: border-box;}
 
   a { outline: none;
@@ -15,12 +15,13 @@
     padding: 2px 1px 0;
     color: white
 
+    }
+    a:hover {color: lightblue;
+    }
+    h5{
+        text-align: center;
 }
-a:hover {color: lightblue;
-}
-h5{
-    text-align: center;
-}
+
 
   /* CSS Home */
 
@@ -33,20 +34,27 @@ h5{
     width: 20%;
     height: 15px;
     margin-top: 10px;
+   }
+
+  .Barracuotassininteres{
+      font-size: 17px;
+      color: #ffffff;
+      margin-top: 3px;
+      background-color: var(--darkblue);
+      text-align: center;
   }
 
   .contenedor{
       background-color: #170055;
-  }
+   }
 
-  .iconos{
-    display: flex;
-    font-size: 30px;
-    justify-content: space-between;
-    margin: 10px;
-    color:#ffffff;
-    background-color: var(--darkblue);
-}
+   .descripcioncompleta{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-content:space-around;
+   }
 
   .flexheader{
     display: flex;
@@ -55,12 +63,77 @@ h5{
     background-color: var(--darkblue);
     justify-content: flex-start;
     color: #ffffff;
-    width:100%
+    margin-bottom: auto;
+   }
+  
+  .iconos{
+    display: flex;
+    font-size: 30px;
+    justify-content: space-between;
+    margin: 10px;
+    color:#ffffff;
+    background-color: var(--darkblue);
+    align-items: flex-start;
+   }
+
+  .Imagenesmasvendidos{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    }
+
+.imagenMV{
+   width: 200px; 
+   height: 150px;
+}    
+
+.masVendidosFlex{
+    display: flex;
+    flex-direction: column;
 }
 
-.Titulo{
-    margin: 0 auto;    
+.Lista{
+    border: 2px solid black;
+    font-size: 12px;
+    width: 100%;
+    text-align: center;
 }
+
+.Marca{
+    color: var(--darkblue);
+    font-weight: bold;
+    font-size: 15px;
+}
+
+ul {
+    padding-inline-start: 0px;
+    color: var(--blue);
+}
+
+.sliderCenter{
+    margin-left: 22%;
+    margin-right: 20%;
+}
+
+.swiffy-slider{
+    background-color: black;
+    margin-left: 0%;
+    margin-right: 1%;
+}
+
+  .Productosmasvendidos{
+    font-size: 17px;
+    color: #ffffff;
+    margin-top: 8px;
+    background-color: var(--Otroazul);
+    text-align: center;
+   }
+
+.Titulo{
+    margin-right: 80px;
+   }
+/* Estilos Footer */
 
 footer .fondo{
     background-image: url("/img/BackgroundFooter.jpg") ;
@@ -146,7 +219,7 @@ article.links{
     border: none;
     color: white;
     padding: 10px 16px;
-
+    text-decoration: none;
     cursor: pointer;
     transition: 0.5s;
 }
@@ -255,13 +328,11 @@ div.formulario{
     
 }
 
-
 .img{
     size: 50%;
     width: 200px;
     margin: 0% auto 20px;
     box-shadow: 5px 5px 5px #999
-
 }
 
 main h1{
@@ -280,15 +351,8 @@ main h1{
 }
 
 
-.FOOTERPRUEBA {
-    padding: 50px;
-    display: flex;
-    justify-content: center;
-    font-size: 50px;
-}
-
 /* ---------------------MEDIA QUERY PARA TABLET------------------------------------ */
-@media (min-width: 767px){
+@media (min-width: 361px){
     article.links{
         font-size: 16px;
     }
@@ -307,11 +371,16 @@ main h1{
         font-size: 12px;
     }
 
+    .Descripciondeproductos{
+        width: 5%;
+        margin-top: 30px;
+    }
+    
     .img{
         width: 300px;
     }
 
-    main h1{
+    .main h1{
         font-size: 40px;
     }
 
@@ -319,12 +388,8 @@ main h1{
         font-size: 16px;
     }
 }
-
-
-
-
 /* ------------------------MEDIA QUERY PARA COMPUTADORA-------------------------- */
-@media (min-width: 1023px){
+@media (min-width: 769px){
     article.links{
         font-size: 16px;
     }
@@ -335,7 +400,7 @@ main h1{
         font-size: 20px;
         margin-bottom: 0px;
     }
- 
+
     .bordeRegister1{
         border: 2px solid black;
         width: 200%;
@@ -448,11 +513,6 @@ main h1{
     
     }
 
-    main{
-        margin-left: 0%;
-        margin-right:25%;
-    }
-
     main h1{
         font-size: 50px; 
     }
@@ -461,13 +521,10 @@ main h1{
         margin-left: 10%;
         margin-right:10%;
     }
-
-
-
     .profilePic{
         font-size: 20px;
     }
-
+    
     footer .cajasfooter{
         display:flex;
         margin:10px;
@@ -475,9 +532,4 @@ main h1{
     footer section {
         width: 33vw;
     }
-
-
-    
-
-
 }

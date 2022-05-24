@@ -22,42 +22,87 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
+<!-- COMIENZO BODY -->
 <body>
         <header>
             <div class="flexheader">
-            <p class="Logo"> <img src="/img/Logo_pronotebooks.jpg" alt="Logo"></p>
+            <p class="Logo"> <img src="/img/Logo_pronotebooks.jpg" alt="Logo" width="30%"></p>
             <h2 class="Titulo">ProNotebooks</h2>
             </div>
 
             <div class="contenedor">
             <p class="iconos">
                 <a><i class="fa-solid fa-bars"></i></a>
-                <a><i class="fa-solid fa-tags"></i></a>
+                <a href = "/detalle"><i class="fa-solid fa-tags"></i></a>
                 <a class="barra"><i class="fa fa-search"></i> Buscar</a>
-                <a href ="carrito.html"><i class="fa-solid fa-cart-arrow-down"></i></a>
-                <a href ="login.html"><i class="fa-solid fa-circle-user"></i></a>
+                <a href="/carrito"><i class="fa-solid fa-cart-arrow-down"></i></a>
+                <a href="/login"><i class="fa-solid fa-circle-user"></i></a>
             </p>
             </div>
         </header>
-
         <main>
             <div class="swiffy-slider">
-                <ul class="slider-container">
-                    <li><img src="/img/imagen_carrusel_1.jpg" style="max-width: 100%;height: auto;"></li>
-                    <li><img src="/img/imagen_carrusel_2.jpg" style="max-width: 100%;height: auto;"></li>
-                    <li><img src="/img/imagen_carrusel_3.jpg" style="max-width: 100%;height: auto;"></li>
-                </ul>
-            
-                <button type="button" class="slider-nav"></button>
-                <button type="button" class="slider-nav slider-nav-next"></button>
-            
-                <div class="slider-indicators">
-                    <button class="active"></button>
-                    <button></button>
-                    <button></button>
-                </div>
+                <article class="sliderCenter">
+                    <ul class="slider-container">
+                        <li><img src="/img/imagen_carrusel_1.jpg" style="max-width: 100%;height: auto;"></li>
+                        <li><img src="/img/imagen_carrusel_2.jpg" style="max-width: 100%;height: auto;"></li>
+                        <li><img src="/img/imagen_carrusel_3.jpg" style="max-width: 100%;height: auto;"></li>
+                    </ul>
+                
+                    <button type="button" class="slider-nav"></button>
+                    <button type="button" class="slider-nav slider-nav-next"></button>
+                
+                    <div class="slider-indicators">
+                        <button class="active"></button>
+                        <button></button>
+                        <button></button>
+                    </div>
+                </article>
             </div>
-        </main>
+
+        <section class="Barracuotassininteres">
+            <p><h3 class="Cuotas">Cuotas sin intereses</h3></p>
+        </section>
+
+        <section class="Productosmasvendidos">
+            <p><h3 class="Productos">Productos mas vendidos</h3></p>
+        </section>
+        
+        <section>
+            <div class="Imagenesmasvendidos">
+                <div class="masVendidosFlex"> 
+                    <img class="imagenMV" src="/img/Imagen_mas_vendidas_1.jpg">
+                    <ul class="Lista">
+                        <div class="Marca">Lenovo</div>
+                        <div class="precio">$150.800</div>
+                        <div class="descuento">20% off</div>
+                        <div i class="fas fa-truck"></i></div>
+                    </ul>
+                </div> 
+                <div class="masVendidosFlex">    
+                    <img class="imagenMV" src="/img/Imagen_mas_vendidas_2.jpg">
+                    <ul class="Lista">
+                        <div class="Marca">LG</div>
+                        <div class="precio">$160.800</div>
+                        <div class="descuento">20% off</div>
+                        <div i class="fas fa-truck"></i></div>
+                    </ul>
+                </div> 
+                <div class="masVendidosFlex">     
+                    <img class="imagenMV" src="/img/Imagen_mas_vendidas_3.jpg">
+                    <ul class="Lista">
+                        <div class="Marca">Dell</div>
+                        <div class="precio">$139.800</div>
+                        <div class="descuento">20% off</div>
+                        <div i class="fas fa-truck"></i></div>
+                    </ul>
+                </div> 
+            </div>
+        </section>
+    </main>
+
+    <!-- COMIENZO FOOTER -->
+
         <footer>
             <div class = "newsletter">Suscribite a nuestro newsletter</div>
             <div class = "fondo">
@@ -102,6 +147,6 @@
             <h5>Copyright © 2021-2022 Pro Notebooks S.A.S.</h5>   
         </div>
            
-    </footer>    
+    </footer>          
     </body>
 </html>
