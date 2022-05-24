@@ -349,6 +349,107 @@ main h1{
 .profileFile{
     margin: 0 auto;
 }
+/* CSS Detalle de Productos */
+
+body .fotos_detalle_producto {
+    width:100%
+}
+body .foto_detalle_producto_principal{
+    display:flex;
+    justify-content: center;
+    border-bottom: 2px solid #eaeaea;
+    margin-bottom: 10px;
+}
+body .foto_detalle_producto_secundarias{
+    display:flex;
+    margin-bottom: 10px;
+    justify-content: center;
+}
+body .principal {
+    width:80%;
+}
+body .secundaria {
+    width:20%;
+    margin: 5px;
+}
+body .titulo_detalle_producto {
+    padding: 7px;
+    font-size: 18px;
+}
+body .codigo_detalle_producto {
+    padding: 7px;
+    font-size: 15px;
+    font-style:italic;
+    margin-left: 5px;
+}
+body .status_stock {
+    color:red;
+    margin-left: 12px;
+    font-size: 15px;
+    font-style:italic;
+}
+body .precio {
+    padding:15px;
+    margin-left: 12px;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+}
+body .boton_detalle_prod{
+    padding: 5px;
+    width: 50%;
+    font-size: 15px;
+    font-weight: bold;
+    color:white;
+    margin:10px;
+    background-color:darkblue;
+}
+body .botones_detalle{
+    margin-bottom: 15px;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: center;
+  }
+body .solapas_contenido_detalle_prod{
+    border:1px solid black;
+    padding: 5px;
+    width: 150px;
+    text-align: center;
+    font-size:12px;
+}
+body .encabezado_contenido_detalle_prod{
+    display:flex;
+}
+body .contenido_detalle {
+    border: 1px solid black;
+    padding: 10px;
+}
+body .detallecompleto{
+    margin: 20px;
+    width:100%
+}
+body .titulos_contenido_detalle_prod{
+    padding: 4px;
+    font-size: 12px;
+    font-weight: bold;
+}
+body .contenido_detalle_prod{
+    font-size: 12px;
+    padding: 4px;    
+}
+body .detalleymarcas {
+    display:flex;
+    justify-content: center;
+}
+body .marcas {
+    display:none;
+    flex-direction: column;
+}
+
+body .logomarcas {
+    width:150px;
+}
+
 
 
 /* ---------------------MEDIA QUERY PARA TABLET------------------------------------ */
@@ -386,6 +487,9 @@ main h1{
 
     .profilePic{
         font-size: 16px;
+    }
+    body .boton_detalle_prod{
+        width: 160px;
     }
 }
 /* ------------------------MEDIA QUERY PARA COMPUTADORA-------------------------- */
@@ -531,5 +635,20 @@ main h1{
     }
     footer section {
         width: 33vw;
+    }
+    body .marcas {
+        display:flex;
+        flex-direction: column;
+    }
+    body .fotosyprecio_detalle{
+        display:flex;
+    }
+    body .cajaprecio_detalle{
+        padding: 100px;  
+        
+    }
+    body .detallecompleto{
+        margin: 20px;
+        width:70%
     }
 }
