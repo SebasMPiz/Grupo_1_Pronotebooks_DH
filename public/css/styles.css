@@ -32,8 +32,9 @@ body {padding-top: 8rem;}
     bottom: 10px;
     right: 10px;
     width: 50px;
-    z-index:10;
+    z-index:-1;
 }
+
 main{
     margin-bottom: 20px;
 }
