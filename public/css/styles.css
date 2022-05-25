@@ -10,20 +10,42 @@
 
   box-sizing: border-box;}
 
-  a { outline: none;
+  a {
+      text-decoration: none;
+      outline: none;
+  }
+  header div .iconos a { outline: none;
     text-decoration: none;
     padding: 2px 1px 0;
     color: white
 
     }
-    a:hover {color: lightblue;
+    header div .iconos a:hover {color: lightblue;
     }
     h5{
         text-align: center;
 }
+body {padding-top: 8rem;}
 
-
+.logowhatsapp{
+    position:fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 50px;
+    z-index:10;
+}
+main{
+    margin-bottom: 20px;
+}
   /* CSS Home */
+
+    header {
+        position:fixed;
+        top:0px;
+        left:0px;
+        width: 100%;
+        z-index: 10;
+    }
 
   .barra{
     font-size: 8px;
@@ -46,6 +68,10 @@
 
   .contenedor{
       background-color: #170055;
+      padding: 0;
+      border-top: 4px solid white ;
+      border-bottom: 5px solid white; 
+      margin-bottom: 3px;
    }
 
    .descripcioncompleta{
@@ -64,6 +90,9 @@
     justify-content: flex-start;
     color: #ffffff;
     margin-bottom: auto;
+    margin:0;
+    padding:0;
+    border-bottom: 5px solid white;
    }
   
   .iconos{
@@ -91,19 +120,45 @@
 .masVendidosFlex{
     display: flex;
     flex-direction: column;
+    padding:0;
+    justify-content: center;
+}
+.masVendidosFlex:hover{
+    box-shadow : 0px 0px 10px black;
+    border: 1px solid grey
 }
 
+
 .Lista{
-    border: 2px solid black;
     font-size: 12px;
     width: 100%;
     text-align: center;
+    height: 120px;
 }
 
 .Marca{
     color: var(--darkblue);
     font-weight: bold;
-    font-size: 15px;
+    font-size: 22px;
+    padding-top:10px;
+}
+body .camion{
+    display: block;
+    position: relative;
+    font-size: 16px;
+    color: #39b54a;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #39b54a;
+    background-color: #FFF;
+    border-radius: 50%;
+    right: -160px;
+    top: -120px;
+}
+body .camion:hover{
+    transform: rotate(-90deg);
+    transition: all 1s;
 }
 
 ul {
@@ -389,11 +444,19 @@ body .status_stock {
     font-style:italic;
 }
 body .precio {
-    padding:15px;
+    padding:10px;
     margin-left: 12px;
-    font-size: 22px;
+    font-size: 18px;
     font-weight: bold;
     text-align: center;
+}
+body .descuento {
+    padding:10px;
+    margin-left: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    color: green;
 }
 body .boton_detalle_prod{
     padding: 5px;
@@ -445,20 +508,146 @@ body .marcas {
     display:none;
     flex-direction: column;
 }
-
 body .logomarcas {
     width:150px;
+}
+/* CSS Carrito de compras */
+ul {
+    list-style:none;
+}
+
+
+.articulo1 {
+    margin-bottom: 10px;
+    border-bottom: #667 dotted 1px;
+}
+
+.articulo2 {
+    margin-bottom: 10px;
+    border-bottom: #667 dotted 1px;
+}
+
+.barraFavoritos {
+    background-color: var(--darkblue);
+    color: white;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.cantidades {
+    display: flex;
+    width: 33%;
+    justify-content:flex-start;
+    align-items: center;
+    margin-left: 15px;
+    margin-bottom: 10px;
+}
+
+.carrito {
+    background-color: var(--darkblue);
+    color: white;
+    text-align: center;
+}
+
+.compra1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.compra2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.comprar {
+    background-color: var(--darkblue);
+    color: white;
+    text-align: center;
+    width: 50%;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.contenedroComprar {
+    display: flex;
+    justify-content: center;
+}
+
+.contenedroEliminar{
+    display: flex;
+    justify-content: center;
+}
+
+.contenedroEliminarYOtros {
+    display: flex;
+    justify-content: space-between;
+    display: none;
+}
+
+.descripcionProducto {
+    width: 50%;
+    margin: 10px;
+}
+
+.descripcionProducto h2 {
+    font-size: 16px;
+}
+
+.descripcionProducto ul li {
+    font-size: 12px;
+}
+
+.eliminar {
+    background-color: var(--darkblue);
+    color: white;
+    text-align: center;
+    width: 50%;
+    margin-bottom: 5px;
 }
 
 
 
+.fa-arrows-up-down{
+    margin-left: 5px;
+}
+
+.monto {
+    text-align: right;
+    margin-right: 30px;
+    margin-bottom: 10px;
+}
+
+.montoTotal{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 15px;
+    align-items: center;
+}
+
+.numeroUnidades {
+    margin-left: 50%;
+}
+
+.numeroMontoTotal{
+    margin-left: 5px;
+}
+
+.vistaProducto {
+    margin: 10px;
+    width: 50%;
+}
 /* ---------------------MEDIA QUERY PARA TABLET------------------------------------ */
 @media (min-width: 361px){
     article.links{
         font-size: 16px;
     }
 
-    body{font-size: 18px;}
+    body{font-size: 18px;
+        padding-top: 1rem;}
 
     .bordesArribaR{
         width: 200px;    
@@ -480,6 +669,9 @@ body .logomarcas {
     .img{
         width: 300px;
     }
+    body{
+        display:block
+    }
 
     .main h1{
         font-size: 40px;
@@ -491,6 +683,42 @@ body .logomarcas {
     body .boton_detalle_prod{
         width: 160px;
     }
+
+        /* TABLET - CSS Carrito de compras */
+    .contenedroEliminar {
+        display: none;
+        justify-content: center;
+    }
+
+    .contenedroEliminarYOtros {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .eliminar {
+        background-color: var(--darkblue);
+        color: white;
+        text-align: center;
+        width: 33.33%;
+        margin-bottom: 5px;
+    }
+
+    .comprarAhora {
+        background-color: var(--darkblue);
+        color: white;
+        text-align: center;
+        width: 33.33%;
+        margin-bottom: 5px;
+    }
+
+    .agregarAFavoritos {
+        background-color: var(--darkblue);
+        color: white;
+        text-align: center;
+        width: 33.33%;
+        margin-bottom: 5px;
+    }
+
 }
 /* ------------------------MEDIA QUERY PARA COMPUTADORA-------------------------- */
 @media (min-width: 769px){
@@ -498,7 +726,8 @@ body .logomarcas {
         font-size: 16px;
     }
 
-    body{font-size: 30px;}
+    body{font-size: 30px;
+        padding-top: 12rem;}
 
     .bordesAbajoL{
         font-size: 20px;
