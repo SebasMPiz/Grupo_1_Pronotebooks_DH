@@ -7,8 +7,9 @@
 }
 
 *{font-family: 'Lato', sans-serif;
-
-  box-sizing: border-box;}
+    box-sizing: border-box;
+    margin:0;
+    padding:0;}
 
   a {
       text-decoration: none;
@@ -25,7 +26,7 @@
     h5{
         text-align: center;
 }
-body {padding-top: 8rem;}
+/* body {padding-top: 12rem;} */
 
 .logowhatsapp{
     position:fixed;
@@ -557,6 +558,7 @@ ul {
     background-color: var(--darkblue);
     color: white;
     text-align: center;
+    margin: 0px;
 }
 
 .compra1{
@@ -656,7 +658,7 @@ ul {
     }
 
     body{font-size: 18px;
-        padding-top: 1rem;}
+        padding-top: 11rem;}
 
     .bordesArribaR{
         width: 200px;    
@@ -679,7 +681,11 @@ ul {
         width: 300px;
     }
     body{
-        display:block
+        display:block;
+        width:100%;
+    }
+    main{
+        width:100%;
     }
 
     .main h1{
