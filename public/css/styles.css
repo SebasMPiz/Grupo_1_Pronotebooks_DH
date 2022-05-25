@@ -32,7 +32,7 @@ body {padding-top: 8rem;}
     bottom: 10px;
     right: 10px;
     width: 50px;
-    z-index:-1;
+    z-index:-1 ;
 }
 
 main{
@@ -307,6 +307,10 @@ article.links{
     background-color: var(--darkblue);
     border: 1px solid var(--darkblue);
     transition: 0.5s;
+}
+
+.bordeRegister2{
+    display: none;
 }
 
 .bordesArriba{
