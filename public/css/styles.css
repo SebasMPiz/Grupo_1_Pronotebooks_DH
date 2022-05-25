@@ -313,6 +313,10 @@ article.links{
     display: none;
 }
 
+.bordeLogin2{
+    display: none;
+}
+
 .bordesArriba{
     margin-top: 0%;
     transition: 1s;
@@ -656,8 +660,9 @@ ul {
     }
 
     body{font-size: 18px;
-        padding-top: 1rem;}
+        padding-top: 10rem;}
 
+        
     .bordesArribaR{
         width: 200px;    
     }
@@ -745,7 +750,7 @@ ul {
 
     .bordeRegister1{
         border: 2px solid black;
-        width: 200%;
+        width: 174%;
         border-radius: 8%;
     }
 
@@ -765,6 +770,7 @@ ul {
         margin-right:14%;
         justify-content: center;
         flex-direction: column;
+        margin-bottom: 20px;
     }
 
     .bordeRegister2 h1 {
@@ -791,8 +797,9 @@ ul {
         border: 2px solid black;
         width: 37%;
         border-radius: 8%;
-        margin-left: 0%;
+        margin-left: 25%;
         margin-right:2%;
+        margin-bottom: 10px;
         justify-content: center;
         flex-direction: column;
     }
@@ -800,10 +807,9 @@ ul {
     .bordeLogin2 h1 {
         color: var(--blue);
         font-size: 35px;
-        
         justify-self: center;
         align-self: center;
-        margin-bottom: 0%;
+
     }
 
     .bordeLogin2 p {
@@ -840,7 +846,8 @@ ul {
 
     .flexDesk{
         display: flex;
-        justify-content: center;
+        justify-content: space-evenly;
+        margin-right: 21px;
     }
 
     .flexDeskL{
@@ -863,6 +870,12 @@ ul {
         margin-left: 10%;
         margin-right:10%;
     }
+
+    main .bordeRegister1{
+        margin-left: -53%;
+        margin-right:0%;
+    }
+
     .profilePic{
         font-size: 20px;
     }
