@@ -839,26 +839,33 @@ ul {
         margin-bottom: 0px;
     }
 
-    .bordeRegister1{
+    main article.bordeRegister1{
         border: 2px solid black;
-        width: 174%;
+        width: 400px;
+        margin-left: 10px;
         border-radius: 8%;
     }
 
-    .bordeLogin1{
+    main article.bordeLogin1{
         border: 2px solid black;
-        width: 135%;
+        width: 400px;
+        margin-left: 10px;
         border-radius: 8%;
+    }
+
+    main.wit{
+        width: 0%;
     }
 
     .bordeRegister2{
         display: flex;
         background-color: #dcf0fc;
         border: 2px solid black;
-        width: 30%;
+        width: 400px;
         border-radius: 8%;
-        margin-left: 6%;
-        margin-right:14%;
+        margin-top: 141px;
+        margin-left: 0%;
+        margin-right:0%;
         justify-content: center;
         flex-direction: column;
         margin-bottom: 20px;
@@ -882,17 +889,23 @@ ul {
         margin-top: 10px;
     }
 
+    .borde .noShow{
+        display: none;
+    }
+
     .bordeLogin2{
         display: flex;
         background-color: #dcf0fc;
         border: 2px solid black;
-        width: 37%;
+        width: 400px;
         border-radius: 8%;
-        margin-left: 25%;
-        margin-right:2%;
-        margin-bottom: 10px;
+        margin-left: 53%;
+        margin-right:0%;
+        margin-top: 137px;
+        margin-bottom: 20px;
         justify-content: center;
         flex-direction: column;
+
     }
 
     .bordeLogin2 h1 {
@@ -938,7 +951,7 @@ ul {
     .flexDesk{
         display: flex;
         justify-content: space-evenly;
-        margin-right: 21px;
+        margin-right: 364px;
     }
 
     .flexDeskL{
@@ -962,14 +975,18 @@ ul {
         font-size: 50px; 
     }
 
-    main .bordeLogin1{
-        margin-left: 10%;
-        margin-right:10%;
+    main article .bordeLogin1{
+        size: 0px;
+        width: 400px;
+        margin-left: initial;
+        margin-right: 0px;
     }
 
-    main .bordeRegister1{
-        margin-left: -53%;
-        margin-right:0%;
+    main article.bordeRegister1{
+        size: 0px;
+        width: 400px;
+        margin-left: initial;
+        margin-right: 0px;
     }
 
     .profilePic{
