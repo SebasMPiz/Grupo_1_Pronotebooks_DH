@@ -204,38 +204,59 @@ footer .fondo{
 }
 footer .titulosfooter {
     background-color: darkblue;
-    width: 100%;
+    width: 97%;
     padding: 7px;
     font-style: italic;
+    margin:5px;
 }
 footer section{
-    margin-top:10px;
     margin-bottom: 10px;
+    margin-top: 10px;
 }
 footer .newsletter{
     background-color: #000080;
-    height: 40px;
     color: #ffffff;
-    text-align: center;
-    margin-bottom: 8px;
     padding: 8px;
+    font-size: 15px;
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+footer .titulonewsletter {
+    line-height: 39px;
+    font-size:18px;
+}
+footer .botonacceder{
+    background-color: lightblue;
+    padding: 5px;
+    margin: 6px;
+}
+footer .datos_newsletter{
+    font-size:12px;
+    padding: 5px;
+    margin:6px;
+    width: 120px;
 }
 
 footer .logoafip{
     margin: 10px;
     width: 50px;
+    right: 5px;
 }
 footer p{
-    padding:6px;
+    padding:11px;
     font-size: 15px;
     margin-left: 3px;
+}
+footer .recibitucompra{
+    width:70%;
 }
 footer li {
     list-style: none;
     font-size: 15px;
     margin-left: 15px;
     padding-top: 6px;
-    }
+    color: lightgrey}
 footer ul{
     font-size: 15px;
     padding: 6px;
@@ -244,6 +265,7 @@ footer ul{
 footer .titulomenu{
     font-weight: bold;
     font-style: italic;
+    color: lightgrey;
 }
 
 footer section p c {
@@ -324,6 +346,10 @@ article.links{
 .bordesArriba{
     margin-top: 0%;
     transition: 1s;
+}
+footer .bordesArriba{
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .bordesArribaR{
@@ -740,6 +766,14 @@ ul {
     body .boton_detalle_prod{
         width: 160px;
     }
+    footer .newsletter{
+        width: 361px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    footer{
+        background-color:#000080;
+    }
 
  /*------------ TABLET - CSS Carrito de compras -------*/
 
@@ -996,9 +1030,11 @@ ul {
     footer .cajasfooter{
         display:flex;
         margin:10px;
+        max-width:1100px;
+        margin: 0 auto;
     }
     footer section {
-        width: 33vw;
+        width: 33%;
     }
     body .marcas {
         display:flex;
@@ -1015,10 +1051,12 @@ ul {
         margin: 20px;
         width:70%
     }
-
-
-
-
+    footer .fondo{
+        padding: 7px;
+    }
+    footer .newsletter{
+        width: 100%
+    }
 
 /*------------ DESK - CSS Carrito de compras -------*/
 
