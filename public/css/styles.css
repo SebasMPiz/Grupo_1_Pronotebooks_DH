@@ -9,7 +9,8 @@
 *{font-family: 'Lato', sans-serif;
     box-sizing: border-box;
     margin:0;
-    padding:0;}
+    padding:0;
+    }
 
   a {
       text-decoration: none;
@@ -38,7 +39,9 @@
 
 main{
     margin-bottom: 20px;
+    padding-top: 110px;
 }
+
   /* CSS Home */
 
     header {
@@ -525,7 +528,8 @@ body .marcas {
 body .logomarcas {
     width:150px;
 }
-/* CSS Carrito de compras */
+/*---------------------- CSS Carrito de compras -----------------*/
+
 ul {
     list-style:none;
 }
@@ -551,11 +555,16 @@ ul {
 
 .cantidades {
     display: flex;
-    width: 33%;
+    width: 15%;
     justify-content:flex-start;
     align-items: center;
     margin-left: 15px;
     margin-bottom: 10px;
+    font-size: 12px;
+}
+
+.cantidadesDesk{
+    display: none;
 }
 
 .carrito {
@@ -586,6 +595,10 @@ ul {
     margin-bottom: 5px;
     margin-top: 5px;
 }
+.comprar:hover{
+    background-color: #09021d;
+    color: white;
+}
 
 .contenedroComprar {
     display: flex;
@@ -609,11 +622,11 @@ ul {
 }
 
 .descripcionProducto h2 {
-    font-size: 16px;
+    font-size: 12px;
 }
 
 .descripcionProducto ul li {
-    font-size: 12px;
+    font-size: 10px;
 }
 
 .eliminar {
@@ -622,8 +635,13 @@ ul {
     text-align: center;
     width: 50%;
     margin-bottom: 5px;
+    transition: all, 250ms;
 }
 
+.eliminar:hover{
+    background-color: #09021d;
+    color: white;
+}
 
 
 .fa-arrows-up-down{
@@ -638,7 +656,7 @@ ul {
 
 .montoTotal{
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     margin-right: 15px;
     align-items: center;
 }
@@ -648,21 +666,38 @@ ul {
 }
 
 .numeroMontoTotal{
-    margin-left: 5px;
+    margin-left: 15px;
 }
 
 .vistaProducto {
     margin: 10px;
     width: 50%;
+    transition: all, 500ms;
+    background-color: black
 }
-/* ---------------------MEDIA QUERY PARA TABLET------------------------------------ */
-@media (min-width: 361px){
+
+.vistaProducto:hover{
+    box-shadow: 0px 0px 10px rgb(18, 18, 18);
+}
+
+
+
+
+
+
+
+
+
+
+/* ---------------------------------------------------------------------MEDIA QUERY PARA TABLET------------------------------------------------------ */
+
+@media (min-width: 361px) {
     article.links{
         font-size: 16px;
     }
 
     body{font-size: 18px;
-        padding-top: 11rem;}
+        /*padding-top: 11rem*/;}
 
         
     .bordesArribaR{
@@ -689,8 +724,10 @@ ul {
         display:block;
         width:100%;
     }
+    
     main{
         width:100%;
+        padding-top: 140px;
     }
 
     .main h1{
@@ -704,50 +741,98 @@ ul {
         width: 160px;
     }
 
-        /* TABLET - CSS Carrito de compras */
-    .contenedroEliminar {
-        display: none;
-        justify-content: center;
-    }
+ /*------------ TABLET - CSS Carrito de compras -------*/
 
-    .contenedroEliminarYOtros {
-        display: flex;
-        justify-content: space-between;
-    }
+ .agregarAFavoritos {
+    background-color: var(--darkblue);
+    color: white;
+    text-align: center;
+    width: 33.33%;
+    margin-bottom: 5px;
+}
+.agregarAFavoritos:hover{
+    background-color: #09021d;
+    color: white;
+}
 
-    .eliminar {
-        background-color: var(--darkblue);
-        color: white;
-        text-align: center;
-        width: 33.33%;
-        margin-bottom: 5px;
-    }
+.cantidades {
+    display: flex;
+    width: 15%;
+    justify-content:flex-start;
+    align-items: center;
+    margin-left: 15px;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
 
-    .comprarAhora {
-        background-color: var(--darkblue);
-        color: white;
-        text-align: center;
-        width: 33.33%;
-        margin-bottom: 5px;
-    }
+.contenedroEliminar {
+    display: none;
+    justify-content: center;
+}
 
-    .agregarAFavoritos {
-        background-color: var(--darkblue);
-        color: white;
-        text-align: center;
-        width: 33.33%;
-        margin-bottom: 5px;
-    }
+.contenedroEliminarYOtros {
+    display: flex;
+    justify-content: space-between;
+}
+
+.comprarAhora {
+    background-color: var(--darkblue);
+    color: white;
+    text-align: center;
+    width: 33.33%;
+    margin-bottom: 5px;
+}
+.comprarAhora:hover{
+    background-color: #09021d;
+    color: white;
+}
+
+.eliminar {
+    background-color: var(--darkblue);
+    color: white;
+    text-align: center;
+    width: 33.33%;
+    margin-bottom: 5px;
+}
+.eliminar:hover{
+    background-color: #09021d;
+    color: white;
+}
+
+.vistaProducto {
+    margin: 10px;
+    width: 50%;
+    transition: all, 500ms;
+    background-color: black
+}
+
+.vistaProducto:hover{
+    box-shadow: 0px 0px 10px rgb(18, 18, 18);
+}
+
+}
 
 
-/* ------------------------MEDIA QUERY PARA COMPUTADORA-------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+/* --------------------------------------------------------- MEDIA QUERY PARA COMPUTADORA --------------------------------------------------------- */
+
 @media (min-width: 769px){
     article.links{
         font-size: 16px;
     }
 
     body{font-size: 30px;
-        padding-top: 12rem;}
+        /*padding-top: 12rem*/;}
 
     .bordesAbajoL{
         font-size: 20px;
@@ -868,6 +953,11 @@ ul {
     
     }
 
+    main{
+        width:100%;
+        padding-top: 140px;
+    }
+
     main h1{
         font-size: 50px; 
     }
@@ -908,4 +998,66 @@ ul {
         margin: 20px;
         width:70%
     }
-}}
+
+
+
+
+
+/*------------ DESK - CSS Carrito de compras -------*/
+
+.agregarAFavoritos:hover{
+    background-color: #09021d;
+    color: white;
+}
+
+.barraFavoritos{
+font-size: 20px;
+}
+
+.cantidades {
+    display: none;
+}
+
+.cantidadesDesk{
+    display: flex;
+    align-items: center;
+    margin-right: 35px;
+    font-size: 15px;
+}
+
+.carrito{
+    font-size: 20px;
+}
+
+.contenedroEliminarYOtros{
+    font-size: 20px;
+}
+
+.contenedroComprar{
+    font-size: 20px;
+}
+
+.comprarAhora:hover{
+    background-color: #09021d;
+    color: white;
+}
+
+.eliminar:hover{
+    background-color: #09021d;
+    color: white;
+}
+
+.monto{
+    font-size: 20px;
+}
+
+.montoTotal{
+    font-size: 20px;
+}
+
+.Unidades {
+    margin-right: 10px;
+}
+
+
+}
