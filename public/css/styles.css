@@ -221,7 +221,10 @@ footer .newsletter{
     display:flex;
     justify-content: center;
     flex-wrap: wrap;
+
 }
+
+
 footer .titulonewsletter {
     line-height: 39px;
     font-size:18px;
@@ -231,6 +234,12 @@ footer .botonacceder{
     padding: 5px;
     margin: 6px;
 }
+
+footer .botonacceder:hover{
+    background-color: rgb(105, 204, 236);
+    cursor: pointer;
+}
+
 footer .datos_newsletter{
     font-size:12px;
     padding: 5px;
