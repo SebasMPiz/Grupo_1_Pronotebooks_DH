@@ -42,6 +42,198 @@ main{
     padding-top: 110px;
 }
 
+/* Creacion de productos*/
+
+.crearProd{
+    color: var(--blue);
+    font-size: 35px;
+    text-align: center;
+    justify-self: center;
+    align-self: center;
+    margin-top: 137px;
+    margin-bottom: 0%;
+}
+
+.mainCreacion {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 10px;
+}
+
+.mainCreacion article{
+    width: 50%;
+    text-align: center;   
+}
+
+.mainCreacion article:first-child{
+    padding-left: 20%;  
+}
+
+.mainCreacion article:nth-child(2){
+    padding-right: 20%;  
+}
+
+.mainCreacion p {
+    font-size: 25px;
+    margin-bottom: 0px;
+}
+
+.mainCreacion .creacionBox{
+    height: 25px;
+    width: 50%;
+    border-radius: 5px;
+    margin-top: 0px;
+}
+
+.mainCreacion .custom-input-file {
+    background-color: var(--darkblue);
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    margin: 0 auto 0;
+    min-height: 7px;
+    overflow: hidden;
+    padding: 7px;
+    position: relative;
+    text-align: center;
+    font-size: 12px;
+    width: 20%;
+    margin-top: 8px;
+  }
+  
+.mainCreacion .custom-input-file .input-file {
+   cursor: pointer;
+   font-size: 10000px;
+   margin: 0;
+   opacity: 0;
+   outline: 0 none;
+   padding: 0;
+   position: absolute;
+   right: -1000px;
+   top: -1000px;
+   font-size: 12px;
+  }
+
+.botonCrear{
+    margin: 30px auto;
+    text-align: center;
+}
+
+.botonCrear input:hover{
+    background-color: var(--darkblue);
+    border: 0px solid var(--darkblue);
+    transition: 0.5s;
+}
+
+.botonCrear input{
+    text-align: center;
+    margin: 0 auto;
+    background-color: var(--blue);
+    border: none;
+    color: white;
+    padding: 10px 16px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+/* Edicion de productos*/
+
+.editarProd{
+    color: var(--blue);
+    font-size: 35px;
+    text-align: center;
+    justify-self: center;
+    align-self: center;
+    margin-top: 137px;
+    margin-bottom: 0%;
+}
+
+.mainEditar {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 10px;
+}
+
+.mainEditar article{
+    width: 50%;
+    text-align: center;   
+}
+
+.mainEditar article:first-child{
+    padding-left: 20%;  
+}
+
+.mainEditar article:nth-child(2){
+    padding-right: 20%;  
+}
+
+.mainEditar p {
+    font-size: 25px;
+    margin-bottom: 0px;
+}
+
+.mainEditar .editarBox{
+    height: 25px;
+    width: 50%;
+    border-radius: 5px;
+    margin-top: 0px;
+}
+
+.mainEditar .custom-input-file {
+    background-color: var(--darkblue);
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    margin: 0 auto 0;
+    min-height: 7px;
+    overflow: hidden;
+    padding: 7px;
+    position: relative;
+    text-align: center;
+    font-size: 12px;
+    width: 20%;
+    margin-top: 8px;
+  }
+  
+.mainEditar .custom-input-file .input-file {
+   cursor: pointer;
+   font-size: 10000px;
+   margin: 0;
+   opacity: 0;
+   outline: 0 none;
+   padding: 0;
+   position: absolute;
+   right: -1000px;
+   top: -1000px;
+   font-size: 12px;
+  }
+
+.botonEditar{
+    margin: 30px auto;
+    text-align: center;
+}
+
+.botonEditar input:hover{
+    background-color: var(--darkblue);
+    border: 0px solid var(--darkblue);
+    transition: 0.5s;
+}
+
+.botonEditar input{
+    text-align: center;
+    margin: 0 auto;
+    background-color: var(--blue);
+    border: none;
+    color: white;
+    padding: 10px 16px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
   /* CSS Home */
 
     header {

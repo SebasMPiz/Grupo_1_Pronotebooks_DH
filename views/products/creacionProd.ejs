@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<!-- COMIENZO DEL HEAD -->
+
+<%- include ("../partials/head") -%>
+
+<!-- COMIENZO BODY -->
+<body>
+        <div class ="logowhatsapp">
+            <img src="/img/whatsapp-logo.svg"  alt="Whatsapp" class ="logosredes"/>
+        </div>
+
+<%- include ("../partials/header") -%>
+
+    <h4 class="crearProd">Creación de Productos</h4>
+    <form action="/creacionProd" method="GET">    
+        <main class="mainCreacion">
+            <article>
+                <p>
+                    <label  for="productName">Nombre del producto:</label>
+                </p>
+                <input class="creacionBox" type="text" id="productName" name="productName" required>
+
+                <br>
+                <br>
+
+                <p>
+                    <label  for="productDesc">Descripción del producto:</label>
+                </p>
+                <input class="creacionBox" type="text" id="productDesc" name="productDesc">
+
+                <br>
+                <br>
+
+                <p class="productPic">
+                    <label  for="productPic">Foto del producto:</label>
+                </p>
+                <div class="custom-input-file col-md-6 col-sm-6 col-xs-6">
+                    <input  class="input-file" type="file"  id="productPic" name="productPic" accept="image/png, .jpeg, .jpg, image" required>Elegir Imagen...
+                </div>
+            </article>
+
+            <article>
+                <p>
+                    <label  for="productSize">Tamaño:</label>
+                </p>
+                <input class="creacionBox" type="text" id="productSize" name="productSize">
+                
+                <br>
+                <br>
+
+                <p>
+                    <label  for="productCategory">Categoría:</label>
+                </p>
+                <select class="creacionBox" name="productCategory" id="productCategory">
+
+                    <option>Gamer</option>
+                    
+                    <option>Escolar</option>
+                    
+                    <option>Profesional</option>
+                    
+                </select>
+
+                <br>
+                <br>
+
+                <p>
+                    <label  for="productPrice">Precio:</label>
+                </p>
+                <input class="creacionBox" type="text" id="productPrice" name="productPrice" required>
+            </article>
+        </main>
+        <div class="botonCrear">
+             <input   type="submit" value="Crear!">
+        </div>
+    </form>
+
+
+    <!-- COMIENZO FOOTER -->
+
+<%- include ("../partials/footer") -%>
+
+    </body>
+</html>
