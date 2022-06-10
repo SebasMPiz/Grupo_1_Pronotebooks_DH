@@ -50,6 +50,7 @@ main{
         left:0px;
         width: 100%;
         z-index: 10;
+        box-shadow : 0px 0px 10px rgb(209, 191, 191);
     }
 
   .barra{

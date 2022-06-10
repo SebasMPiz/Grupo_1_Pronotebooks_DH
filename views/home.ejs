@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<!-- COMIENZO DEL HEAD -->
+
+<%- include ("./partials/head") -%>
+
+<!-- COMIENZO BODY -->
+<body>
+        <div class ="logowhatsapp">
+            <img src="/img/whatsapp-logo.svg"  alt="Whatsapp" class ="logosredes"/>
+        </div>
+
+<%- include ("./partials/header") -%>
+
+        <main>
+            <div class="swiffy-slider">
+                <article class="sliderCenter">
+                    <ul class="slider-container">
+                        <li><img src="/img/imagen_carrusel_1.jpg" style="max-width: 100%;height: auto;"></li>
+                        <li><img src="/img/imagen_carrusel_2.jpg" style="max-width: 100%;height: auto;"></li>
+                        <li><img src="/img/imagen_carrusel_3.jpg" style="max-width: 100%;height: auto;"></li>
+                    </ul>
+                
+                    <button type="button" class="slider-nav"></button>
+                    <button type="button" class="slider-nav slider-nav-next"></button>
+                
+                    <div class="slider-indicators">
+                        <button class="active"></button>
+                        <button></button>
+                        <button></button>
+                    </div>
+                </article>
+            </div>
+
+        <section class="Barracuotassininteres">
+            <p><h3 class="Cuotas">Cuotas sin intereses</h3></p>
+        </section>
+
+        <section class="Productosmasvendidos">
+            <p><h3 class="Productos">Productos mas vendidos</h3></p>
+        </section>
+        
+        <section>
+            <div class="Imagenesmasvendidos">
+                <div class="masVendidosFlex"> 
+                    <img class="imagenMV" src="/img/Imagen_mas_vendidas_1.jpg">
+                    <ul class="Lista">
+                        <div class="Marca">Lenovo</div>
+                        <div class="precio">$150.800</div>
+                        <div class="descuento">20% off</div>
+                        <div class="camion"><div i class="fas fa-truck"></i></div></div>
+                    </ul>
+                </div> 
+                <div class="masVendidosFlex">    
+                    <img class="imagenMV" src="/img/Imagen_mas_vendidas_2.jpg">
+                    <ul class="Lista">
+                        <div class="Marca">LG</div>
+                        <div class="precio">$160.800</div>
+                        <div class="descuento">20% off</div>
+                        <div class="camion"><div i class="fas fa-truck"></i></div></div>
+                    </ul>
+                </div> 
+                <div class="masVendidosFlex">     
+                    <img class="imagenMV" src="/img/Imagen_mas_vendidas_3.jpg">
+                    <ul class="Lista">
+                        <div class="Marca">Dell</div>
+                        <div class="precio">$139.800</div>
+                        <div class="descuento">20% off</div>
+                        <div class="camion"><div i class="fas fa-truck"></i></div></div>
+                    </ul>
+                </div> 
+            </div>
+        </section>
+    </main>
+
+    <!-- COMIENZO FOOTER -->
+
+    <%- include ("./partials/footer") -%>
+
+    </body>
+</html>
