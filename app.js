@@ -4,6 +4,8 @@ const rutasMain = require('./routes/main');
 
 //Creamos la carpeta estática
 app.use(express.static('public'));
+
+//Template Engine 
 app.set('view engine', 'ejs');
 
 app.use('/', rutasMain);
