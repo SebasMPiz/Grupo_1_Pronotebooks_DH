@@ -12,7 +12,7 @@
 
 <%- include ("../partials/header") -%>
 
-    <h4 class="editarProd">Editar Productos</h4>
+    <h4 class="editarProd">Productos</h4>
     <div class="botonEditar">
         <input   type="submit" value="Elegir Producto">
     </div>
@@ -20,48 +20,52 @@
         <main class="mainEditar">
             <article>
                 <p>
-                    <label  for="productName">Nombre del producto:</label>
+                    <label  for="productName">Nombre</label>
                 </p>
-                <input class="editarBox" type="text" id="productName" name="productName" required>
+                <input class="editarBox" type="text" id="name" name="name" required>
 
                 <br>
                 <br>
 
                 <p>
-                    <label  for="productDesc">Descripción del producto:</label>
+                    <label  for="productDesc">Apellido</label>
                 </p>
-                <input class="editarBox" type="text" id="productDesc" name="productDesc">
+                <input class="editarBox" type="text" id="lastname" name="lastname">
 
                 <br>
                 <br>
 
                 <p class="productPic">
-                    <label  for="productPic">Foto del producto:</label>
+                    <label  for="productPic">Imagen</label>
                 </p>
                 <div class="custom-input-file col-md-6 col-sm-6 col-xs-6">
-                    <input  class="input-file" type="file"  id="productPic" name="productPic" accept="image/png, .jpeg, .jpg, image" required>Elegir Imagen...
+                    <input  class="input-file" type="file"  id="imagen" name="imagen" accept="image/png, .jpeg, .jpg, image" required>Elegir Imagen...
                 </div>
             </article>
 
             <article>
                 <p>
-                    <label  for="productSize">Tamaño:</label>
+                    <label  for="productSize">Contraseña</label>
                 </p>
-                <input class="editarBox" type="text" id="productSize" name="productSize">
+                <input class="editarBox" type="text" id="password" name="password">
                 
                 <br>
                 <br>
 
                 <p>
-                    <label  for="productCategory">Categoría:</label>
+                    <label  for="productCategory">Categoría</label>
                 </p>
-                <select class="editarBox" name="productCategory" id="productCategory">
+                <select class="editarBox" name="category" id="category">
 
-                    <option>Gamer</option>
+                    <option>Minorista</option>
                     
-                    <option>Escolar</option>
+                    <option>Mayorista</option>
                     
-                    <option>Profesional</option>
+                    <option>Vendedor</option>
+
+                    <option>Comprador</option>
+
+                    <option>Administrador</option>
                     
                 </select>
 
@@ -69,9 +73,9 @@
                 <br>
 
                 <p>
-                    <label  for="productPrice">Precio:</label>
+                    <label  for="productPrice">Email</label>
                 </p>
-                <input class="editarBox" type="text" id="productPrice" name="productPrice" required>
+                <input class="editarBox" type="text" id="email" name="email" required>
             </article>
         </main>
         <div class="botonEditar">

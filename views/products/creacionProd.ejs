@@ -12,53 +12,55 @@
 
 <%- include ("../partials/header") -%>
 
-    <h4 class="crearProd">Creación de Productos</h4>
+    <h4 class="crearProd">Agregar Productos</h4>
     <form action="/creacionProd" method="GET">    
         <main class="mainCreacion">
             <article>
                 <p>
-                    <label  for="productName">Nombre del producto:</label>
+                    <label  for="productName">Marca</label>
                 </p>
-                <input class="creacionBox" type="text" id="productName" name="productName" required>
+                <input class="creacionBox" type="text" id="marca" name="marca" required>
 
                 <br>
                 <br>
 
                 <p>
-                    <label  for="productDesc">Descripción del producto:</label>
+                    <label  for="productDesc">Descripción</label>
                 </p>
-                <input class="creacionBox" type="text" id="productDesc" name="productDesc">
+                <input class="creacionBox" type="text" id="descrption" name="description">
 
                 <br>
                 <br>
 
                 <p class="productPic">
-                    <label  for="productPic">Foto del producto:</label>
+                    <label  for="productPic">Foto del producto</label>
                 </p>
                 <div class="custom-input-file col-md-6 col-sm-6 col-xs-6">
-                    <input  class="input-file" type="file"  id="productPic" name="productPic" accept="image/png, .jpeg, .jpg, image" required>Elegir Imagen...
+                    <input  class="input-file" type="file"  id="image" name="image" accept="image/png, .jpeg, .jpg, image" required>Elegir Imagen...
                 </div>
             </article>
 
             <article>
                 <p>
-                    <label  for="productSize">Tamaño:</label>
+                    <label  for="productSize">Color</label>
                 </p>
-                <input class="creacionBox" type="text" id="productSize" name="productSize">
+                <input class="creacionBox" type="text" id="color" name="color">
                 
                 <br>
                 <br>
 
                 <p>
-                    <label  for="productCategory">Categoría:</label>
+                    <label  for="productCategory">Categoría</label>
                 </p>
-                <select class="creacionBox" name="productCategory" id="productCategory">
+                <select class="creacionBox" name="categoría" id="categoría">
 
                     <option>Gamer</option>
                     
-                    <option>Escolar</option>
+                    <option>Hogar</option>
                     
-                    <option>Profesional</option>
+                    <option>Diseño</option>
+
+                    <option>Industrial</option>
                     
                 </select>
 
@@ -66,9 +68,9 @@
                 <br>
 
                 <p>
-                    <label  for="productPrice">Precio:</label>
+                    <label  for="productPrice">Precio</label>
                 </p>
-                <input class="creacionBox" type="text" id="productPrice" name="productPrice" required>
+                <input class="creacionBox" type="text" id="price" name="price" required>
             </article>
         </main>
         <div class="botonCrear">
