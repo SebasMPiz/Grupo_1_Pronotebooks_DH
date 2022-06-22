@@ -1,14 +1,22 @@
 const express = require('express');
 const app = express();
+const path = require('path');
 const rutasMain = require('./routes/main');
+const rutasProducts = require('./routes/productos');
+const methodOverride =  require('method-override');
 
 //Creamos la carpeta estática
 app.use(express.static('public'));
 
 //Template Engine 
 app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, '/views'))
+
+app.use(methodOverride('_method'))
 
 app.use('/', rutasMain);
+app.use("/products", rutasProducts);
+
 
 app.listen(3040, ()=>{
     console.log('Servidor corriendo en puerto 3040');
