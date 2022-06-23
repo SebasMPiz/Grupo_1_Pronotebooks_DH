@@ -42,33 +42,18 @@
         
         <section>
             <div class="Imagenesmasvendidos">
-                <div class="masVendidosFlex"> 
-                    <img class="imagenMV" src="/img/Imagen_mas_vendidas_1.jpg">
+                
+                <% products.forEach(function (product) { %>              
+               <div class="masVendidosFlex"> 
+                    <img class="imagenMV" src="/img/<%=product.image%>">
                     <ul class="Lista">
-                        <div class="Marca">Lenovo</div>
-                        <div class="precio">$150.800</div>
+                        <div class="Marca"><%=product.marca%> <%=product.modelo%></div>
+                        <div class="precio"><%=product.precio%></div>
                         <div class="descuento">20% off</div>
                         <div class="camion"><div i class="fas fa-truck"></i></div></div>
                     </ul>
                 </div> 
-                <div class="masVendidosFlex">    
-                    <img class="imagenMV" src="/img/Imagen_mas_vendidas_2.jpg">
-                    <ul class="Lista">
-                        <div class="Marca">LG</div>
-                        <div class="precio">$160.800</div>
-                        <div class="descuento">20% off</div>
-                        <div class="camion"><div i class="fas fa-truck"></i></div></div>
-                    </ul>
-                </div> 
-                <div class="masVendidosFlex">     
-                    <img class="imagenMV" src="/img/Imagen_mas_vendidas_3.jpg">
-                    <ul class="Lista">
-                        <div class="Marca">Dell</div>
-                        <div class="precio">$139.800</div>
-                        <div class="descuento">20% off</div>
-                        <div class="camion"><div i class="fas fa-truck"></i></div></div>
-                    </ul>
-                </div> 
+                <% }) %> 
             </div>
         </section>
     </main>

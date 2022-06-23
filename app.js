@@ -21,7 +21,9 @@ app.use("/products", rutasProducts);
 app.listen(3040, ()=>{
     console.log('Servidor corriendo en puerto 3040');
 })
-
+app.get('/', (req,res)=>{
+    res.render(__dirname + '/views/home.ejs');
+});
 /*app.listen(3040, ()=>{
     console.log('Servidor corriendo en peurto 3040');
 });
@@ -42,9 +44,6 @@ app.get('/register', (req,res)=>{
     res.render(__dirname + '/views/users/register.ejs');
 });
 
-app.get('/detalle', (req,res)=>{
-    res.render(__dirname + '/views/products/detalle.ejs');
-});
 app.get('/carrito', (req,res)=>{
     res.render(__dirname + '/views/products/carrito.ejs');
 });*/

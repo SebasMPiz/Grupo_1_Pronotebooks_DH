@@ -12,7 +12,7 @@ router.get("/", productsController.list)
 router.get ("/create", productsController.create)
 router.post('/create', uploadFile.single('image'), productsController.store);
 
-/*** GET ONE PRODUCT ***/ 
+/*** DETAIL ONE PRODUCT ***/ 
 router.get("/:id", productsController.detail)
 
 /*** EDIT ONE PRODUCT ***/
