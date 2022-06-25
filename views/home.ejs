@@ -16,9 +16,9 @@
             <div class="swiffy-slider">
                 <article class="sliderCenter">
                     <ul class="slider-container">
-                        <li><img src="/img/imagen_carrusel_1.jpg" style="max-width: 100%;height: auto;"></li>
-                        <li><img src="/img/imagen_carrusel_2.jpg" style="max-width: 100%;height: auto;"></li>
-                        <li><img src="/img/imagen_carrusel_3.jpg" style="max-width: 100%;height: auto;"></li>
+                        <% inSaleProducts.forEach(function (product) { %>
+                        <li><a href = "/products/<%=product.id%>"><img src="/img/carrousel/<%=product.imagenBanner%>" style="max-width: 100%;height: auto"/></a></li>
+                        <% }) %>
                     </ul>
                 
                     <button type="button" class="slider-nav"></button>
@@ -43,15 +43,17 @@
         <section>
             <div class="Imagenesmasvendidos">
                 
-                <% products.forEach(function (product) { %>
+                <% topCincoVendidos.forEach(function (product) { %>
                <div class="masVendidosFlex"> 
-                    <img class="imagenMV" src="/img/<%=product.image%>">
+                    <a href = "/products/<%=product.id%>">
+                    <img class="imagenMV" src="/img/products/<%=product.image%>">
                     <ul class="Lista">
                         <div class="Marca"><%=product.marca%> <%=product.modelo%></div>
-                        <div class="precio"><%=product.precio%></div>
+                        <div class="precio">$ <%=toThousand(product.precio)%></div>
                         <div class="descuento">20% off</div>
                         <div class="camion"><div i class="fas fa-truck"></i></div></div>
                     </ul>
+                    </a>
                 </div> 
                 <% }) %> 
             </div>

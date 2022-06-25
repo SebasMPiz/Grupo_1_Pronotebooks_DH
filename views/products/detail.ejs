@@ -17,30 +17,33 @@
             <div class = "fotosyprecio_detalle">
             <div class = "fotos_detalle_producto">
                 <div class = "foto_detalle_producto_principal">
-                    <img class="principal" src="/img/<%=product.image%>">
+                    <img class="principal" src="/img/products/<%=product.image%>">
                 </div>
                 <div class = "foto_detalle_producto_secundarias">
-                    <img class="secundaria" src="/img/<%=image.image2%>">
-                    <img class="secundaria" src="/img/<%=image.image3%>">
-                    <img class="secundaria" src="/img/<%=image.image4%>">
+                    <img class="secundaria" src="/img/products/<%=image.image2%>">
+                    <img class="secundaria" src="/img/products/<%=image.image3%>">
+                    <img class="secundaria" src="/img/products/<%=image.image4%>">
                 </div>
             </div>  
             <section class ="cajaprecio_detalle">
                 <div class ="titulo_detalle_producto">
-                    Dell Alienware mx17 | 16gb RAM | 256gb SSD | Win10 | 17" 
+                    <%=product.marca%> <%=product.serie%> <%=product.modelo%> | <%=product.memoria%> | 
+                    <%=product.almacenamiento%> | <%=product.sistemaOperativo%> | <%=product.pantalla%>" 
                 </div>
                 <div class = "codigo_detalle_producto">
-                    Cod. 123445552-53
+                    Cod.  <%=product.codigomodelo%>
                 </div>
-                <div class = "status_stock">
-                    No hay stock
+                <div class = "<%= cssStock %>">
+                    <%= hayStock %>
                 </div>
                 <div class = "precio">
-                    Precio: ARS 657.000
+                    Precio: ARS <%=toThousand(product.precio)%>
                 </div>
                 <div class = "botones_detalle">
                     <button class = "boton_detalle_prod">Comprar Ahora</button>
                     <button class = "boton_detalle_prod">Agregar al carrito</button>
+                    <a href = "/products/<%=product.id%>/edit"><button class = "boton_detalle_prod">Editar Producto</button></a>
+                    <button class = "boton_detalle_prod">Eliminar Producto</button>
                 </div>
             </section>
             </div>
@@ -55,34 +58,31 @@
                     <div class = "titulos_contenido_detalle_prod">PROCESADOR
                     </div>
                     <div class = "contenido_detalle_prod">
-                        Marca: AMD / Modelo: A4 9120E <br>
-                        Núcleos: 2 / Frecuencia: 2.2GHz <br>
+                        <%=product.procesador%>
                     </div>
 
                     <div class = "titulos_contenido_detalle_prod">GRÁFICOS
                     </div>
                     <div class = "contenido_detalle_prod">
-                        Marca: AMD Radeon / Modelo: R3 <br>
+                        <%=product.graficos%>
                     </div>
 
                     <div class = "titulos_contenido_detalle_prod">MEMORIA
                     </div>
                     <div class = "contenido_detalle_prod">
-                        Capacidad: 4GB / Tipo: DDR4 SODIMM <br>
-                        Expansión: No <br>
+                        <%=product.memoria%>
                     </div>
 
                     <div class = "titulos_contenido_detalle_prod">ALMACENAMIENTO
                     </div>
                     <div class = "contenido_detalle_prod">
-                        Capacidad: 64GB / Clase: SSD eMMC <br>
-                        Puerto M2: No <br>
+                        <%=product.almacenamiento%>
                     </div>
 
                     <div class = "titulos_contenido_detalle_prod">PANTALLA
                     </div>
                     <div class = "contenido_detalle_prod">
-                        Tamaño: 14 / Resolución: 1366x768<br>
+                        <%=product.pantalla%>
                     </div>
                     
                     <div class = "titulos_contenido_detalle_prod">CONECTIVIDAD
@@ -97,17 +97,16 @@
                     <div class = "titulos_contenido_detalle_prod">SISTEMA OPERATIVO
                     </div>
                     <div class = "contenido_detalle_prod">
-                        OS: Windows 11 Home<br>
+                        <%=product.sistemaOperativo%>
                     </div>
 
                     <div class = "titulos_contenido_detalle_prod">OTRAS ESPECIFICACIONES
                     </div>
                     <div class = "contenido_detalle_prod">
-                        Color: Ice Blue / WebCam: Si, 0.3MP <br>
+                        Color: <%=product.color%> / WebCam: Si, 0.3MP <br>
                         Teclado: Español / Pad Numérico: Si<br>
-                        Dimensiones: 23.50cm Profundidad, 32.71cm Ancho, 1.88cm Alto<br>
-                        Peso: 1.40Kg / Modelo: 81VS000GAR<br>
-                        Batería: 35Wh / Garantía: 12 Meses Lenovo Oficial<br>
+                        Modelo: <%=product.codigomodelo%><br>
+                        Aplicacion: <%=product.category%><br>
                     </div>
                 </div>                      
             </section> 

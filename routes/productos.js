@@ -17,7 +17,7 @@ router.get("/:id", productsController.detail)
 
 /*** EDIT ONE PRODUCT ***/
 router.get('/:id/edit', productsController.editProd)
-router.patch('/:id', uploadFile.single('image'), productsController.update);
+router.post('/:id', uploadFile.single('image'), productsController.update);
 
 
 /*** DELETE ONE PRODUCT***/ 

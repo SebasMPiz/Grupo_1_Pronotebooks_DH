@@ -11,74 +11,118 @@
         </div>
 
 <%- include ("../partials/header") -%>
-
-    <h4 class="crearProd">Edita el producto</h4>
-    <form action="/creacionProd" method="GET">    
-        <main class="mainCreacion">
-            <article>
-                <p>
-                    <label  for="productName">Marca</label>
-                </p>
-                <input class="creacionBox" type="text" id="marca" name="marca" required>
-
-                <br>
-                <br>
-
-                <p>
-                    <label  for="productDesc">Descripción</label>
-                </p>
-                <input class="creacionBox" type="text" id="descrption" name="description">
-
-                <br>
-                <br>
-
-                <p class="productPic">
-                    <label  for="productPic">Foto del producto</label>
-                </p>
-                <div class="custom-input-file col-md-6 col-sm-6 col-xs-6">
-                    <input  class="input-file" type="file"  id="image" name="image" accept="image/png, .jpeg, .jpg, image" required>Elegir Imagen...
-                </div>
-            </article>
-
-            <article>
-                <p>
-                    <label  for="productSize">Color</label>
-                </p>
-                <input class="creacionBox" type="text" id="color" name="color">
-                
-                <br>
-                <br>
-
-                <p>
-                    <label  for="productCategory">Categoría</label>
-                </p>
-                <select class="creacionBox" name="categoría" id="categoría">
-
-                    <option>Gamer</option>
-                    
-                    <option>Hogar</option>
-                    
-                    <option>Diseño</option>
-
-                    <option>Industrial</option>
-                    
-                </select>
-
-                <br>
-                <br>
-
-                <p>
-                    <label  for="productPrice">Precio</label>
-                </p>
-                <input class="creacionBox" type="text" id="price" name="price" required>
-            </article>
-        </main>
-        <div class="botonCrear">
-             <input   type="submit" value="Crear!">
+    <div class = "cajacelesteregistro"></div>
+    <div class = "tituloregistro">
+    <h2>Completa tus datos</h2>
+    </div>
+    <form class = "listadoregistro" action = "/products/<%=editProduct.id %>" method = "POST">
+            <div class = "cajaregistro">
+            <div class = "camposregistro">
+                <label for="marca">Marca</label><br>
+                <input class="ingresodato" value = "<%= editProduct.marca %>" type="text" id="marca" name="marca" required>
+             </div>        
+            <div class = "camposregistro">
+                <label for="serie">Serie</label><br>
+                <input class="ingresodato" value = "<%= editProduct.serie %>" type="text" id="serie" name="serie" required>
+            </div> 
+            <div class = "camposregistro">
+                <label for="modelo">Modelo</label><br>
+                <input class="ingresodato" value = "<%= editProduct.modelo %>" type="text" id="modelo" name="modelo" required>
+            </div>
+            <div class = "camposregistro">
+                <label for="procesador">Procesador</label><br>
+                <input class="ingresodato" value = "<%= editProduct.procesador %>" type="text" id="procesador" name="procesador">
+            </div>
+            <div class = "camposregistro">
+                <label for="graficos">Gráficos</label><br>
+                <input class="ingresodato" value = "<%= editProduct.graficos %>" type="text" id="graficos" name="graficos">
+            </div> 
+            <div class = "camposregistro">
+                <label for="memoria">Memoria</label><br>
+                <input class="ingresodato" value = "<%= editProduct.memoria %>" type="text" id="memoria" name="memoria">
+            </div> 
+            <div class = "camposregistro">
+                <label for="almacenamiento">almacenamiento</label><br>
+                <input class="ingresodato" value = "<%= editProduct.almacenamiento %>" type="text" id="almacenamiento" name="almacenamiento">
+            </div> 
+            <div class = "camposregistro">
+                <label for="sistemaOperativo">Sistema Operativo</label><br>
+                <input class="ingresodato" value = "<%= editProduct.sistemaOperativo %>" type="text" id="sistemaOperativo" name="sistemaOperativo">
+            </div> 
+            <div class = "camposregistro">
+                <label for="pantalla">Pantalla</label><br>
+                <input class="ingresodato" value = "<%= editProduct.pantalla %>" type="text" id="pantalla" name="pantalla">
+            </div> 
+            <div class = "camposregistro">
+                <label for="color">Color</label><br>
+                <input class="ingresodato" value = "<%= editProduct.color %>" type="text" id="color" name="color">
+            </div> 
+            <div class = "camposregistro">
+                <label for="precio">Precio</label><br>
+                <input class="ingresodato" value = "<%= editProduct.precio %>" type="text" id="precio" name="precio">
+            </div> 
+            <div class = "camposregistro">
+                <label for="codigomodelo">Codigo</label><br>
+                <input class="ingresodato" value = "<%= editProduct.codigomodelo %>" type="text" id="codigomodelo" name="codigomodelo">
+            </div> 
+            <div  class = "camposregistro" style ="display:flex; flex-direction:column">
+                <label style="margin-bottom:7px" for="slotExpansion">Posee Slot de expansion</label>
+                <% if (editProduct.slotExpansion === "Si") { %> 
+                <p><input type="radio" checked value="Si" name ="slotExpansion"> Si</p>
+                <p><input type="radio" value="No" name ="slotExpansion"> No</p>
+                <% } else { %>
+                <p><input type="radio" value="Si" name ="slotExpansion"> Si</p>
+                <p><input type="radio" checked value="No" name ="slotExpansion"> No</p>
+                <% } %>
+            </div> 
+            <div  class = "camposregistro" style ="display:flex; flex-direction:column">
+                <label style="margin-bottom:7px" for="oferta">Esta en Oferta:</label>
+                <% if (editProduct.oferta === "si") { %> 
+                <p><input type="radio" checked value="Si" name ="oferta"> Si</p>
+                <p><input type="radio" value="No" name ="oferta"> No</p>
+                <% } else { %>
+                <p><input type="radio" value="Si" name ="oferta"> Si</p>
+                <p><input type="radio" checked value="No" name ="oferta"> No</p>
+                <% } %>
+            </div> 
+            <div  class = "camposregistro" style ="display:flex; flex-direction:column">
+                <label style="margin-bottom:7px" for="slotExpansion">Categoria</label>
+                <% if (editProduct.category === "Gaming") { %> 
+                <p><input type="radio" checked value="Gaming" name ="category"> Gaming</p>
+                <p><input type="radio" value="Business" name ="category"> Business</p>
+                <p><input type="radio" value="Home" name ="category"> Home</p>
+                <p><input type="radio" value="Industrial" name ="category"> Industrial</p>
+                <% } else if (editProduct.category === "Business") { %>
+                <p><input type="radio" value="Gaming" name ="category"> Gaming</p>
+                <p><input type="radio" checked value="Business" name ="category"> Business</p>
+                <p><input type="radio" value="Home" name ="category"> Home</p>
+                <p><input type="radio" value="Industrial" name ="category"> Industrial</p>
+                <% } else if (editProduct.category === "Home") { %>
+                <p><input type="radio" value="Gaming" name ="category"> Gaming</p>
+                <p><input type="radio" value="Business" name ="category"> Business</p>
+                <p><input type="radio" checked value="Home" name ="category"> Home</p>
+                <p><input type="radio" value="Industrial" name ="category"> Industrial</p>
+                <% } else { %>
+                <p><input type="radio" value="Gaming" name ="category"> Gaming</p>
+                <p><input type="radio" value="Business" name ="category"> Business</p>
+                <p><input type="radio" value="Home" name ="category"> Home</p>
+                <p><input type="radio" checked value="Industrial" name ="category"> Industrial</p>
+                <% } %>
+            </div> 
         </div>
+
+
+            <div class ="cajabotones">
+                <div>
+                    <input type="submit" value="Enviar" class = "boton">
+                </div> 
+                <div>
+                    <a href = "/products/<%=editProduct.id%>"><button class = "boton">Regresar</button></a>
+                </div>
+                </div> 
+                       
     </form>
-
-
+ 
     <!-- COMIENZO FOOTER -->
 
 <%- include ("../partials/footer") -%>

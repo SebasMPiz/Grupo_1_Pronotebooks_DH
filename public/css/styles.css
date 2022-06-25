@@ -140,6 +140,63 @@ main{
 
 /* Edicion de productos*/
 
+.logoregister {
+    width: 200px;
+}
+.cajaregistro {
+
+    text-align: left;
+    display: flex;
+    flex-wrap: wrap;
+    justify-items: right;
+}
+body .listadoregistro {
+    text-align: center;
+    margin: 0 auto;
+    font-size: 12px;
+    max-width: 600px;
+    background-color: lightblue;
+    border: 1px solid grey;
+    padding: 25px;
+    border-radius: 1rem;
+    margin-bottom: 25px;
+}
+body .camposregistro{
+    padding:10px;
+    width: 33%
+}
+body .cajabotones {
+    margin-top: 20px;
+    display:flex;
+    ;
+    justify-content: center;
+}
+body .botonenviar {
+    width: 120px;
+    margin-left:20px;
+    margin-right: 20px;
+}
+body .botonenviar:hover {
+   background-color: #0022AA;
+   transition: all 0.5s;
+}
+body .boton {
+    width: 120px;
+    margin-left:20px;
+    margin-right: 20px;
+}
+
+.cajacelesteregistro{
+    height: 30%;
+    background-color: grey;
+}
+body .tituloregistro{
+    margin-left:auto;
+    margin-right:auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 50%;
+}
 .editarProd{
     color: var(--blue);
     font-size: 35px;
@@ -313,11 +370,23 @@ main{
     justify-content: space-around;
     margin-top: 20px;
     flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
     }
+    .listadoproductos{
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+        flex-wrap: wrap;
+        max-width:950px;
+        margin-left: auto;
+        margin-right: auto;
+        }
 
 .imagenMV{
    width: 200px; 
    height: 150px;
+   margin: 15px;
 }    
 
 .masVendidosFlex{
@@ -325,6 +394,7 @@ main{
     flex-direction: column;
     padding:0;
     justify-content: center;
+    margin: 10px;
 }
 .masVendidosFlex:hover{
     box-shadow : 0px 0px 10px black;
@@ -355,8 +425,8 @@ body .camion{
     border: 1px solid #39b54a;
     background-color: #FFF;
     border-radius: 50%;
-    right: -160px;
-    top: -120px;
+    right: -194px;
+    top: -43px;
 }
 body .camion:hover{
     transform: rotate(-90deg);
@@ -677,10 +747,11 @@ body .foto_detalle_producto_secundarias{
 }
 body .principal {
     width:80%;
+    margin: 25px;
 }
 body .secundaria {
     width:20%;
-    margin: 5px;
+    margin: 10px;
 }
 body .titulo_detalle_producto {
     padding: 7px;
@@ -692,7 +763,13 @@ body .codigo_detalle_producto {
     font-style:italic;
     margin-left: 5px;
 }
-body .status_stock {
+body .status_stock_si {
+    color:green;
+    margin-left: 12px;
+    font-size: 15px;
+    font-style:italic;
+}
+body .status_stock_no {
     color:red;
     margin-left: 12px;
     font-size: 15px;
