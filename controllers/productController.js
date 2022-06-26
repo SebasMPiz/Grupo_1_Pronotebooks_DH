@@ -17,6 +17,7 @@ const productsController = {
         res.render('products/creacionProd');
     },
 	store: (req, res) => {
+		console.log(req.file)
 		let nuevoProducto = {
 		id: products[products.length - 1].id + 1, //Para no soreescribir productos
 			...req.body,
@@ -24,6 +25,7 @@ const productsController = {
 			stock: 0,
 			imagenBanner: " ",		
 			image: req.file ? req.file.filename : 'defaultproduct.jfif' }
+
 		let nuevoImagenes = {
 			id: products[products.length - 1].id + 1,
 			bannerImage: " ",

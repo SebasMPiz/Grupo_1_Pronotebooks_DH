@@ -10,7 +10,7 @@ router.get("/", productsController.list)
 
 /*** CREATE ONE PRODUCT ***/ 
 router.get ("/create", productsController.create)
-router.post ('/', uploadFile.any(), productsController.store);
+router.post ('/', uploadFile.single('image'), productsController.store);
 
 /*** DETAIL ONE PRODUCT ***/ 
 router.get("/:id", productsController.detail)
@@ -18,7 +18,6 @@ router.get("/:id", productsController.detail)
 /*** EDIT ONE PRODUCT ***/
 router.get('/:id/edit', productsController.editProd)
 router.patch('/:id', uploadFile.single('image'), productsController.update);
-
 
 /*** DELETE ONE PRODUCT***/ 
 router.delete('/:id', productsController.destroy)
