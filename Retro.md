@@ -14,9 +14,6 @@
 •	
 5 Stop
 •	
-------------------------------------------------------------------------------------------------------------------
-
-
 
 ----------SPRINT 3 RETROSPECTIVA----------------------------------------------------------------------------------
 1 Start
@@ -33,4 +30,21 @@
 •	Borrar y clonar código
 5 Stop
 •	Usar ZIP para compartir código
-------------------------------------------------------------------------------------------------------------------
+
+
+----------SPRINT 4 RETROSPECTIVA----------------------------------------------------------------------------------
+1 Start
+•	Ramas en Git
+2 More
+•	Live share
+•   Utilizar pull y push
+•   Commits
+3 Keep
+•	Buena organización en separación de tareas
+•   Buena comunicación y trabajo en equipo
+•   Responsabilidad
+•   Trello
+4 Less
+•	Procrastinar UX/UI
+5 Stop
+•	

@@ -264,28 +264,6 @@
   "stock": 13
  },
  {
-  "id": 13,
-  "marca": "Lenovo",
-  "serie": "545466",
-  "modelo": "5416+41",
-  "procesador": "amd",
-  "graficos": "Nvidia",
-  "memoria": "268",
-  "almacenamiento": "8",
-  "sistemaOperativo": "windowd",
-  "pantalla": "16",
-  "color": "negro",
-  "precio": "400000",
-  "codigomodelo": "564654",
-  "slotExpansion": "Si",
-  "oferta": "No",
-  "category": "Gaming",
-  "cantVendida": 0,
-  "stock": 0,
-  "imagenBanner": " ",
-  "image": "defaultproduct.jfif"
- },
- {
   "id": 14,
   "marca": "Lenovo",
   "serie": "545466",
@@ -328,5 +306,27 @@
   "stock": 0,
   "imagenBanner": " ",
   "image": "1656257395335.jpg"
+ },
+ {
+  "id": 16,
+  "marca": "Lenovo",
+  "serie": "545466",
+  "modelo": "5416+41",
+  "procesador": "amd",
+  "graficos": "Nvidia",
+  "memoria": "268",
+  "almacenamiento": "8",
+  "sistemaOperativo": "windowd",
+  "pantalla": "16",
+  "color": "negro",
+  "precio": "250000",
+  "codigomodelo": "564654",
+  "slotExpansion": "Si",
+  "oferta": "Si",
+  "category": "Gaming",
+  "cantVendida": 0,
+  "stock": 0,
+  "imagenBanner": " ",
+  "image": "1656269489880.jpg"
  }
 ]
