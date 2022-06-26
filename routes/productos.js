@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-// const multer = require("multer")
+const multer = require("multer")
 const uploadFile = require('../middlewares/uploadImage');
 const productsController = require('../controllers/productController')
 
@@ -10,14 +10,14 @@ router.get("/", productsController.list)
 
 /*** CREATE ONE PRODUCT ***/ 
 router.get ("/create", productsController.create)
-router.post('/create', uploadFile.single('image'), productsController.store);
+router.post ('/', uploadFile.any(), productsController.store);
 
 /*** DETAIL ONE PRODUCT ***/ 
 router.get("/:id", productsController.detail)
 
 /*** EDIT ONE PRODUCT ***/
 router.get('/:id/edit', productsController.editProd)
-router.post('/:id', uploadFile.single('image'), productsController.update);
+router.patch('/:id', uploadFile.single('image'), productsController.update);
 
 
 /*** DELETE ONE PRODUCT***/ 

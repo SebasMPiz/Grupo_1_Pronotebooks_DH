@@ -1,13 +1,98 @@
-[{"id":1,"bannerImage":"Alienware_Area51_carrousel.jpg","mainImage":"Dell_Alienware_MX15.jpg","image2":"defaultproduct.jfif","image3":"defaultproduct.jfif","image4":"defaultproduct.jfif"},
- {"id":2,"bannerImage":" ","mainImage":"Appe_Macbook_Air13.jpg","image2":"defaultproduct.jfif","image3":"defaultproduct.jfif","image4":"defaultproduct.jfif"},
- {"id":3,"bannerImage":" ","mainImage":"GETAC_B360.png","image2":"defaultproduct.jfif","image3":"defaultproduct.jfif","image4":"defaultproduct.jfif"},
- {"id":4,"bannerImage":" ","mainImage":"Lenovo_Thinkpad_E15.jpg","image2":"defaultproduct.jfif","image3":"defaultproduct.jfif","image4":"defaultproduct.jfif"},
- {"id":5,"bannerImage":" ","mainImage":"HP_Pavilion_15.jpg","image2":"defaultproduct.jfif","image3":"defaultproduct.jfif","image4":"defaultproduct.jfif"},
- {"id":6,"bannerImage":" ","mainImage":"Dell_XPS_15_7590.jpg","image2":"defaultproduct.jfif","image3":"defaultproduct.jfif","image4":"defaultproduct.jfif"},
- {"id":7,"bannerImage":" ","mainImage":"ASUS_ChromeboxFlip_14.jpg","image2":"defaultproduct.jfif","image3":"defaultproduct.jfif","image4":"defaultproduct.jfif"},
- {"id":8,"bannerImage":"MSI_carrousel.jpg","mainImage":"MSI_Raider_66.jpg","image2":"defaultproduct.jfif","image3":"defaultproduct.jfif","image4":"defaultproduct.jfif"},
- {"id":9,"bannerImage":" ","mainImage":"Panasonic_Thoughbook_CF-53.jpg","image2":"defaultproduct.jfif","image3":"defaultproduct.jfif","image4":"defaultproduct.jfif"},
- {"id":10,"bannerImage":" ","mainImage":"Microsoft_Surface_Laptop_4.jpg","image2":"defaultproduct.jfif","image3":"defaultproduct.jfif","image4":"defaultproduct.jfif"},
- {"id":11,"bannerImage":"ACER_carrousel.jpg","mainImage":"Acer_Nitro_5.jpg","image2":"defaultproduct.jfif","image3":"defaultproduct.jfif","image4":"defaultproduct.jfif"},
- {"id":12,"bannerImage":"Lenovo_Legion_carrousel.jpg","mainImage":"Lenovo_Legion.jpg","image2":"defaultproduct.jfif","image3":"defaultproduct.jfif","image4":"defaultproduct.jfif"}]
-    
+[
+ {
+  "id": 1,
+  "bannerImage": "Alienware_Area51_carrousel.jpg",
+  "mainImage": "Dell_Alienware_MX15.jpg",
+  "image2": "defaultproduct.jfif",
+  "image3": "defaultproduct.jfif",
+  "image4": "defaultproduct.jfif"
+ },
+ {
+  "id": 2,
+  "bannerImage": " ",
+  "mainImage": "Appe_Macbook_Air13.jpg",
+  "image2": "defaultproduct.jfif",
+  "image3": "defaultproduct.jfif",
+  "image4": "defaultproduct.jfif"
+ },
+ {
+  "id": 3,
+  "bannerImage": " ",
+  "mainImage": "GETAC_B360.png",
+  "image2": "defaultproduct.jfif",
+  "image3": "defaultproduct.jfif",
+  "image4": "defaultproduct.jfif"
+ },
+ {
+  "id": 4,
+  "bannerImage": " ",
+  "mainImage": "Lenovo_Thinkpad_E15.jpg",
+  "image2": "defaultproduct.jfif",
+  "image3": "defaultproduct.jfif",
+  "image4": "defaultproduct.jfif"
+ },
+ {
+  "id": 5,
+  "bannerImage": " ",
+  "mainImage": "HP_Pavilion_15.jpg",
+  "image2": "defaultproduct.jfif",
+  "image3": "defaultproduct.jfif",
+  "image4": "defaultproduct.jfif"
+ },
+ {
+  "id": 6,
+  "bannerImage": " ",
+  "mainImage": "Dell_XPS_15_7590.jpg",
+  "image2": "defaultproduct.jfif",
+  "image3": "defaultproduct.jfif",
+  "image4": "defaultproduct.jfif"
+ },
+ {
+  "id": 7,
+  "bannerImage": " ",
+  "mainImage": "ASUS_ChromeboxFlip_14.jpg",
+  "image2": "defaultproduct.jfif",
+  "image3": "defaultproduct.jfif",
+  "image4": "defaultproduct.jfif"
+ },
+ {
+  "id": 8,
+  "bannerImage": "MSI_carrousel.jpg",
+  "mainImage": "MSI_Raider_66.jpg",
+  "image2": "defaultproduct.jfif",
+  "image3": "defaultproduct.jfif",
+  "image4": "defaultproduct.jfif"
+ },
+ {
+  "id": 9,
+  "bannerImage": " ",
+  "mainImage": "Panasonic_Thoughbook_CF-53.jpg",
+  "image2": "defaultproduct.jfif",
+  "image3": "defaultproduct.jfif",
+  "image4": "defaultproduct.jfif"
+ },
+ {
+  "id": 10,
+  "bannerImage": " ",
+  "mainImage": "Microsoft_Surface_Laptop_4.jpg",
+  "image2": "defaultproduct.jfif",
+  "image3": "defaultproduct.jfif",
+  "image4": "defaultproduct.jfif"
+ },
+ {
+  "id": 11,
+  "bannerImage": "ACER_carrousel.jpg",
+  "mainImage": "Acer_Nitro_5.jpg",
+  "image2": "defaultproduct.jfif",
+  "image3": "defaultproduct.jfif",
+  "image4": "defaultproduct.jfif"
+ },
+ {
+  "id": 12,
+  "bannerImage": "Lenovo_Legion_carrousel.jpg",
+  "mainImage": "Lenovo_Legion.jpg",
+  "image2": "defaultproduct.jfif",
+  "image3": "defaultproduct.jfif",
+  "image4": "defaultproduct.jfif"
+ }
+]

@@ -11,74 +11,95 @@
         </div>
 
 <%- include ("../partials/header") -%>
-
-    <h4 class="crearProd">Agregar Productos</h4>
-    <form action="/creacionProd" method="GET">    
-        <main class="mainCreacion">
-            <article>
-                <p>
-                    <label  for="productName">Marca</label>
-                </p>
-                <input class="creacionBox" type="text" id="marca" name="marca" required>
-
-                <br>
-                <br>
-
-                <p>
-                    <label  for="productDesc">Descripción</label>
-                </p>
-                <input class="creacionBox" type="text" id="descrption" name="description">
-
-                <br>
-                <br>
-
-                <p class="productPic">
-                    <label  for="productPic">Foto del producto</label>
-                </p>
-                <div class="custom-input-file col-md-6 col-sm-6 col-xs-6">
-                    <input  class="input-file" type="file"  id="image" name="image" accept="image/png, .jpeg, .jpg, image" required>Elegir Imagen...
-                </div>
-            </article>
-
-            <article>
-                <p>
-                    <label  for="productSize">Color</label>
-                </p>
-                <input class="creacionBox" type="text" id="color" name="color">
-                
-                <br>
-                <br>
-
-                <p>
-                    <label  for="productCategory">Categoría</label>
-                </p>
-                <select class="creacionBox" name="categoría" id="categoría">
-
-                    <option>Gamer</option>
-                    
-                    <option>Hogar</option>
-                    
-                    <option>Diseño</option>
-
-                    <option>Industrial</option>
-                    
-                </select>
-
-                <br>
-                <br>
-
-                <p>
-                    <label  for="productPrice">Precio</label>
-                </p>
-                <input class="creacionBox" type="text" id="price" name="price" required>
-            </article>
-        </main>
-        <div class="botonCrear">
-             <input   type="submit" value="Crear!">
+    <div class = "cajacelesteregistro"></div>
+    <div class = "tituloregistro">
+    <h2>Completa tus datos</h2>
+    </div>
+    <form class = "listadoregistro" action = "/products/" method="POST" enctype="multipart/form-data">
+            <div class = "cajaregistro">
+            <div class = "camposregistro">
+                <label for="marca">Marca</label><br>
+                <input class="ingresodato" placeholder = "Ej: HP, Lenovo, Acer" type="text" id="marca" name="marca" required>
+             </div>        
+            <div class = "camposregistro">
+                <label for="serie">Serie</label><br>
+                <input class="ingresodato" placeholder = "Ej: ThinkPad, Pavilion" type="text" id="serie" name="serie" required>
+            </div> 
+            <div class = "camposregistro">
+                <label for="modelo">Modelo</label><br>
+                <input class="ingresodato" placeholder = "Modelo" type="text" id="modelo" name="modelo" required>
+            </div>
+            <div class = "camposregistro">
+                <label for="procesador">Procesador</label><br>
+                <input class="ingresodato" placeholder = "Ej: AMD, Intel, Otros" type="text" id="procesador" name="procesador">
+            </div>
+            <div class = "camposregistro">
+                <label for="graficos">Gráficos</label><br>
+                <input class="ingresodato" placeholder = "Ej: Nvidia, Radeon" type="text" id="graficos" name="graficos">
+            </div> 
+            <div class = "camposregistro">
+                <label for="memoria">Memoria</label><br>
+                <input class="ingresodato" placeholder = "Capacidad Memoria" type="text" id="memoria" name="memoria">
+            </div> 
+            <div class = "camposregistro">
+                <label for="almacenamiento">almacenamiento</label><br>
+                <input class="ingresodato"  placeholder = "Capacidad almacenamiento"  type="text" id="almacenamiento" name="almacenamiento">
+            </div> 
+            <div class = "camposregistro">
+                <label for="sistemaOperativo">Sistema Operativo</label><br>
+                <input class="ingresodato"  placeholder = "Ej: Windows, Mac, etc"  type="text" id="sistemaOperativo" name="sistemaOperativo">
+            </div> 
+            <div class = "camposregistro">
+                <label for="pantalla">Pantalla</label><br>
+                <input class="ingresodato" placeholder = "Tamaño de pantalla"  type="text" id="pantalla" name="pantalla">
+            </div> 
+            <div class = "camposregistro">
+                <label for="color">Color</label><br>
+                <input class="ingresodato"  placeholder = "Color"  type="text" id="color" name="color">
+            </div> 
+            <div class = "camposregistro">
+                <label for="precio">Precio</label><br>
+                <input class="ingresodato"  placeholder = "Precio"  type="text" id="precio" name="precio">
+            </div> 
+            <div class = "camposregistro">
+                <label for="codigomodelo">Codigo</label><br>
+                <input class="ingresodato"  placeholder = "Codigo de Fabricante"  type="text" id="codigomodelo" name="codigomodelo">
+            </div> 
+            <div  class = "camposregistro" style ="display:flex; flex-direction:column">
+                <label style="margin-bottom:7px" for="slotExpansion">Posee Slot de expansion</label>
+                <p><input type="radio" value="Si" name ="slotExpansion"> Si</p>
+                <p><input type="radio" value="No" name ="slotExpansion"> No</p>
+            </div> 
+            <div  class = "camposregistro" style ="display:flex; flex-direction:column">
+                <label style="margin-bottom:7px" for="oferta">Esta en Oferta:</label>
+                <p><input type="radio" value="Si" name ="oferta"> Si</p>
+                <p><input type="radio" value="No" name ="oferta"> No</p>
+            </div> 
+            <div  class = "camposregistro" style ="display:flex; flex-direction:column">
+                <label style="margin-bottom:7px" for="slotExpansion">Categoria</label>
+                <p><input type="radio" value="Gaming" name ="category"> Gaming</p>
+                <p><input type="radio" value="Business" name ="category"> Business</p>
+                <p><input type="radio" value="Home" name ="category"> Home</p>
+                <p><input type="radio" value="Industrial" name ="category"> Industrial</p>
+            </div> 
+            <div class = "camposregistro">
+                <label for="image">Imagen de Producto</label><br>
+                <input type="file" name="image">
+            </div> 
         </div>
+
+
+            <div class ="cajabotones">
+                <div>
+                    <button type="submit" class="boton">Guardar producto</button>
+                </div> 
+                <div>
+                    <a href = "/products/create"><button class = "boton">Regresar</button></a>
+                </div>
+                </div> 
+                       
     </form>
-
-
+ 
     <!-- COMIENZO FOOTER -->
 
 <%- include ("../partials/footer") -%>

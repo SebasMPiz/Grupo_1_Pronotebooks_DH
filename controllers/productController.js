@@ -16,6 +16,28 @@ const productsController = {
     create: (req,res)=>{
         res.render('products/creacionProd');
     },
+	store: (req, res) => {
+		let nuevoProducto = {
+		id: products[products.length - 1].id + 1, //Para no soreescribir productos
+			...req.body,
+			cantVendida: 0,
+			stock: 0,
+			imagenBanner: " ",		
+			image: req.file ? req.file.filename : 'defaultproduct.jfif' }
+		let nuevoImagenes = {
+			id: products[products.length - 1].id + 1,
+			bannerImage: " ",
+			mainImage: req.file ? req.file.filename : 'defaultproduct.jfif',
+			image2: req.file ? req.file.filename : 'defaultproduct.jfif', 
+			image3: req.file ? req.file.filename : 'defaultproduct.jfif',
+			image4: req.file ? req.file.filename : 'defaultproduct.jfif'
+		}
+			images.push(nuevoImagenes)
+			fs.writeFileSync(imagesFilePath, JSON.stringify(images, null, " "))
+			products.push(nuevoProducto)
+			fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "))
+			res.redirect("/products/")	
+	},
     detail: (req, res) => {
 		let idProduct = req.params.id;
 		let product = products.find(product => product.id == idProduct)
@@ -30,16 +52,8 @@ const productsController = {
 			hayStock = "Hay " + product.stock + " en stock"
 			cssStock = "status_stock_si"
 		}
-		
+		console.log(product)
 		res.render("products/detail", { title: product.marca, hayStock, cssStock, product ,image, toThousand })
-    },
-    store: (req, res) => {
-		let nuevoProducto = {
-			id: products[products.length - 1].id + 1, //Para no soreescribir productos
-			...req.body,
-			image: req.file ? req.file.filename : 'default-image.png' // un if ternario , evaluamos si existe req.file en lo que recibimos
-																	 //que nos guarde el filename del archivo , de lo contrario tenemos una imagen por defecto en nuestra 'base de datos'
-        }
     },
     editProd: (req, res) => {
 		let id = req.params.id
@@ -49,14 +63,14 @@ const productsController = {
     update: (req, res) => {
 		let id = req.params.id //El id que nos requiere por la url el usuario
 		let editProduct = products.find(producto => producto.id == id) //El producto que se va a editar
-		
-
 		editProduct = {
 			id: editProduct.id,
-			...req.body
+			...req.body,
+			cantVendida: editProduct.cantVendida,
+			stock: editProduct.stock,
+			imagenBanner: editProduct.imagenBanner,		
+			image: editProduct.image
 		}; //El producto que se va a editar
-
-		
 
 		let newProducts = products.map(producto => {   // El metodo map nos devuelve un array modificado, lo que quiere decir esto es que 
 													  //Nuestro array de productos se modifica completo con el nuevo producto editado
@@ -65,8 +79,8 @@ const productsController = {
 			}
 			    return producto;
 		})
-		// fs.writeFileSync(productsFilePath, JSON.stringify(newProducts, null, ' '));
-		res.redirect('/');
+		fs.writeFileSync(productsFilePath, JSON.stringify(newProducts, null, ' '));
+		res.redirect("/products");
 	},
     // Delete - Delete one product from DB
 	destroy: (req, res) => {
