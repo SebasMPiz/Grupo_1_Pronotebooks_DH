@@ -43,7 +43,9 @@
                     <button class = "boton">Comprar Ahora</button>
                     <button class = "boton">Agregar al carrito</button>
                     <a href = "/products/<%=product.id%>/edit"><button class = "boton">Editar Producto</button></a>
-                    <button class = "boton">Eliminar Producto</button>
+                    <form action="/products/<%= product.id %>?_method=DELETE" method="POST" class="boton">
+                        <button type="submit" class="action-button delete">ELIMINAR</button>
+                    </form>
                 </div>
             </section>
             </div>

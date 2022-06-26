@@ -88,8 +88,9 @@ const productsController = {
 	destroy: (req, res) => {
 		let id = req.params.id  // Lo mismo que en todas los otros metodos lo primero que capturamos aca es el id
 		let finalProducts = products.filter(producto => producto.id != id) // Aqui lo que hacemos es filtrar los productos que no sean el id que nosotros queremos eliminar
-		fs.writeFileSync(productsFilePath, JSON.stringify(finalProducts, null, ' ')); // Aqui lo que hacemos es escribir el archivo de nuevo con los productos que no sean el id que nosotros queremos eliminar
-		res.redirect('/');
+
+  		fs.writeFileSync(productsFilePath, JSON.stringify(finalProducts, null, ' ')); // Aqui lo que hacemos es escribir el archivo de nuevo con los productos que no sean el id que nosotros queremos eliminar
+		res.redirect('/products'); 
 	}
 
 }
