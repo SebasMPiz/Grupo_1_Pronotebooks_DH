@@ -47,4 +47,4 @@
 4 Less
 •	Procrastinar UX/UI
 5 Stop
-•	
+•	--
