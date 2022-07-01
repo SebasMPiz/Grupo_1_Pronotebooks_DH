@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<!-- COMIENZO DEL HEAD -->
+
+<%- include ("../partials/head") -%>
+
+<!-- COMIENZO BODY -->
+<body>
+        <div class ="logowhatsapp">
+            <img src="/img/whatsapp-logo.svg"  alt="Whatsapp" class ="logosredes"/>
+        </div>
+
+<%- include ("../partials/header") -%>
+<div class = "cajacelesteregistro"></div>
+<div class = "tituloregistro">
+<h2>Completa tus datos</h2>
+</div>
+<div class="listadoregistro">
+    <div class="listImages">      
+       <div>
+        <div class="listImagesFlex"> 
+            <img class="imagenLs" src="/img/products/<%=editImage.mainImage%>">
+            <div class="textImage">Imagen principal</div>
+        </div>
+        <form action="/products/<%= editImage.id %>/editImage/?_method=PATCH" method="POST"></form>
+            <input type="file" id="imageInput" name = "mainImage"/>
+            <input type="button" onclick= "document.getElementById('imageInput').click()" value="Seleccionar" class ="botonEditImage" />        
+            <input type="submit" value="Enviar" class = "botonEditImage">
+        </form>
+        </div>
+        <div>
+        <div class="listImagesFlex"> 
+            <img class="imagenLs" src="/img/products/<%=editImage.image2%>">
+            <div class="textImage">  </div>
+        </div>
+            <input type="file" id="imageInput" name = "image2"/>
+            <input type="button" onclick= "document.getElementById('imageInput').click()" value="Editar" class ="botonEditImage" />
+        </div> 
+        <div>
+            <div class="listImagesFlex"> 
+                <img class="imagenLs" src="/img/products/<%=editImage.image3%>">
+                <div class="textImage">  </div>
+            </div>
+            <input type="file" id="imageInput" name = "image3"/>
+            <input type="button" onclick= "document.getElementById('imageInput').click()" value="Editar" class ="botonEditImage" />
+           
+        </div> 
+        <div>
+            <div class="listImagesFlex"> 
+                <img class="imagenLs" src="/img/products/<%=editImage.image4%>">
+                <div class="textImage">  </div>
+            </div>
+            <input type="file" id="imageInput" name = "image2"/>
+            <input type="button" onclick= "document.getElementById('imageInput').click()" value="Editar" class ="botonEditImage" />
+        </div> 
+        <div>
+            <a href = "/products/<%=editImage.id%>/"><button class = "boton">Regresar</button></a>
+        </div>
+    </div>
+</div>
+    <!-- COMIENZO FOOTER -->
+
+<%- include ("../partials/footer") -%>
+
+    </body>
+</html>

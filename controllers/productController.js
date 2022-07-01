@@ -84,7 +84,33 @@ const productsController = {
 		fs.writeFileSync(productsFilePath, JSON.stringify(newProducts, null, ' '));
 		res.redirect("/products");
 	},
-    // Delete - Delete one product from DB
+	editImage: (req,res) => {
+		let id = req.params.id
+		let editImage = images.find(producto => producto.id == id)
+		res.render("products/editImageProd", { editImage })
+	},
+	updateImage: (req,res) => {
+				let id = req.params.id 
+		let editImage = images.find(image => image.id == id) 	
+		editImage = {
+			id: editImage.id,
+			bannerImage: bannerImage,
+			mainImage: req.file,
+			image2: editImage.image2,
+			image3: editImage.image3,
+			image4: editImage.image4,
+		}; 
+		
+		let newImages = images.map(image => {   
+												
+			if (image.id === editImage.id) {
+				return image = { ...editImage };  // Metodo spread operator nos devuelve todo el objeto
+			}
+			    return image;
+		})
+		fs.writeFileSync(imagesFilePath, JSON.stringify(newImages, null, ' '));
+		res.redirect("products/");
+	},	
 	destroy: (req, res) => {
 		let id = req.params.id  // Lo mismo que en todas los otros metodos lo primero que capturamos aca es el id
 		let finalProducts = products.filter(producto => producto.id != id) // Aqui lo que hacemos es filtrar los productos que no sean el id que nosotros queremos eliminar
