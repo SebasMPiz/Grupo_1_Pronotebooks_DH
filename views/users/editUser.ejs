@@ -23,19 +23,14 @@
                         
                     <main class="ajusteWidth">
                     <article class="bordeRegister1">
-                        <h1>Regístrate</h1>
-                        <form action="/users/register" method="POST">
+                        <h1>Edicion de usuario</h1>
+                        <form action="/" method="POST">
                             <div class="formulario">
                                 <div class="centrado">
                                     <p class="bordesAbajo">
-                                        <label  for="name">Nombre:</label>
+                                        <label  for="usuario">Usuario:</label>
                                     </p>
-                                    <input class="bordesArribaR" type="text" id="name" name="name" required>
-                                    <br>
-                                    <p class="bordesAbajo">
-                                        <label  for="last_name">Apellido:</label>
-                                    </p>
-                                    <input class="bordesArribaR" type="text" id="last_name" name="last_name" required>
+                                    <input class="bordesArribaR" type="text" id="usuario" name="usuario" required>
                                     <br>
                                     <p class="bordesAbajo">
                                         <label for="email">Correo electronico:</label>
@@ -50,20 +45,16 @@
                                     <p class="bordesAbajo">
                                         <label  for="confirmPassword">Confirmar contraseña:</label>
                                     </p>
-                                    <input class="bordesAbajo" type="password" id="confirmPassword" name="confirmPassword" required>
+                                    <input class="bordesArribaR" type="password" id="confirmPassword" name="confirmPassword" required>
                                     <br>
-                                    <p>
-                                        <label  for="category">Categoria:</label>
-                                            <p><input  type="radio" value="Admin" name ="category"> Administrador</p>
-                                            <p><input  type="radio" value="Usuario" name ="category"> Usuario</p>
-                                    </p>
+                                
                                 </div>
 
-                                    <p class="profilePic">                                        
-                                        <label  for="image">Foto de perfil:</label>
+                                    <p class="profilePic">
+                                        <label  for="profilePic">Foto de perfil:</label>
                                     </p>
                                     <div class="custom-input-file col-md-6 col-sm-6 col-xs-6">
-                                        <input  class="input-file" type="file"  id="image" name="image" accept="image/png, .jpeg, .jpg, image">Elegir Imagen...                                      
+                                        <input  class="input-file" type="file"  id="profilePic" name="profilePic" accept="image/png, .jpeg, .jpg, image">Elegir Imagen...
                                     </div>
                                     <br>   
 

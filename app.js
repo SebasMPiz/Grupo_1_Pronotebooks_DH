@@ -5,6 +5,7 @@ const path = require('path');
 const rutasMain = require('./routes/main');
 const rutasProducts = require('./routes/productos');
 const methodOverride =  require('method-override');
+const rutasUsers = require ("./routes/users")
 
 //Creamos la carpeta estática
 app.use(express.static('public'));
@@ -20,6 +21,7 @@ app.use(methodOverride('_method'))
 
 app.use('/', rutasMain);
 app.use("/products", rutasProducts);
+app.use("/users", rutasUsers);
 
 
 app.listen(3040, ()=>{

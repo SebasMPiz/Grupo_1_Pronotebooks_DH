@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<!-- COMIENZO DEL HEAD -->
+
+<%- include ("../partials/head") -%>
+
+<!-- COMIENZO BODY -->
+<body>
+        <div class ="logowhatsapp">
+            <img src="/img/whatsapp-logo.svg"  alt="Whatsapp" class ="logosredes"/>
+        </div>
+
+<%- include ("../partials/header") -%>
+
+        <main>
+
+            <a href = "/users/register"><button class = "boton">Crear Usuario</button></a>
+
+        <section>
+            <div class="listadoproductos">      
+                <% users.forEach(function (users) { %>
+               <div class="masVendidosFlex"> 
+                    <a href = "/users/<%=users.id%>">
+                    <img class="imagenMV" src="/img/<%=users.image%>">
+                    <ul class="Lista">
+                        <div class="name"><%=users.name%></div>
+                        <div class="last_name"><%=users.last_name%></div>
+                        <div class="email"><%=users.email%></div>
+                        <div class="category"><%=users.category%></div>
+                    </ul>
+                    </a>
+                </div> 
+                <% }) %> 
+            </div>
+        </section>
+    </main>
+
+    <!-- COMIENZO FOOTER -->
+
+    <%- include ("../partials/footer") -%>
+
+    </body>
+</html>
