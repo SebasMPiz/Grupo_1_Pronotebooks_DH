@@ -5,7 +5,8 @@ const path = require('path');
 const rutasMain = require('./routes/main');
 const rutasProducts = require('./routes/productos');
 const methodOverride =  require('method-override');
-const rutasUsers = require ("./routes/users")
+const rutasUsers = require ("./routes/users");
+const session = require ("express-session");
 
 //Creamos la carpeta estática
 app.use(express.static('public'));
@@ -15,7 +16,7 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/views'))
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-
+app.use(session( {secret: "Nuestro mensaje secreto"}));
 app.use(cookieParser())
 app.use(methodOverride('_method'))
 

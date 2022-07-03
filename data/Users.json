@@ -1,19 +1,23 @@
 [
  {
   "id": 1,
-  "name": "Benyamin",
-  "last_name": "Beare",
-  "email": "bbeare0@illinois.edu",
-  "password": "gECEd7DDH",
-  "category": "Administrador",
-  "image": "../img/ppdefecto.png"
+  "name": "Quent",
+  "last_name": "Piza",
+  "email": "qglayzer1@prnewswire.com",
+  "password": "8ANV3L4I",
+  "phone": "5491122502443",
+  "country": "Argentina",
+  "category": "Usuario",
+  "image": "ppdefecto.png"
  },
  {
   "id": 2,
   "name": "Quent",
-  "last_name": "Glayzer",
+  "last_name": "Piza",
   "email": "qglayzer1@prnewswire.com",
   "password": "8ANV3L4I",
+  "phone": "5491122502443",
+  "country": "Argentina",
   "category": "Usuario",
   "image": "ppdefecto.png"
  },
@@ -24,6 +28,8 @@
   "email": "rgerardet2@foxnews.com",
   "password": "7ozJjO4cS",
   "category": "Administrador",
+  "country": "Argentina",
+  "phone": "5491122502443",
   "image": "ppdefecto.png"
  },
  {
@@ -33,26 +39,19 @@
   "email": "dbream3@cbslocal.com",
   "password": "iflGDgczPjq",
   "category": "Usuario",
+  "country": "Argentina",
+  "phone": "5491122502443",
   "image": "ppdefecto.png"
  },
  {
   "id": 5,
-  "name": "Lucas",
-  "last_name": "Montoby",
-  "email": "montobybianchi@gmail.com",
-  "password": "123456",
-  "confirmPassword": "123456",
-  "category": "Admin",
-  "image": "defaultuser.jfif"
- },
- {
-  "id": 6,
-  "name": "Lucas",
-  "last_name": "Montoby",
-  "email": "montobybianchi@gmail.com",
-  "password": "123456",
-  "confirmPassword": "123456",
-  "category": "Admin",
-  "image": "defaultuser.jfif"
+  "name": "Sebastian",
+  "last_name": "Pizarro",
+  "mail": "sepizarro@yahoo.com.ar",
+  "password": "$2a$10$CmlPOn3/ai3tdsHnKeg6Eekb93KDf3zqrAqMay3e1SQKMvN9wwVRK",
+  "phone": "+5491122604195",
+  "country": "Argentina",
+  "category": "Administrador",
+  "image": "1656879611078.jpg"
  }
 ]

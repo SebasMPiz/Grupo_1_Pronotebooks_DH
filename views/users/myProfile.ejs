@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<!-- COMIENZO DEL HEAD -->
+
+<%- include ("../partials/head") -%>
+
+<!-- COMIENZO BODY -->
+<body>
+        <div class ="logowhatsapp">
+            <img src="/img/whatsapp-logo.svg"  alt="Whatsapp" class ="logosredes"/>
+        </div>
+
+<%- include ("../partials/header") -%>
+    <div class = "cajacelesteregistro"></div>
+    <div class = "tituloregistro">
+    <h2>Completa tus datos</h2>
+    </div>
+    <div class = "listadoregistro">
+            <img class="imagenMV" src="/img/users/<%=users.image%>">
+            <div class = "cajaregistro">
+            <div class = "camposregistro">
+                <p class= "fieldUserProfile">Nombre: </p><p><%= users.name %></p>
+             </div> 
+             <div class = "camposregistro">
+                <p class= "fieldUserProfile">Apellido: </p><p><%= users.last_name %></p>
+             </div> 
+             <div class = "camposregistro">
+                <p class= "fieldUserProfile">Email: </p><p><%= users.mail %></p>
+             </div> 
+             <div class = "camposregistro">
+                <p class= "fieldUserProfile">Telefono: </p><p><%= users.phone %></p>
+             </div>
+             <div class = "camposregistro">
+                <p class= "fieldUserProfile">Pais: </p><p><%= users.country %></p>
+             </div>
+                          <div class = "camposregistro">
+                <p class= "fieldUserProfile">Categoria: </p><p><%= users.category %></p>
+             </div>
+            </div> 
+        </div>
+            <div class ="cajabotones">            
+                <div>
+                    <a href = "/users/<%=users.id%>/edit"><button class = "boton">Editar perfil</button></a>
+                </div>
+                <form action="/users/<%= users.id %>?_method=DELETE" method="POST">
+                    <button type="submit" class = "boton">Eliminar perfil</button>
+                </form>
+
+            </div> 
+                       
+    </form>
+ 
+    <!-- COMIENZO FOOTER -->
+
+<%- include ("../partials/footer") -%>
+
+    </body>
+</html>

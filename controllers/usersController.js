@@ -1,7 +1,8 @@
 const fs = require('fs');
 const path = require('path');
+const bcrypt = require("bcryptjs")
 
-const usersFilePath = path.join(__dirname, '../data/users.json');
+const usersFilePath = path.join(__dirname, '../data/Users.json');
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
 const usersController = {
@@ -13,14 +14,22 @@ const usersController = {
         res.render('users/register');
     },
 	store: (req, res) => {
+		console.log(req.file)
 		let newUser = {
 		id: users[users.length - 1].id + 1,
 			...req.body,
+			password: bcrypt.hashSync(req.body.password, 10),
 			image: req.file ? req.file.filename : 'defaultuser.jfif' }
 		
 			users.push(newUser)
 			fs.writeFileSync(usersFilePath, JSON.stringify(users, null, " "))
-			res.redirect("/")	
+			res.redirect("/users/list")	
+	},
+	detail: (req, res) => {
+		let idUser = req.params.id;
+		let user = users.find(product => product.id == idUser)
+		
+		res.render("users/myProfile", { users:user })
 	},
     editUser: (req, res) => {
 		let id = req.params.id
@@ -33,7 +42,7 @@ const usersController = {
 		editUser = {
 			id: editUser.id,
 			...req.body,
-			image: editUser.image
+			image: req.file ? req.file.filename : 'defaultuser.jfif'
 		}; 
 
 		let newUsers = users.map(user => {
@@ -44,7 +53,7 @@ const usersController = {
 			    return user;
 		})
 		fs.writeFileSync(usersFilePath, JSON.stringify(newUsers, null, ' '));
-		res.redirect("/users");
+		res.redirect("/users/list");
 	},
 
 	destroy: (req, res) => {
@@ -52,7 +61,7 @@ const usersController = {
 		let finalUsers = users.filter(user => user.id != id) 
 
   		fs.writeFileSync(usersFilePath, JSON.stringify(finalUsers, null, ' '));
+		res.redirect("/users/list")
 	}
-
 }
 module.exports = usersController

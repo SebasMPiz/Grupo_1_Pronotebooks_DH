@@ -82,12 +82,12 @@ const productsController = {
 			    return producto;
 		})
 		fs.writeFileSync(productsFilePath, JSON.stringify(newProducts, null, ' '));
-		res.redirect("/products");
+		res.redirect("/products/" + editProduct.id)
 	},
 	editImage: (req,res) => {
 		let id = req.params.id
 		let editImage = images.find(producto => producto.id == id)
-		res.render("products/editImageProd", { editImage })
+		res.render("products/editImageProd", {editImage})
 	},
 	updateImage: (req,res) => {
 				let id = req.params.id 
@@ -109,7 +109,7 @@ const productsController = {
 			    return image;
 		})
 		fs.writeFileSync(imagesFilePath, JSON.stringify(newImages, null, ' '));
-		res.redirect("products/");
+		res.redirect("/products/");
 	},	
 	destroy: (req, res) => {
 		let id = req.params.id  // Lo mismo que en todas los otros metodos lo primero que capturamos aca es el id

@@ -147,12 +147,17 @@ main{
 .logoregister {
     width: 200px;
 }
+.fieldUserProfile{
+    font-size:14px;
+
+}
 .cajaregistro {
 
     text-align: left;
     display: flex;
     flex-wrap: wrap;
-    justify-items: right;
+    justify-items: center;
+    justify-content: space-evenly;
 }
 body .listadoregistro {
     text-align: center;
@@ -295,6 +300,84 @@ body .tituloregistro{
     transition: 0.5s;
 }
 
+/* Edicion de fotos */
+
+  #imageInput {
+    display:none;
+  }
+  .form-group {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 30px;
+}
+.form-group label {
+	margin-bottom: 15px;
+}
+.form-group textarea {
+	min-width: 100%;
+	height: 100px;
+	max-height: 200px;
+}
+.form-file {
+	width: 40%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	row-gap: 20px;
+	margin-bottom: 20px;
+}
+.form-file__action {
+	width: 100%;
+}
+.form-file__action label {
+	display: block;
+}
+.form-file__action label.title {
+	width: 100%;
+	margin-bottom: 15px;
+	text-align: center;
+}
+.form-file__action input {
+	width: 0;
+	height: 0;
+	opacity: 0;
+	display: none;
+}
+.form-file__result {
+	cursor: pointer;
+	overflow: hidden;
+	position: relative;
+	background-color: #f2f0f0;
+	border-radius: 8px;
+	border: 1px dashed #609dd6;
+	transition: bacgroundColor 0.3s linear;
+	z-index: 10;
+}
+.form-file__result::after {
+	content: 'Clic para elegir imagen.';
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	color: #609dd6;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.form-file__result img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	z-index: 50;
+}
+.form-file__result--active {
+	background-color: rgba(82, 81, 79, 0.314);
+}
+
   /* CSS Home */
 
     header {
@@ -304,6 +387,12 @@ body .tituloregistro{
         width: 100%;
         z-index: 10;
         box-shadow : 0px 0px 10px rgb(209, 191, 191);
+    }
+    .fa-solid {
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        text-decoration: none;
+        color: white
     }
 
   .barra{
@@ -349,13 +438,12 @@ body .tituloregistro{
     flex-direction: row;
     align-items: center;
     background-color: var(--darkblue);
-    justify-content: space-between;
-
-    
+    justify-content: space-between;   
     color: #ffffff;
     margin-bottom: auto;
     margin:0;
-    padding:0;
+    padding:0px;
+    padding-right: 20px;
     border-bottom: 5px solid white;
    }
   
@@ -650,10 +738,6 @@ article.links{
     transition: 0.5s;
 }
 
-#imageInput{
-    display:none
-}
-
 .boton:hover{
     background-color: var(--darkblue);
     border: 1px solid var(--darkblue);
@@ -721,7 +805,10 @@ footer .bordesArriba{
 .bordesAbajo{
     margin-bottom: 2px;
 }
-
+.bordesAbajoA{
+    margin-bottom: 2px;
+    font-size: 12px;
+}
 .bordesAbajo::before{
     content: "*";
     color: red;
@@ -791,6 +878,7 @@ main h1{
 .profileFile{
     margin: 0 auto;
 }
+
 /* CSS Detalle de Productos */
 
 body .fotos_detalle_producto {
@@ -1336,13 +1424,17 @@ ul {
     .flexDesk{
         display: flex;
         justify-content: space-evenly;
-        margin-right: 364px;
     }
 
     .flexDeskL{
+        padding-top: 20px;
         display: flex;
         flex-direction: row-reverse;
         justify-content: center;
+        margin-left:auto;
+        margin-right: auto;
+        width: 60%;
+
     }
     
 

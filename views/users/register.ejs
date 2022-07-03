@@ -14,64 +14,59 @@
 <!-- COMIENZO BODY -->
 <%- include ("../partials/header") -%>
 
-            <div class="flexDesk">
+<div class = "cajacelesteregistro"></div>
+<div class = "tituloregistro">
+<h2>Completa tus datos</h2>
+</div>
+<form class = "listadoregistro" action="/users/register" method="POST" enctype="multipart/form-data">
+        <div class = "cajaregistro">
+        <div class = "camposregistro">
+            <label for="name">Nombre</label><br>
+            <input class="ingresodato" type="text" id="name" name="name" required>
+         </div>        
+        <div class = "camposregistro">
+            <label for="last_name">Apellido</label><br>
+            <input class="ingresodato"  type="text" id="last_name" name="last_name" required>
+        </div> 
+        <div class = "camposregistro">
+            <label for="mail">Email</label><br>
+            <input class="ingresodato" type="email" id="mail" name="mail" required>
+        </div>
+        <div class = "camposregistro">
+            <label for="password">Password</label><br>
+            <input class="ingresodato" type="password" id="password" name="password">
+        </div>
+        <div class = "camposregistro">
+            <label for="phone">Telefono</label>
+            <input class="ingresodato" type="text" id="phone" name="phone" required>
+         </div>
+         <div class = "camposregistro">
+            <label for="country">Pais</label>
+            <input class="ingresodato" type="text" id="country" name="country" required>
+         </div>
+        <div  class = "camposregistro" style ="display:flex; flex-direction:column">
+            <label style="margin-bottom:7px" for="category">Categoria</label>
+            <p><input type="radio" value="Administrador" name ="category">Administrador</p>
+            <p><input type="radio" value="Usuario" name ="category">Usuario</p>
+        </div> 
+        <div class = "camposregistro">
+            <input type="button" onclick= "document.getElementById('imageInput').click()" value="Agregar foto de Perfil" class ="botonEditImage" />
+            <input type="file" id="imageInput" name = "image"/>
+        </div> 
+    </div>
+       <div class ="cajabotones">
+            <div>
+                <button type="submit" class="boton">Guardar</button>
+            </div> 
+            <div>
+                <a href = "/users/list"><button class = "boton">Regresar</button></a>
+            </div>
+            </div> 
+                   
+</form>
 
-                        <article class="bordeRegister2">
-                            <h1>¿Ya tienes cuenta?</h1> 
-                            <p><a href="/login">Inicia sesión</a></p>
-                        </article>
-                        
-                    <main class="ajusteWidth">
-                    <article class="bordeRegister1">
-                        <h1>Regístrate</h1>
-                        <form action="/users/register" method="POST">
-                            <div class="formulario">
-                                <div class="centrado">
-                                    <p class="bordesAbajo">
-                                        <label  for="name">Nombre:</label>
-                                    </p>
-                                    <input class="bordesArribaR" type="text" id="name" name="name" required>
-                                    <br>
-                                    <p class="bordesAbajo">
-                                        <label  for="last_name">Apellido:</label>
-                                    </p>
-                                    <input class="bordesArribaR" type="text" id="last_name" name="last_name" required>
-                                    <br>
-                                    <p class="bordesAbajo">
-                                        <label for="email">Correo electronico:</label>
-                                    </p>
-                                    <input  class="bordesArribaR" type="email" id="email" name="email" required>
-                                    <br>
-                                    <p class="bordesAbajo">
-                                        <label  for="password">Contraseña:</label>
-                                    </p>
-                                    <input class="bordesArribaR" type="password" id="password" name="password" required>
-                                    <br>
-                                    <p class="bordesAbajo">
-                                        <label  for="confirmPassword">Confirmar contraseña:</label>
-                                    </p>
-                                    <input class="bordesAbajo" type="password" id="confirmPassword" name="confirmPassword" required>
-                                    <br>
-                                    <p>
-                                        <label  for="category">Categoria:</label>
-                                            <p><input  type="radio" value="Admin" name ="category"> Administrador</p>
-                                            <p><input  type="radio" value="Usuario" name ="category"> Usuario</p>
-                                    </p>
-                                </div>
 
-                                    <p class="profilePic">                                        
-                                        <label  for="image">Foto de perfil:</label>
-                                    </p>
-                                    <div class="custom-input-file col-md-6 col-sm-6 col-xs-6">
-                                        <input  class="input-file" type="file"  id="image" name="image" accept="image/png, .jpeg, .jpg, image">Elegir Imagen...                                      
-                                    </div>
-                                    <br>   
-
-                                    <input  class="botonRegister" type="submit" value="Crear cuenta">
-
-                        </div>
-                    </form>
-
+       
                     <article class="links">
                         <p class="borde"><a href="#">Regresar</a></p>
                     </article>
