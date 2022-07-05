@@ -1,57 +1,68 @@
 [
  {
   "id": 1,
-  "name": "Quent",
-  "last_name": "Piza",
-  "email": "qglayzer1@prnewswire.com",
-  "password": "8ANV3L4I",
+  "name": "Sebastian",
+  "last_name": "Pizarro",
+  "email": "sebas@yahoo.com",
+  "password": "sebapiza",
   "phone": "5491122502443",
   "country": "Argentina",
-  "category": "Usuario",
-  "image": "ppdefecto.png"
+  "category": "Administrador",
+  "image": "1657039756957.jpg"
  },
  {
   "id": 2,
-  "name": "Quent",
-  "last_name": "Piza",
-  "email": "qglayzer1@prnewswire.com",
-  "password": "8ANV3L4I",
+  "name": "Thanos",
+  "last_name": "Bad",
+  "email": "thanos@marvel.com",
+  "password": "thanos123",
   "phone": "5491122502443",
-  "country": "Argentina",
-  "category": "Usuario",
-  "image": "ppdefecto.png"
+  "country": "EEUU",
+  "category": "Administrador",
+  "image": "1657040016722.jpg"
  },
  {
   "id": 3,
-  "name": "Ruthann",
-  "last_name": "Gerardet",
-  "email": "rgerardet2@foxnews.com",
-  "password": "7ozJjO4cS",
-  "category": "Administrador",
-  "country": "Argentina",
+  "name": "Thomas",
+  "last_name": "Anderson",
+  "email": "neo@matrix.com",
+  "password": "neo123",
   "phone": "5491122502443",
-  "image": "ppdefecto.png"
+  "country": "EEUU",
+  "category": "Administrador",
+  "image": "1657040131676.jpg"
  },
  {
   "id": 4,
-  "name": "Derron",
-  "last_name": "Bream",
-  "email": "dbream3@cbslocal.com",
-  "password": "iflGDgczPjq",
-  "category": "Usuario",
-  "country": "Argentina",
+  "name": "Taylor",
+  "last_name": "Hawkins",
+  "email": "taylor@foo.com",
+  "password": "taylor123",
   "phone": "5491122502443",
-  "image": "ppdefecto.png"
+  "country": "EEUU",
+  "category": "Administrador",
+  "image": "1657040344557.jpg"
  },
  {
   "id": 5,
-  "name": "Sebastian",
-  "last_name": "Pizarro",
-  "mail": "sepizarro@yahoo.com.ar",
-  "password": "$2a$10$CmlPOn3/ai3tdsHnKeg6Eekb93KDf3zqrAqMay3e1SQKMvN9wwVRK",
-  "phone": "+5491122604195",
-  "country": "Argentina",
+  "name": "Carlos",
+  "last_name": "Marquez",
+  "mail": "carlos.mar@gmail.com",
+  "password": "$2a$10$vN46TubWV1e3VM7OQYpnoeXXPzlRBDqR.4CnMAelFikOi2ccZ9FFG",
+  "phone": "522212231",
+  "country": "Peru",
   "category": "Administrador",
-  "image": "1656879611078.jpg"
+  "image": "1656943552581.png"
+ },
+ {
+  "id": 6,
+  "name": "Emmet",
+  "last_name": "Brown",
+  "mail": "emmet@time.com",
+  "password": "$2a$10$Tb1mnF2BOiZHoP2rkDZu3.j6xHXUGTye7orMGTdtyoxszuq.rTxHe",
+  "phone": "2233444333",
+  "country": "EEUU",
+  "category": "Usuario",
+  "image": "1657040405141.jpeg"
  }
 ]
