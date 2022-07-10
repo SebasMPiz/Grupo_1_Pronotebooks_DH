@@ -25,7 +25,7 @@
                 <p class= "fieldUserProfile">Apellido: </p><p><%= users.last_name %></p>
              </div> 
              <div class = "camposregistro">
-                <p class= "fieldUserProfile">Email: </p><p><%= users.mail %></p>
+                <p class= "fieldUserProfile">Email: </p><p><%= users.email %></p>
              </div> 
              <div class = "camposregistro">
                 <p class= "fieldUserProfile">Telefono: </p><p><%= users.phone %></p>
@@ -44,6 +44,9 @@
                 </div>
                 <form action="/users/<%= users.id %>?_method=DELETE" method="POST">
                     <button type="submit" class = "boton">Eliminar perfil</button>
+                </form>
+                <form action="logout" method = "GET">
+                    <button type="submit" class = "boton">Deslogear</button>
                 </form>
 
             </div> 

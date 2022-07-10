@@ -4,11 +4,11 @@
   "name": "Sebastian",
   "last_name": "Pizarro",
   "email": "sebas@yahoo.com",
-  "password": "sebapiza",
+  "password": "1234",
   "phone": "5491122502443",
   "country": "Argentina",
   "category": "Administrador",
-  "image": "1657039756957.jpg"
+  "image": "1657392262244.jpg"
  },
  {
   "id": 2,
@@ -47,7 +47,7 @@
   "id": 5,
   "name": "Carlos",
   "last_name": "Marquez",
-  "mail": "carlos.mar@gmail.com",
+  "email": "carlos.mar@gmail.com",
   "password": "$2a$10$vN46TubWV1e3VM7OQYpnoeXXPzlRBDqR.4CnMAelFikOi2ccZ9FFG",
   "phone": "522212231",
   "country": "Peru",
@@ -58,11 +58,33 @@
   "id": 6,
   "name": "Emmet",
   "last_name": "Brown",
-  "mail": "emmet@time.com",
+  "email": "emmet@time.com",
   "password": "$2a$10$Tb1mnF2BOiZHoP2rkDZu3.j6xHXUGTye7orMGTdtyoxszuq.rTxHe",
   "phone": "2233444333",
   "country": "EEUU",
   "category": "Usuario",
   "image": "1657040405141.jpeg"
+ },
+ {
+  "id": 7,
+  "name": "Sebastian",
+  "last_name": "Pizarro",
+  "email": "ej@ej.com",
+  "password": "$2a$10$m0clrotrTLe0bAJdJ.6YGO.Vyt7PSV8pH3zjbrG/oX1qUEwzGEJ2W",
+  "phone": "5491122604195",
+  "country": "Argentina",
+  "category": "Administrador",
+  "image": "1657395831244.jpeg"
+ },
+ {
+  "id": 8,
+  "name": "Lucas",
+  "last_name": "Montoby",
+  "email": "lucas@dh.com",
+  "password": "$2a$10$e7/dJ17PAqLyHrosFgbD6.lWJV39kRa5.ewFjXzH/5p8rC.ZgvsaS",
+  "phone": "1234444",
+  "country": "Argentina",
+  "category": "Administrador",
+  "image": "1657406279748.jpeg"
  }
 ]

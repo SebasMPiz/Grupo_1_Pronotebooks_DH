@@ -1,17 +1,18 @@
 const express = require('express');
 const router = express.Router();
 const mainController = require('../controllers/mainController')
+const authMiddleware = require('../middlewares/authMiddleware');
 
 
 router.get('/', mainController.home)
 
-router.get('/carrito', mainController.carrito)
+router.get('/carrito', authMiddleware, mainController.carrito)
 
 // router.get('/detalle', mainController.detalle)
 
-router.get('/login', mainController.login)
+// router.get('/login', mainController.login)
 
-router.get('/register', mainController.register)
+// router.get('/register', mainController.register)
 
 
 

@@ -22,7 +22,11 @@
         <a class = "fontsHeader" href = "/products">Links</a>
 
         <a href="/carrito"><i class="fa-solid fa-cart-arrow-down"></i></a>
-        <a href="/login"><i class="fa-solid fa-circle-user"></i></a>
+        <% if (locals.isLogged) { %>
+          <a href="/users/login"><i class="fa-solid fa-circle-user" style = "color:green"></i></a>
+        <% } else { %>
+            <a href="/users/login"><i class="fa-solid fa-circle-user"></i></a>
+        <% } %>
     </div>
         <div class="contenedor">
             <a class="barra"><i class="fa fa-search"></i> Buscar</a>

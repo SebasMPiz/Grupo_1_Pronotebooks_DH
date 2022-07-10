@@ -394,6 +394,12 @@ body .tituloregistro{
         text-decoration: none;
         color: white
     }
+    .fa-solidlog {
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        text-decoration: none;
+        color: green
+    }
 
   .barra{
     font-size: 16px;
