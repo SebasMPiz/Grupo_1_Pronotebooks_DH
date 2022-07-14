@@ -48,3 +48,24 @@
 •	Procrastinar UX/UI
 5 Stop
 •	--
+
+
+
+----------SPRINT 5 RETROSPECTIVA----------------------------------------------------------------------------------
+1 Start
+•	Ramas en Git (probar utilizar GIT GRAPH)
+•   Implementar Dailys 
+2 More
+•   Darle estilos al sitio
+3 Keep
+•   Live share
+•   Utilizar pull y push
+•   Commits
+•	Buena organización en separación de tareas
+•   Buena comunicación y trabajo en equipo
+•   Responsabilidad
+•   Trello
+4 Less
+•	--
+5 Stop
+•	-- 
