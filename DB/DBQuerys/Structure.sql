@@ -20,11 +20,11 @@ CREATE TABLE `Products` (
    `processor` VARCHAR(255) NOT NULL,
    `graphics` VARCHAR(255) NOT NULL,
    `memory` VARCHAR(255) NOT NULL,
-   `expansionSlot` BIT NOT NULL,
+   `expansionSlot` VARCHAR(255) NOT NULL,
    `storage` VARCHAR(255) NOT NULL,
    `operativeSystem` VARCHAR(255) NOT NULL,
    `screenSize` INT NOT NULL,
-   `computerCategory` INT NOT NULL,
+   `computerCategory` VARCHAR(255) NOT NULL,
    `color` VARCHAR(255) NOT NULL,
    `price` INT NOT NULL,
    `description` VARCHAR(255) NOT NULL,
@@ -51,6 +51,7 @@ CREATE TABLE `Categories` (
 
 CREATE TABLE `Brand` (
    `Id` INT NOT NULL,
+   `brand`  VARCHAR (45) NOT NULL,
    `serie` VARCHAR(255) NOT NULL,
    `model` VARCHAR(255) NOT NULL,
    PRIMARY KEY (`Id`)
