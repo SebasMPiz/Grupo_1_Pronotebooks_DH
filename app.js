@@ -34,6 +34,8 @@ app.listen(3040, ()=>{
 app.get('/', (req,res)=>{
     res.render(__dirname + '/views/home.ejs');
 });
+
+
 /*app.listen(3040, ()=>{
     console.log('Servidor corriendo en peurto 3040');
 });
