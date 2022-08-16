@@ -1,6 +1,6 @@
 module.exports = (sequelize, dataTypes) => {
 
-    let alias = "Brand";
+    let alias = "brand";
 
     let cols =  {
         id: {
@@ -18,20 +18,21 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING,
         },
         };
-        
-    let config = {
-        tableName: "Brand",
-        timestamp: false
+
+let config = {
+        tableName: "brand",
+         timestamp: false
     };
     
-    const Brand = sequelize.define (alias, cols, config);
+     const Brand = sequelize.define (alias, cols, config);
 
-    Brand.associate = function (models){    
-        Brand.hasMany(models.Products,{
-            as: "Products",
-            foreingKey: "id_brand"
-        })
-    }
+//     // Brand.associate = function (models){    
+//     //     Brand.hasMany(models.Products,{
+//     //         as: "Brand",
+//     //         //foreingKey: "id_brand",
+//     //         timestamp: false
+//     //     })
+//     // }
 
-return Brand;
+return Brand
 }

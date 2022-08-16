@@ -1,6 +1,6 @@
 module.exports = (sequelize, dataTypes) => {
 
-    let alias = "ImagesProducts";
+    let alias = "imagesproducts";
 
     let cols =  {
         id: {
@@ -27,18 +27,20 @@ module.exports = (sequelize, dataTypes) => {
         };
         
     let config = {
-        tableName: "ImagesProducts",
+        tableName: "imagesproducts",
         timestamp: false
     };
-    
-    const ImagesProducts = sequelize.define (alias, cols, config);
 
-    ImagesProducts.associate = function (models){    
-        ImagesProducts.belongsTo(models.Products,{
-            as: "Product",
-            foreingKey: "id_imagesProducts"
-        })
-    }
 
-return ImagesProducts;
+  const ImagesProducts = sequelize.define (alias, cols, config);
+
+// ImagesProducts.associate = function (models){    
+//     ImagesProducts.belongsTo(models.Products,{
+//         as: "Product",
+//         foreingKey: "id_imagesProducts",
+//         timestamp: false
+//     })
+// }
+
+ return ImagesProducts
 }

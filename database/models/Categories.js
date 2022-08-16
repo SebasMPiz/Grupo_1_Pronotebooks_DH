@@ -1,6 +1,6 @@
 module.exports = (sequelize, dataTypes) => {
 
-    let alias = "Categories";
+    let alias = "categories";
 
     let cols =  {
         id: {
@@ -12,20 +12,23 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING,
         },
         };
+
+
         
-    let config = {
-        tableName: "Categories",
-        timestamp: false
-    };
-    
-    const Categories = sequelize.define (alias, cols, config);
+ let config = {
+     tableName: "categories",
+     timestamp: false
+ };
 
-    Categories.associate = function (models){    
-        Categories.hasMany(models.Users,{
-            as: "Users",
-            foreingKey: "id_category"
-        })
-    }
+ const Categories = sequelize.define (alias, cols, config);
 
-return Categories;
+// Categories.associate = function (models){    
+//     Categories.hasMany(models.Users,{
+//         as: "Users",
+//         foreingKey: "id_category",
+//         timestamp: false
+//     })
+// }
+
+ return Categories
 }

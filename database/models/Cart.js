@@ -1,6 +1,6 @@
 module.exports = (sequelize, dataTypes) => {
 
-    let alias = "Cart";
+    let alias = "cart";
 
     let cols =  {
         id: {
@@ -17,29 +17,31 @@ module.exports = (sequelize, dataTypes) => {
         };
         
     let config = {
-        tableName: "Cart",
+        tableName: "cart",
         timestamp: false
     };
-    
-    const Cart = sequelize.define (alias, cols, config);
-
-    Cart.associate = function (models){    
-        Cart.belongsTo(models.Users,{
-            as: "User",
-            foreingKey: "id_Users"
-        })
-    }
-
-    Cart.associate = function (models){    
-        Cart.belongsToMany(models.Products,{
-            as: "Products",
-            through: "Cart_Products",
-            foreingKey: "id_Cart",
-            otherKey: "id_Product",
-            timestamp: false
-        })
-    }
 
 
-return Cart;
+ const Cart = sequelize.define (alias, cols, config);
+
+//     Cart.associate = function (models){    
+//         Cart.belongsTo(models.Users,{
+//             as: "User",
+//             foreingKey: "id_Users",
+//             timestamp: false
+//         })
+//     }
+
+//     Cart.associate = function (models){    
+//         Cart.belongsToMany(models.Products,{
+//             as: "Products",
+//             through: "Cart_Products",
+//             foreingKey: "id_Cart",
+//             otherKey: "id_Product",
+//             timestamp: false
+//         })
+//     }
+
+
+ return Cart
 }

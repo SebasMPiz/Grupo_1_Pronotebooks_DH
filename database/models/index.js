@@ -31,6 +31,8 @@ Object.keys(db).forEach(modelName => {
   }
 });
 
+db = require( '../../handlers/associations.js' )( db );
+
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 

@@ -1,6 +1,6 @@
 module.exports = (sequelize, dataTypes) => {
 
-    let alias = "Users";
+    let alias = "users";
 
     let cols =  {
         id: {
@@ -30,34 +30,38 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.INTEGER                                            
         } 
         };
-        
-    let config = {
-        tableName: "Users",
-        timestamp: false
-    };
-    
-    const Users = sequelize.define (alias, cols, config);
+ 
 
-    Users.associate = function (models){    
-        Users.belongsTo(models.ImagesUsers,{
-            as: "imageUsers",
-            foreingKey: "id_imageUsers"
-        })
-    }
+let config = {
+    tableName: "users",
+    timestamp: false
+};
 
-    Users.associate = function (models){    
-        Users.belongsTo(models.Categories,{
-            as: "Categories",
-            foreingKey: "id_category"
-        })
-    }
+ const Users = sequelize.define (alias, cols, config);
 
-    Users.associate = function (models){    
-        Users.belongsTo(models.Cart,{
-            as: "Cart",
-            foreingKey: "id_Users"
-        })
-    }
+// Users.associate = function (models){    
+//     Users.belongsTo(models.ImagesUsers,{
+//         as: "imageUsers",
+//         foreingKey: "id_imageUsers",
+//         timestamp: false
+//     })
+// }
 
-return Users;
-}   
+// Users.associate = function (models){    
+//     Users.belongsTo(models.Categories,{
+//         as: "Categories",
+//         foreingKey: "id_category",
+//         timestamp: false
+//     })
+// }
+
+// Users.associate = function (models){    
+//     Users.belongsTo(models.Cart,{
+//         as: "Cart",
+//         foreingKey: "id_Users",
+//         timestamp: false
+//     })
+// }
+
+    return Users
+}

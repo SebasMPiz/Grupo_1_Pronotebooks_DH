@@ -20,7 +20,7 @@ const productsController = {
 
 	list: (req, res) => {
         products.findAll({
-            // include: ['brands']
+            include: [brands]
         })
             .then(products => {
                 res.render('products/list.ejs', {products, toThousand})

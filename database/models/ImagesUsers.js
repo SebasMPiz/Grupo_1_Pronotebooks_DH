@@ -1,6 +1,6 @@
 module.exports = (sequelize, dataTypes) => {
 
-    let alias = "ImagesUsers";
+    let alias = "imagesusers";
 
     let cols =  {
         id: {
@@ -15,18 +15,20 @@ module.exports = (sequelize, dataTypes) => {
         };
         
     let config = {
-        tableName: "ImagesUsers",
+        tableName: "imagesusers",
         timestamp: false
     };
-    
-    const ImagesUsers = sequelize.define (alias, cols, config);
 
-    ImagesUsers.associate = function (models){    
-        ImagesUsers.belongsTo(models.Users,{
-            as: "User",
-            foreingKey: "id_imageUsers"
-        })
-    }
 
-return ImagesUsers;
+ const ImagesUsers = sequelize.define (alias, cols, config);
+
+//     ImagesUsers.associate = function (models){    
+//         ImagesUsers.belongsTo(models.Users,{
+//             as: "User",
+//             foreingKey: "id_imageUsers",
+//             timestamp: false
+//         })
+//     }
+
+ return ImagesUsers
 }

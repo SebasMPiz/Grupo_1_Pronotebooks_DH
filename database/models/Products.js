@@ -1,6 +1,6 @@
 module.exports = (sequelize, dataTypes) => {
 
-    let alias = "Products";
+    let alias = "products";
 
     let cols =  {
         id: {
@@ -36,16 +36,16 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.INTEGER
         },
         computerCategory: {
-            type: dataTypes.STRING                                            
+            type: dataTypes.STRING
         },
         color: {
-            type: dataTypes.STRING                                            
+            type: dataTypes.STRING
         },
         price: {
             type: dataTypes.INTEGER
         },
         description: {
-            type: dataTypes.STRING                                            
+            type: dataTypes.STRING
         },
         id_imageProducts: {
             type: dataTypes.INTEGER
@@ -55,37 +55,40 @@ module.exports = (sequelize, dataTypes) => {
         },
 
         };
+
         
-    let config = {
-        tableName: "Products",
-        timestamp: false
-    };
+let config = {
+    tableName: "products",
+    timestamp: false
+     };
     
-    const Products = sequelize.define (alias, cols, config);
+const Products = sequelize.define (alias, cols, config);
 
-    Products.associate = function (models){    
-        Products.belongsToMany(models.Cart,{
-            as: "Cart",
-            through: "Cart_Products",
-            foreingKey: "id_Product",
-            otherKey: "id_Cart",
-            timestamp: false
-        })
+//     Products.associate = function (models){    
+//         Products.belongsToMany(models.Cart,{
+//             as: "Cart",
+//             through: "Cart_Products",
+//             foreingKey: "id_Product",
+//             otherKey: "id_Cart",
+//             timestamp: false
+//         })
+//     }
+
+//     Products.associate = function (models){    
+//         Products.belongsTo(models.Brand,{
+//             as: "Brand",
+//             foreingKey: "id_brand",
+//             timestamp: false
+//         })
+//     }
+
+//     Products.associate = function (models){    
+//         Products.hasMany(models.ImagesProducts,{
+//             as: "ImagesProducts",
+//             foreingKey: "id_ImagesProducts",
+//             timestamp: false
+//         })
+//     }
+
+return Products
     }
-
-    Products.associate = function (models){    
-        Products.belongsTo(models.Brand,{
-            as: "Brand",
-            foreingKey: "id_brand"
-        })
-    }
-
-    Products.associate = function (models){    
-        Products.hasMany(models.ImagesProducts,{
-            as: "ImagesProducts",
-            foreingKey: "id_ImagesProducts"
-        })
-    }
-
-return Products;
-}  
