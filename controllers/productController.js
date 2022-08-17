@@ -11,16 +11,16 @@ const sequelize = db.sequelize;
 const { Op } = require("sequelize");
 const moment = require('moment');
 
-const products = db.Products;
-const brands = db.Brand;
+const products = db.products;
+const brand = db.brand;
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const productsController = {
 
 	list: (req, res) => {
-        products.findAll({
-            include: [brands]
+        brand.findAll({
+            include: [products] 
         })
             .then(products => {
                 res.render('products/list.ejs', {products, toThousand})
