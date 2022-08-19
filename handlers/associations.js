@@ -7,12 +7,14 @@ module.exports = function( db ) {
         foreignKey: 'id_brand',
     });
 
-    // db[ 'products' ].belongsTo( db[ 'imagesproducts' ],{
-    //     foreignKey: 'id_imagesproducts'
-    // });
-    // db[ 'cart_products' ].hasMany( db[ 'products' ], {
-    //     foreignKey: 'id_product'
-    // });
+
+    db[ 'imagesproducts' ].hasMany( db[ 'products' ], {
+        foreignKey: 'id_imageProducts'
+    });
+    db[ 'products' ].belongsTo( db[ 'imagesproducts' ],{
+        foreignKey: 'id_imageProducts'
+    });
+    
 
     // db[ 'cart_products' ].belongsTo( db[ 'cart' ], {
     //     foreignKey: 'id_cart'

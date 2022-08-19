@@ -13,22 +13,26 @@ const moment = require('moment');
 
 const products = db.products;
 const brand = db.brand;
+const imagesproducts = db.imagesproducts;
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const productsController = {
 
 	list: (req, res) => {
-        brand.findAll({
-            include: [products] 
+        products.findAll({
+            include: [{model:brand}, {model:imagesproducts}]
         })
             .then(products => {
-                res.render('products/list.ejs', {products, toThousand})
+                res.render('products/list.ejs', {products, toThousand}) 
+				//res.json(products)
+				
             })},
 	
-    // create: (req,res)=>{
-    //     res.render('products/creacionProd');
-    // },
+    create: (req,res)=>{
+        res.render('products/creacionProd');
+    },
+
 	// store: (req, res) => {
 	// 	console.log(req.file)
 	// 	let nuevoProducto = {
@@ -51,7 +55,7 @@ const productsController = {
 	// 		fs.writeFileSync(imagesFilePath, JSON.stringify(images, null, " "))
 	// 		products.push(nuevoProducto)
 	// 		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "))
-	// 		res.redirect("/products/")	
+	// 		res.redirect("/products/")
 	// },
     // detail: (req, res) => {
 	// 	let idProduct = req.params.id;
