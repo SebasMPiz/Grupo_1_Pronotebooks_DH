@@ -25,38 +25,33 @@ const productsController = {
         })
             .then(products => {
                 res.render('products/list.ejs', {products, toThousand}) 
-				//res.json(products)
+				// res.json(products)
 				
             })},
 	
     create: (req,res)=>{
         res.render('products/creacionProd');
-    },
+	},
 
-	// store: (req, res) => {
-	// 	console.log(req.file)
-	// 	let nuevoProducto = {
-	// 	id: products[products.length - 1].id + 1, //Para no soreescribir productos
-	// 		...req.body,
-	// 		cantVendida: 0,
-	// 		stock: 0,
-	// 		imagenBanner: " ",
-	// 		image: req.file ? req.file.filename : 'defaultproduct.jfif' }
+	store: (req, res) => {
 
-	// 	let nuevoImagenes = {
-	// 		id: products[products.length - 1].id + 1,
-	// 		bannerImage: " ",
-	// 		mainImage: req.file ? req.file.filename : 'defaultproduct.jfif',
-	// 		image2: req.file ? req.file.filename : 'defaultproduct.jfif', 
-	// 		image3: req.file ? req.file.filename : 'defaultproduct.jfif',
-	// 		image4: req.file ? req.file.filename : 'defaultproduct.jfif'
-	// 	}
-	// 		images.push(nuevoImagenes)
-	// 		fs.writeFileSync(imagesFilePath, JSON.stringify(images, null, " "))
-	// 		products.push(nuevoProducto)
-	// 		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "))
-	// 		res.redirect("/products/")
-	// },
+		products.create({
+			processor: req.body.procesador,
+			graphics: req.body.graficos,
+			memory: req.body.memoria,
+			soldQuantity: 0,
+			discount: 0,
+			operativeSystem: req.body.sistemaOperativo,
+			screenSize: req.body.pantalla,
+			computerCategory: req.body.category,
+			color: req.body.color,
+			price: req.body.precio,	
+		},
+		{
+            include: [{model:brand}, {model:imagesproducts}]
+        })
+			res.redirect("/products/")
+	},
     // detail: (req, res) => {
 	// 	let idProduct = req.params.id;
 	// 	let product = products.find(product => product.id == idProduct)

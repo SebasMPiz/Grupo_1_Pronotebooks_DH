@@ -23,9 +23,9 @@
                     <a href = "/products/<%=product.id%>">
                     <img class="imagenMV" src="/img/products/<%=product.imagesproduct.mainImage%>">
                     <ul class="Lista">
-                        <div class="Marca"><%=product.brand.model%></div>
+                        <div class="Marca"><%=product.brand.brand%> <%=product.brand.model%></div>
                         <div class="precio">$ <%=toThousand(product.price)%></div>
-                        <div class="descuento">20% off</div>
+                        <div class="descuento"><%=(product.discount)*100%>%</div>
                         <div class="camion"><div i class="fas fa-truck"></i></div></div>
                     </ul>
                     </a>
