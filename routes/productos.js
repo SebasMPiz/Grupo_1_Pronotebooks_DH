@@ -13,10 +13,10 @@ router.get ("/create", productsController.create)
 router.post ('/', uploadFile.single('image'), productsController.store);
 
 // /*** DETAIL ONE PRODUCT ***/ 
-// router.get("/:id", productsController.detail)
+router.get("/:id", productsController.detail)
 
 // /*** EDIT ONE PRODUCT ***/
-// router.get('/:id/edit', productsController.editProd)
+router.get('/:id/edit', productsController.editProd)
 // router.patch('/:id', productsController.update);
 
 // /*** EDIT IMAGES ***/

@@ -15,59 +15,55 @@
     <div class = "tituloregistro">
     <h2>Completa tus datos</h2>
     </div>
-    <form class = "listadoregistro" action = "/products/<%=editProduct.id %>?_method=PATCH" method = "POST">
+    <form class = "listadoregistro" action = "/products/<%=product.Id %>?_method=PATCH" method = "POST">
             <div class = "cajaregistro">
             <div class = "camposregistro">
                 <label for="marca">Marca</label><br>
-                <input class="ingresodato" value = "<%= editProduct.marca %>" type="text" id="marca" name="marca" required>
+                <input class="ingresodato" value = "<%= product.brand.brand %>" type="text" id="marca" name="marca" required>
              </div>        
             <div class = "camposregistro">
                 <label for="serie">Serie</label><br>
-                <input class="ingresodato" value = "<%= editProduct.serie %>" type="text" id="serie" name="serie" required>
+                <input class="ingresodato" value = "<%= product.brand.serie %>" type="text" id="serie" name="serie" required>
             </div> 
             <div class = "camposregistro">
                 <label for="modelo">Modelo</label><br>
-                <input class="ingresodato" value = "<%= editProduct.modelo %>" type="text" id="modelo" name="modelo" required>
+                <input class="ingresodato" value = "<%= product.brand.model %>" type="text" id="modelo" name="modelo" required>
             </div>
             <div class = "camposregistro">
                 <label for="procesador">Procesador</label><br>
-                <input class="ingresodato" value = "<%= editProduct.procesador %>" type="text" id="procesador" name="procesador">
+                <input class="ingresodato" value = "<%= product.processor %>" type="text" id="procesador" name="procesador">
             </div>
             <div class = "camposregistro">
                 <label for="graficos">Gráficos</label><br>
-                <input class="ingresodato" value = "<%= editProduct.graficos %>" type="text" id="graficos" name="graficos">
+                <input class="ingresodato" value = "<%= product.graphics %>" type="text" id="graficos" name="graficos">
             </div> 
             <div class = "camposregistro">
                 <label for="memoria">Memoria</label><br>
-                <input class="ingresodato" value = "<%= editProduct.memoria %>" type="text" id="memoria" name="memoria">
+                <input class="ingresodato" value = "<%= product.memory %>" type="text" id="memoria" name="memoria">
             </div> 
             <div class = "camposregistro">
                 <label for="almacenamiento">almacenamiento</label><br>
-                <input class="ingresodato" value = "<%= editProduct.almacenamiento %>" type="text" id="almacenamiento" name="almacenamiento">
+                <input class="ingresodato" value = "<%= product.storage %>" type="text" id="almacenamiento" name="almacenamiento">
             </div> 
             <div class = "camposregistro">
                 <label for="sistemaOperativo">Sistema Operativo</label><br>
-                <input class="ingresodato" value = "<%= editProduct.sistemaOperativo %>" type="text" id="sistemaOperativo" name="sistemaOperativo">
+                <input class="ingresodato" value = "<%= product.operativeSystem %>" type="text" id="sistemaOperativo" name="sistemaOperativo">
             </div> 
             <div class = "camposregistro">
                 <label for="pantalla">Pantalla</label><br>
-                <input class="ingresodato" value = "<%= editProduct.pantalla %>" type="text" id="pantalla" name="pantalla">
+                <input class="ingresodato" value = "<%= product.screenSize %>" type="text" id="pantalla" name="pantalla">
             </div> 
             <div class = "camposregistro">
                 <label for="color">Color</label><br>
-                <input class="ingresodato" value = "<%= editProduct.color %>" type="text" id="color" name="color">
+                <input class="ingresodato" value = "<%= product.color %>" type="text" id="color" name="color">
             </div> 
             <div class = "camposregistro">
                 <label for="precio">Precio</label><br>
-                <input class="ingresodato" value = "<%= editProduct.precio %>" type="text" id="precio" name="precio">
-            </div> 
-            <div class = "camposregistro">
-                <label for="codigomodelo">Codigo</label><br>
-                <input class="ingresodato" value = "<%= editProduct.codigomodelo %>" type="text" id="codigomodelo" name="codigomodelo">
+                <input class="ingresodato" value = "<%= product.price %>" type="text" id="precio" name="precio">
             </div> 
             <div  class = "camposregistro" style ="display:flex; flex-direction:column">
                 <label style="margin-bottom:7px" for="slotExpansion">Posee Slot de expansion</label>
-                <% if (editProduct.slotExpansion === "Si") { %> 
+                <% if (product.expansionSlot === "Si") { %> 
                 <p><input type="radio" checked value="Si" name ="slotExpansion"> Si</p>
                 <p><input type="radio" value="No" name ="slotExpansion"> No</p>
                 <% } else { %>
@@ -75,29 +71,19 @@
                 <p><input type="radio" checked value="No" name ="slotExpansion"> No</p>
                 <% } %>
             </div> 
-            <div  class = "camposregistro" style ="display:flex; flex-direction:column">
-                <label style="margin-bottom:7px" for="oferta">Esta en Oferta:</label>
-                <% if (editProduct.oferta === "si") { %> 
-                <p><input type="radio" checked value="Si" name ="oferta"> Si</p>
-                <p><input type="radio" value="No" name ="oferta"> No</p>
-                <% } else { %>
-                <p><input type="radio" value="Si" name ="oferta"> Si</p>
-                <p><input type="radio" checked value="No" name ="oferta"> No</p>
-                <% } %>
-            </div> 
-            <div  class = "camposregistro" style ="display:flex; flex-direction:column">
+             <div  class = "camposregistro" style ="display:flex; flex-direction:column">
                 <label style="margin-bottom:7px" for="slotExpansion">Categoria</label>
-                <% if (editProduct.category === "Gaming") { %> 
+                <% if (product.computerCategory === "Gaming") { %> 
                 <p><input type="radio" checked value="Gaming" name ="category"> Gaming</p>
                 <p><input type="radio" value="Business" name ="category"> Business</p>
                 <p><input type="radio" value="Home" name ="category"> Home</p>
                 <p><input type="radio" value="Industrial" name ="category"> Industrial</p>
-                <% } else if (editProduct.category === "Business") { %>
+                <% } else if (product.computerCategory === "Business") { %>
                 <p><input type="radio" value="Gaming" name ="category"> Gaming</p>
                 <p><input type="radio" checked value="Business" name ="category"> Business</p>
                 <p><input type="radio" value="Home" name ="category"> Home</p>
                 <p><input type="radio" value="Industrial" name ="category"> Industrial</p>
-                <% } else if (editProduct.category === "Home") { %>
+                <% } else if (product.computerCategory === "Home") { %>
                 <p><input type="radio" value="Gaming" name ="category"> Gaming</p>
                 <p><input type="radio" value="Business" name ="category"> Business</p>
                 <p><input type="radio" checked value="Home" name ="category"> Home</p>
@@ -119,11 +105,11 @@
                 </div>
                 
                 <div>
-                    <a href = "/products/<%=editProduct.id%>/editImage"><button class = "boton">Editar Imagenes</button></a>
+                    <a href = "/products/<%=product.Id%>/editImage"><button class = "boton">Editar Imagenes</button></a>
                 </div>
                
                 <div>
-                    <a href = "/products/<%=editProduct.id%>"><button class = "boton">Regresar</button></a>
+                    <a href = "/products/<%=product.Id%>"><button class = "boton">Regresar</button></a>
                 </div>
                 </div> 
                        

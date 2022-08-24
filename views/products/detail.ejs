@@ -17,27 +17,23 @@
             <div class = "fotosyprecio_detalle">
             <div class = "fotos_detalle_producto">
                 <div class = "foto_detalle_producto_principal">
-                    <img class="principal" src="/img/products/<%=product.image%>">
+                    <img class="principal" src="/img/products/<%=product.imagesproduct.mainImage%>">
                 </div>
                 <div class = "foto_detalle_producto_secundarias">
-                    <img class="secundaria" src="/img/products/<%=image.image2%>">
-                    <img class="secundaria" src="/img/products/<%=image.image3%>">
-                    <img class="secundaria" src="/img/products/<%=image.image4%>">
+                    <img class="secundaria" src="/img/products/<%=product.imagesproduct.image2%>">
+                    <img class="secundaria" src="/img/products/<%=product.imagesproduct.image3%>">
+                    <img class="secundaria" src="/img/products/<%=product.imagesproduct.image4%>">
                 </div>
             </div>  
             <section class ="cajaprecio_detalle">
                 <div class ="titulo_detalle_producto">
-                    <%=product.marca%> <%=product.serie%> <%=product.modelo%> | <%=product.memoria%> | 
-                    <%=product.almacenamiento%> | <%=product.sistemaOperativo%> | <%=product.pantalla%>" 
+                    <%=product.brand.brand%> <%=product.brand.serie%> <%=product.brand.model%> | <%=product.memory%> 
                 </div>
                 <div class = "codigo_detalle_producto">
-                    Cod.  <%=product.codigomodelo%>
+                    
                 </div>
-                <div class = "<%= cssStock %>">
-                    <%= hayStock %>
-                </div>
-                <div class = "precio">
-                    Precio: ARS <%=toThousand(product.precio)%>
+                 <div class = "precio">
+                    Precio: ARS <%=toThousand(product.price)%>
                 </div>
                 <div class = "botones_detalle">
                     <button class = "boton">Comprar Ahora</button>
@@ -61,32 +57,28 @@
                     <div class = "titulos_contenido_detalle_prod">PROCESADOR
                     </div>
                     <div class = "contenido_detalle_prod">
-                        <%=product.procesador%>
+                       
                     </div>
 
                     <div class = "titulos_contenido_detalle_prod">GRÁFICOS
                     </div>
                     <div class = "contenido_detalle_prod">
-                        <%=product.graficos%>
-                    </div>
+                       </div>
 
                     <div class = "titulos_contenido_detalle_prod">MEMORIA
                     </div>
                     <div class = "contenido_detalle_prod">
-                        <%=product.memoria%>
-                    </div>
+                       </div>
 
                     <div class = "titulos_contenido_detalle_prod">ALMACENAMIENTO
                     </div>
                     <div class = "contenido_detalle_prod">
-                        <%=product.almacenamiento%>
-                    </div>
+                        </div>
 
                     <div class = "titulos_contenido_detalle_prod">PANTALLA
                     </div>
                     <div class = "contenido_detalle_prod">
-                        <%=product.pantalla%>
-                    </div>
+                       </div>
                     
                     <div class = "titulos_contenido_detalle_prod">CONECTIVIDAD
                     </div>
@@ -100,16 +92,15 @@
                     <div class = "titulos_contenido_detalle_prod">SISTEMA OPERATIVO
                     </div>
                     <div class = "contenido_detalle_prod">
-                        <%=product.sistemaOperativo%>
-                    </div>
+                       </div>
 
                     <div class = "titulos_contenido_detalle_prod">OTRAS ESPECIFICACIONES
                     </div>
                     <div class = "contenido_detalle_prod">
                         Color: <%=product.color%> / WebCam: Si, 0.3MP <br>
                         Teclado: Español / Pad Numérico: Si<br>
-                        Modelo: <%=product.codigomodelo%><br>
-                        Aplicacion: <%=product.category%><br>
+                        Modelo: <br>
+                        Aplicacion: <%=product.computerCategory%><br>
                     </div>
                 </div>                      
             </section> 

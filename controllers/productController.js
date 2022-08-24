@@ -33,9 +33,21 @@ const productsController = {
         res.render('products/creacionProd');
 	},
 
-	store: (req, res) => {
-
-		products.create({
+	store: async (req, res) => {
+		
+		let uploadImage = await imagesproducts.create({
+			mainImage: req.file ? req.file.filename : 'defaultproduct.jfif', 
+			bannerImage: "defaultproduct.jfif",
+			image2: "defaultproduct.jfif",
+			image3: "defaultproduct.jfif",
+			image4: "defaultproduct.jfif",
+		});
+		let brandCreate = await brand.create({ 
+			brand: req.body.marca,
+			serie: req.body.serie,
+			model: req.body.modelo,
+		});
+		products.create({ 
 			processor: req.body.procesador,
 			graphics: req.body.graficos,
 			memory: req.body.memoria,
@@ -45,35 +57,50 @@ const productsController = {
 			screenSize: req.body.pantalla,
 			computerCategory: req.body.category,
 			color: req.body.color,
-			price: req.body.precio,	
-		},
-		{
-            include: [{model:brand}, {model:imagesproducts}]
-        })
+			price: req.body.precio,
+			id_imageProducts: uploadImage.null,
+			id_brand: brandCreate.null,
+		}),
 			res.redirect("/products/")
 	},
-    // detail: (req, res) => {
-	// 	let idProduct = req.params.id;
-	// 	let product = products.find(product => product.id == idProduct)
-	// 	let image = images.find(image => image.id == idProduct)
-	// 	let hayStock = 0
-	// 	let cssStock = 0
-	// 	if (product.stock == 0) {
-	// 		hayStock = "No hay stock"
-	// 		cssStock = "status_stock_no"
-	// 	} 
-	// 	else {
-	// 		hayStock = "Hay " + product.stock + " en stock"
-	// 		cssStock = "status_stock_si"
-	// 	}
-	// 	console.log(product)
-	// 	res.render("products/detail", { title: product.marca, hayStock, cssStock, product ,image, toThousand })
-    // },
-    // editProd: (req, res) => {
-	// 	let id = req.params.id
-	// 	let editProduct = products.find(producto => producto.id == id)
-	// 	res.render("products/edicionProd", { editProduct })
-    // },
+    detail: (req, res) => {
+		products
+			.findByPk(req.params.id, {
+				include: [{model:brand}, {model:imagesproducts}]
+			})
+			.then(product => {
+				return res.render('products/detail', {
+					product, toThousand
+				});
+			})
+			
+		// let idProduct = req.params.id;
+		// let product = products.find(product => product.id == idProduct)
+		// let image = images.find(image => image.id == idProduct)
+		// let hayStock = 0
+		// let cssStock = 0
+		// if (product.stock == 0) {
+		// 	hayStock = "No hay stock"
+		// 	cssStock = "status_stock_no"
+		// } 
+		// else {
+		// 	hayStock = "Hay " + product.stock + " en stock"
+		// 	cssStock = "status_stock_si"
+		// }
+		// console.log(product)
+		// res.render("products/detail", { title: product.marca, hayStock, cssStock, product ,image, toThousand })
+    },
+    editProd: (req, res) => {
+		products
+			.findByPk(req.params.id, {
+				include: [{model:brand}, {model:imagesproducts}]
+			})
+			.then(product => {
+				return res.render('products/edicionProd', {
+					product
+				});
+			})
+	},
     // update: (req, res) => {
 	// 	let id = req.params.id //El id que nos requiere por la url el usuario
 	// 	let editProduct = products.find(producto => producto.id == id) //El producto que se va a editar
