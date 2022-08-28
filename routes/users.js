@@ -8,7 +8,7 @@ const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware  = require('../middlewares/authMiddleware');
 
 
-/*** GET ALL USERS ***/ 
+/*** GET ALL USERS ***/
 router.get("/", usersController.list)
 
 // /*** LOGIN ***/ 

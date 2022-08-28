@@ -3,7 +3,7 @@ module.exports = (sequelize, dataTypes) => {
     let alias = "users";
 
     let cols =  {
-        id: {
+        Id: {
             autoIncremental: true,
             primaryKey: true, 
             type: dataTypes.INTEGER
@@ -26,7 +26,7 @@ module.exports = (sequelize, dataTypes) => {
         id_category: {
             type: dataTypes.INTEGER                                            
         },
-        id_imagesUsers: {
+        id_imageUsers: {
             type: dataTypes.INTEGER                                            
         } 
         };
@@ -37,7 +37,7 @@ let config = {
     timestamp: false
 };
 
- const Users = sequelize.define (alias, cols, config);
+ const users = sequelize.define (alias, cols, config);
 
 // Users.associate = function (models){    
 //     Users.belongsTo(models.ImagesUsers,{
@@ -63,5 +63,5 @@ let config = {
 //     })
 // }
 
-    return Users
+    return users
 }

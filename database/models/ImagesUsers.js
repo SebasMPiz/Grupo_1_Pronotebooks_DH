@@ -3,7 +3,7 @@ module.exports = (sequelize, dataTypes) => {
     let alias = "imagesusers";
 
     let cols =  {
-        id: {
+        Id: {
             autoIncremental: true,
             primaryKey: true, 
             type: dataTypes.INTEGER
@@ -20,7 +20,7 @@ module.exports = (sequelize, dataTypes) => {
     };
 
 
- const ImagesUsers = sequelize.define (alias, cols, config);
+ const imagesusers = sequelize.define (alias, cols, config);
 
 //     ImagesUsers.associate = function (models){    
 //         ImagesUsers.belongsTo(models.Users,{
@@ -30,5 +30,5 @@ module.exports = (sequelize, dataTypes) => {
 //         })
 //     }
 
- return ImagesUsers
+ return imagesusers
 }

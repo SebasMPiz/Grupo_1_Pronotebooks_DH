@@ -3,7 +3,7 @@ module.exports = (sequelize, dataTypes) => {
     let alias = "cart";
 
     let cols =  {
-        id: {
+        Id: {
             autoIncremental: true,
             primaryKey: true, 
             type: dataTypes.INTEGER
@@ -22,7 +22,7 @@ module.exports = (sequelize, dataTypes) => {
     };
 
 
- const Cart = sequelize.define (alias, cols, config);
+ const cart = sequelize.define (alias, cols, config);
 
 //     Cart.associate = function (models){    
 //         Cart.belongsTo(models.Users,{
@@ -43,5 +43,5 @@ module.exports = (sequelize, dataTypes) => {
 //     }
 
 
- return Cart
+ return cart
 }

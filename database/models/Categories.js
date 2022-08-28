@@ -3,7 +3,7 @@ module.exports = (sequelize, dataTypes) => {
     let alias = "categories";
 
     let cols =  {
-        id: {
+        Id: {
             autoIncremental: true,
             primaryKey: true, 
             type: dataTypes.INTEGER
@@ -20,7 +20,7 @@ module.exports = (sequelize, dataTypes) => {
      timestamp: false
  };
 
- const Categories = sequelize.define (alias, cols, config);
+ const categories = sequelize.define (alias, cols, config);
 
 // Categories.associate = function (models){    
 //     Categories.hasMany(models.Users,{
@@ -30,5 +30,5 @@ module.exports = (sequelize, dataTypes) => {
 //     })
 // }
 
- return Categories
+ return categories
 }
