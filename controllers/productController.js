@@ -30,8 +30,14 @@ const productsController = {
             })},
 	
     create: (req,res)=>{
-        res.render('products/creacionProd');
-	},
+		brand.findAll({
+            
+        })
+            .then(brand => {
+            	res.render('products/creacionProd', {brand, toThousand}) 
+				// res.json(brand.length)
+				
+            })},
 
 	store: async (req, res) => {
 		
@@ -101,28 +107,45 @@ const productsController = {
 				});
 			})
 	},
-    // update: (req, res) => {
-	// 	let id = req.params.id //El id que nos requiere por la url el usuario
-	// 	let editProduct = products.find(producto => producto.id == id) //El producto que se va a editar
-	// 	editProduct = {
-	// 		id: editProduct.id,
-	// 		...req.body,
-	// 		cantVendida: editProduct.cantVendida,
-	// 		stock: editProduct.stock,
-	// 		imagenBanner: editProduct.imagenBanner,		
-	// 		image: editProduct.image
-	// 	}; //El producto que se va a editar
+    update: (req, res) => {
 
-	// 	let newProducts = products.map(producto => {   // El metodo map nos devuelve un array modificado, lo que quiere decir esto es que 
-	// 												  //Nuestro array de productos se modifica completo con el nuevo producto editado
-	// 		if (producto.id === editProduct.id) {
-	// 			return product = { ...editProduct };  // Metodo spread operator nos devuelve todo el objeto
-	// 		}
-	// 		    return producto;
-	// 	})
-	// 	fs.writeFileSync(productsFilePath, JSON.stringify(newProducts, null, ' '));
-	// 	res.redirect("/products/" + editProduct.id)
-	// },
+		products.findByPk(req.params.id, {
+            include: [{model:brand}, {model:imagesproducts}]
+			})
+            .then(product => {
+				products.update({ 
+					processor: req.body.procesador,
+					graphics: req.body.graficos,
+					memory: req.body.memoria,
+					operativeSystem: req.body.sistemaOperativo,
+					screenSize: req.body.pantalla,
+					computerCategory: req.body.category,
+					color: req.body.color,
+					price: req.body.precio,
+				},
+				{
+					where: {id: product.Id}
+				})
+			});
+			res.redirect('/products/list'); 		
+		}
+
+		
+		// let uploadImage = await imagesproducts.update({
+		// 	mainImage: req.file , 
+		// });
+
+		// // brand.update({ 
+		// // 	brand: req.body.marca,
+		// // 	serie: req.body.serie,
+		// // 	model: req.body.modelo,
+		// // },
+		// // {
+		// // 	where: {Id: id_brand}
+		// // }
+		// );
+
+			// res.redirect("/products/")
 	// editImage: (req,res) => {
 	// 	let id = req.params.id
 	// 	let editImage = images.find(producto => producto.id == id)
@@ -155,8 +178,7 @@ const productsController = {
 	// 	let finalProducts = products.filter(producto => producto.id != id) // Aqui lo que hacemos es filtrar los productos que no sean el id que nosotros queremos eliminar
 
   	// 	fs.writeFileSync(productsFilePath, JSON.stringify(finalProducts, null, ' ')); // Aqui lo que hacemos es escribir el archivo de nuevo con los productos que no sean el id que nosotros queremos eliminar
-	// 	res.redirect('/products'); 
+	
 	// }
-
 }
 module.exports = productsController

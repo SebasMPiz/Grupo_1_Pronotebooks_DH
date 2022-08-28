@@ -17,7 +17,7 @@ router.get("/:id", productsController.detail)
 
 // /*** EDIT ONE PRODUCT ***/
 router.get('/:id/edit', productsController.editProd)
-// router.patch('/:id', productsController.update);
+router.patch('/:id', productsController.update);
 
 // /*** EDIT IMAGES ***/
 // router.get('/:id/editImage', productsController.editImage)

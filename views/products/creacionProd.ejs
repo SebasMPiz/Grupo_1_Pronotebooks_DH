@@ -19,7 +19,12 @@
             <div class = "cajaregistro">
             <div class = "camposregistro">
                 <label for="marca">Marca</label><br>
-                <input class="ingresodato" placeholder = "Ej: HP, Lenovo, Acer" type="text" id="marca" name="marca" required>
+               <select class = "ingresodato"name = "marca" id = "marca">
+                <% for (i=0; i < brand.length;i++) { %>
+                    <option value ="<%=brand[i].brand%>"><%=brand[i].brand%></option>                        
+                <% } %> 
+                <option value = "agregar marca">agregar marca</option>
+                </select>
              </div>        
             <div class = "camposregistro">
                 <label for="serie">Serie</label><br>
