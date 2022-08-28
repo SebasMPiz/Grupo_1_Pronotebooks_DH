@@ -14,21 +14,30 @@ module.exports = function( db ) {
     db[ 'products' ].belongsTo( db[ 'imagesproducts' ],{
         foreignKey: 'id_imageProducts'
     });
+
+
+    db[ 'categories' ].hasMany( db[ 'users' ], {
+        foreignKey: 'id_category'
+    });
+    db[ 'users' ].belongsTo( db[ 'categories' ], {
+        foreignKey: 'id_category'
+    });
+
+
+    db[ 'imagesusers' ].hasOne( db[ 'users' ], {
+        foreignKey: 'id_imageUsers'
+    });
+    db[ 'users' ].belongsTo( db[ 'imagesusers' ], {
+        foreignKey: 'id_imageUsers'
+    });
     
 
-    // db[ 'cart_products' ].belongsTo( db[ 'cart' ], {
-    //     foreignKey: 'id_cart'
-    // });
-    // db[ 'cart' ].belongsTo( db[ 'users' ], {
-    //     foreignKey: 'id_Users'
-    // });
-
-    // db[ 'users' ].belongsTo( db[ 'categories' ], {
-    //     foreignKey: 'id_category'
-    // });
-    // db[ 'users' ].hasMany( db[ 'imagesusers' ], {
-    //     foreignKey: 'id_imagesusers'
-    // });
+    db[ 'users' ].hasOne( db[ 'cart' ], {
+        foreignKey: 'id_Users'
+    });
+     db[ 'cart' ].belongsTo( db[ 'users' ], {
+        foreignKey: 'id_Users'
+    });
    
     return db;
 

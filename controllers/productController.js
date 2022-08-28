@@ -1,4 +1,4 @@
-const fs = require('fs');
+const fs   = require('fs');
 const path = require('path');
 
 // const productsFilePath = path.join(__dirname, '../data/products.json');
@@ -8,11 +8,11 @@ const path = require('path');
 
 const db = require('../database/models');
 const sequelize = db.sequelize;
-const { Op } = require("sequelize");
-const moment = require('moment');
+const { Op }    = require("sequelize");
+const moment    = require('moment');
 
-const products = db.products;
-const brand = db.brand;
+const products       = db.products;
+const brand          = db.brand;
 const imagesproducts = db.imagesproducts;
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
@@ -24,7 +24,7 @@ const productsController = {
             include: [{model:brand}, {model:imagesproducts}]
         })
             .then(products => {
-                res.render('products/list.ejs', {products, toThousand}) 
+                res.render('products/list.ejs') 
 				// res.json(products)
 				
             })},
@@ -172,7 +172,8 @@ const productsController = {
 	// 	})
 	// 	fs.writeFileSync(imagesFilePath, JSON.stringify(newImages, null, ' '));
 	// 	res.redirect("/products/");
-	// },	
+	// },
+
 	// destroy: (req, res) => {
 	// 	let id = req.params.id  // Lo mismo que en todas los otros metodos lo primero que capturamos aca es el id
 	// 	let finalProducts = products.filter(producto => producto.id != id) // Aqui lo que hacemos es filtrar los productos que no sean el id que nosotros queremos eliminar

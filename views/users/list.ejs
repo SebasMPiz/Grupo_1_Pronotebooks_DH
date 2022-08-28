@@ -17,16 +17,15 @@
             <a href = "/users/register"><button class = "boton">Crear Usuario</button></a>
 
         <section>
-            <div class="listadoproductos">      
+            <div class="listadoproductos">
                 <% users.forEach(function (users) { %>
                <div class="masVendidosFlex"> 
                     <a href = "/users/profile/<%=users.id%>">
-                    <img class="imagenMV" src="/img/users/<%=users.image%>">
+                   <!-- <img class="imagenMV" src="/img/users/<%=users.imagesusers.image%>"> -->
                     <ul class="Lista">
                         <div class="name"><%=users.name%></div>
                         <div class="last_name"><%=users.last_name%></div>
                         <div class="email"><%=users.email%></div>
-                        <div class="category"><%=users.category%></div>
                     </ul>
                     </a>
                 </div> 
