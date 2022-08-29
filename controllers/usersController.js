@@ -2,7 +2,7 @@ const fs                  = require('fs');
 const path                = require('path');
 const bcryptjs            = require("bcryptjs")
 const {	validationResult} = require('express-validator');
-const User                = require('../models/User');
+// const user                = require('../models/user');
 const { localsName }      = require('ejs');
 
 

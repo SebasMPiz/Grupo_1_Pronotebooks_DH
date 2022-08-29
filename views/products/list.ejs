@@ -21,7 +21,7 @@
                 <% products.forEach(function (product) { %>
                <div class="masVendidosFlex"> 
                     <a href = "/products/<%=product.Id%>">
-                    <img class="imagenMV" src="/img/products/<%=product.imagesproduct.mainImage%>">
+                    <img class="imagenMV" src="/img/products/<%=products.imagesproducts.mainImage%>">
                     <ul class="Lista">
                         <div class="Marca"><%=product.brand.brand%> <%=product.brand.model%></div>
                         <div class="precio">$ <%=toThousand(product.price)%></div>

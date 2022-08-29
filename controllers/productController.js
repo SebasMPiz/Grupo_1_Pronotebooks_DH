@@ -24,7 +24,8 @@ const productsController = {
             include: [{model:brand}, {model:imagesproducts}]
         })
             .then(products => {
-                res.render('products/list.ejs') 
+                res.render('products/list.ejs',{products, toThousand
+				})
 				// res.json(products)
 				
             })},
@@ -79,7 +80,7 @@ const productsController = {
 					product, toThousand
 				});
 			})
-			
+
 		// let idProduct = req.params.id;
 		// let product = products.find(product => product.id == idProduct)
 		// let image = images.find(image => image.id == idProduct)
@@ -97,8 +98,7 @@ const productsController = {
 		// res.render("products/detail", { title: product.marca, hayStock, cssStock, product ,image, toThousand })
     },
     editProd: (req, res) => {
-		products
-			.findByPk(req.params.id, {
+		products.findByPk(req.params.id, {
 				include: [{model:brand}, {model:imagesproducts}]
 			})
 			.then(product => {
