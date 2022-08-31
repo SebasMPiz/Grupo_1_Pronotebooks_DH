@@ -127,8 +127,8 @@ const productsController = {
 					where: {id: product.Id}
 				})
 			});
-			res.redirect('/products/list'); 		
-		}
+			res.redirect('/products'); 		
+		},
 
 		
 		// let uploadImage = await imagesproducts.update({
@@ -174,12 +174,27 @@ const productsController = {
 	// 	res.redirect("/products/");
 	// },
 
-	// destroy: (req, res) => {
-	// 	let id = req.params.id  // Lo mismo que en todas los otros metodos lo primero que capturamos aca es el id
-	// 	let finalProducts = products.filter(producto => producto.id != id) // Aqui lo que hacemos es filtrar los productos que no sean el id que nosotros queremos eliminar
+	destroy: (req, res) => {
+		let id = req.params.id  // Lo mismo que en todas los otros metodos lo primero que capturamos aca es el id
+		let finalProducts = products.filter(producto => producto.id != id) // Aqui lo que hacemos es filtrar los productos que no sean el id que nosotros queremos eliminar
 
-  	// 	fs.writeFileSync(productsFilePath, JSON.stringify(finalProducts, null, ' ')); // Aqui lo que hacemos es escribir el archivo de nuevo con los productos que no sean el id que nosotros queremos eliminar
-	
-	// }
+  		fs.writeFileSync(productsFilePath, JSON.stringify(finalProducts, null, ' ')); // Aqui lo que hacemos es escribir el archivo de nuevo con los productos que no sean el id que nosotros queremos eliminar
+	},
+	destroy: (req, res) => {
+		products
+			.findByPk(req.params.id, {
+				include: [{model:brand}, {model:imagesproducts}]
+			})
+			.then(product => {
+				// product.removeCategories(product.imagesproducts);
+
+				product.destroy(/* {
+					where: {id:req.params.id}
+				} */);
+				return res.redirect('/products');
+			})
+			.catch(error => res.send(error));
+	},
+
 }
 module.exports = productsController

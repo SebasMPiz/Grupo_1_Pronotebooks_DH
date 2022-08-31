@@ -28,10 +28,20 @@ const usersController = {
         })
             .then(users => {
 				//console.log(users)
-                res.render('users/list.ejs') 
+                res.render('users/list.ejs', {users}) 
 				//res.json(users)
 				
             })},
+
+			register: (req,res)=>{
+				users.findAll({
+					
+				})
+					.then(users => {
+						res.render('users/register', {users}) 
+						// res.json(brand.length)
+						
+					})},
 
 	// register: (req,res)=>{
 	// 	res.render('users/register');

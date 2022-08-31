@@ -36,11 +36,9 @@
                     Precio: ARS <%=toThousand(product.price)%>
                 </div>
                 <div class = "botones_detalle">
-                    <button class = "boton">Comprar Ahora</button>
-                    <button class = "boton">Agregar al carrito</button>
                     <a href = "/products/<%=product.Id%>/editImage"><button class = "boton">Editar Imagenes</button></a>
                     <a href = "/products/<%=product.Id%>/edit"><button class = "boton">Editar Producto</button></a>
-                    <form action="/products/<%= product.id %>?_method=DELETE" method="POST">
+                    <form action="/products/<%= product.Id %>?_method=DELETE" method="POST">
                         <button type="submit" class = "boton">Eliminar</button>
                     </form>
                 </div>

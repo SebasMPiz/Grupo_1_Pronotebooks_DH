@@ -16,8 +16,8 @@ router.get("/", usersController.list)
 // // router.post('/login', usersController.loginProcess);
 // router.get('/logout/', usersController.logout)
 
-// /*** CREATE ONE USER ***/ 
-// router.get ("/register", usersController.register)
+/*** CREATE ONE USER ***/ 
+router.get ("/register", usersController.register)
 // router.post ('/register', uploadUserFile.single('image'), usersController.store);
 
 // /*** DETAIL MY PROFILE ***/ 
