@@ -70,7 +70,8 @@ const productsController = {
 		}),
 			res.redirect("/products/")
 	},
-    detail: (req, res) => {
+	
+	detail: (req, res) => {
 		products
 			.findByPk(req.params.id, {
 				include: [{model:brand}, {model:imagesproducts}]
@@ -80,23 +81,8 @@ const productsController = {
 					product, toThousand
 				});
 			})
-
-		// let idProduct = req.params.id;
-		// let product = products.find(product => product.id == idProduct)
-		// let image = images.find(image => image.id == idProduct)
-		// let hayStock = 0
-		// let cssStock = 0
-		// if (product.stock == 0) {
-		// 	hayStock = "No hay stock"
-		// 	cssStock = "status_stock_no"
-		// } 
-		// else {
-		// 	hayStock = "Hay " + product.stock + " en stock"
-		// 	cssStock = "status_stock_si"
-		// }
-		// console.log(product)
-		// res.render("products/detail", { title: product.marca, hayStock, cssStock, product ,image, toThousand })
     },
+
     editProd: (req, res) => {
 		products.findByPk(req.params.id, {
 				include: [{model:brand}, {model:imagesproducts}]
@@ -107,6 +93,7 @@ const productsController = {
 				});
 			})
 	},
+	
     update: (req, res) => {
 
 		products.findByPk(req.params.id, {
