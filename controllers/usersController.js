@@ -105,25 +105,23 @@ const usersController = {
 			res.redirect("/users")	
 		},
 
-		profile: (req, res) => {
+	profile: (req, res) => {
 			return res.render('users/myProfile', {
 			users: req.session.userLogged
 				});
-				},
+		},
 				
+	detail: (req, res) => {
+		let idUser = req.params.id;
+		let user = users.findByPk(product => product.id == idUser)
+		res.render("users/myProfile", { users:user })
+	},
 
-
-	// detail: (req, res) => {
-	// 	let idUser = req.params.id;
-	// 	let user = users.find(product => product.id == idUser)
-	// 	res.render("users/myProfile", { users:user })
-	// },
-
-    // editUser: (req, res) => {
-	// 	let id = req.params.id
-	// 	let editUser = users.find(user => user.id == id)
-	// 	res.render("users/editUser", { editUser })
-    // },
+    editUser: (req, res) => {
+		let id = req.params.id
+		let editUser = users.findByPk(user => user.id == id)
+		res.render("users/editUser", { editUser })
+    },
 
     // update: (req, res) => {
 	// 	let id = req.params.id 

@@ -20,14 +20,14 @@ router.get('/logout/', usersController.logout)
 router.get ("/register", usersController.register)
 router.post ('/register', uploadUserFile.single('image'), usersController.store);
 
-// /*** DETAIL MY PROFILE ***/ 
-// router.get("/profile", authMiddleware, usersController.profile)
+/*** DETAIL MY PROFILE ***/ 
+router.get("/profile", authMiddleware, usersController.profile)
 
-// /*** DETAIL USER PROFILE ***/ 
-// router.get("/profile/:id", usersController.detail)
+/*** DETAIL USER PROFILE ***/ 
+router.get("/profile/:id", usersController.detail)
 
-// /*** EDIT MY PROFILE ***/
-// router.get('/:id/edit', usersController.editUser)
+/*** EDIT MY PROFILE ***/
+router.get('/:id/edit', usersController.editUser)
 // router.patch('/:id/edit', uploadUserFile.single('image'), usersController.update);
 
 // /*** DELETE ACCOUNT***/ 
