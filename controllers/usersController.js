@@ -83,7 +83,7 @@ const usersController = {
 	logout: (req, res) => {
 		res.clearCookie('userEmail');
 			req.session.destroy();
-			return res.redirect('/');
+			return res.redirect('/users');
 				},
 
 	store: async (req, res) => {
@@ -112,8 +112,7 @@ const usersController = {
 				
 	detail: (req, res) => {
 		
-		users
-			.findByPk(req.params.id, {include: [{model:categories}, {model:imagesusers}]
+		users.findByPk(req.params.id, {include: [{model:categories}, {model:imagesusers}]
 			})
 			.then(users => {
 				return res.render('users/myProfile', {
@@ -124,8 +123,8 @@ const usersController = {
 		users
 			.findByPk(req.params.id, {include: [{model:categories}, {model:imagesusers}]})
 			.then(users => {
-			return res.render('users/editUser', {editUser: users
-			})})},
+			return res.render('users/editUser', {editUser: users})
+		})},
 
 	update: (req,res) => {
 
