@@ -28,9 +28,9 @@ router.get("/profile/:id", usersController.detail)
 
 /*** EDIT MY PROFILE ***/
 router.get('/:id/edit', usersController.editUser)
-// router.patch('/:id/edit', uploadUserFile.single('image'), usersController.update);
+router.patch('/:id/edit', uploadUserFile.single('image'), usersController.update);
 
 // /*** DELETE ACCOUNT***/ 
-// router.delete('/:id', usersController.destroy)
+router.delete('/:id', usersController.destroy)
 
 module.exports = router;

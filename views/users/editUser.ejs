@@ -15,8 +15,8 @@
     <div class = "tituloregistro">
     <h2>Completa tus datos</h2>
     </div>
-    <form class = "listadoregistro" action = "/users/<%=editUser.id %>/edit?_method=PATCH" method = "POST" enctype="multipart/form-data">
-            <img class="imagenMV" src="/img/users/<%=editUser.image%>">
+    <form class = "listadoregistro" action = "/users/<%=editUser.Id %>/edit?_method=PATCH" method = "POST" enctype="multipart/form-data">
+            <img class="imagenMV" src="/img/users/<%=editUser.imagesuser.profileImage%>">
             <div class = "cajaregistro">
             <div class = "camposregistro">
                 <label for="name">Nombre</label>
@@ -32,7 +32,7 @@
              </div>
              <div class = "camposregistro">
                 <label for="password">Password</label>
-                <input class="ingresodato" value = "<%= editUser.password %>" type="password" id="password" name="password" required>
+                <input class="ingresodato" type="password" id="password" name="password">
              </div>  
              <div class = "camposregistro">
                 <label for="phone">Telefono</label>
@@ -44,7 +44,7 @@
              </div>  
             <div  class = "camposregistro" style ="display:flex; flex-direction:column">
                 <label style="margin-bottom:7px" for="category">Categoria</label>
-                <% if (editUser.category === "Administrador") { %> 
+                <% if (editUser.category.name === "Administrador") { %> 
                 <p><input type="radio" checked value="Administrador" name ="category"> Administrador</p>
                 <p><input type="radio" value="Usuario" name ="category"> Usuario</p>
                 <% } else { %>

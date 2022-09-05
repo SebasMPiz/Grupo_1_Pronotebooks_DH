@@ -16,7 +16,7 @@
     <h2>Completa tus datos</h2>
     </div>
     <div class = "listadoregistro">
-            <img class="imagenMV" src="/img/users/<%=users.image%>">
+            <img class="imagenMV" src="/img/users/<%=users.imagesuser.profileImage%>">
             <div class = "cajaregistro">
             <div class = "camposregistro">
                 <p class= "fieldUserProfile">Nombre: </p><p><%= users.name %></p>
@@ -34,7 +34,7 @@
                 <p class= "fieldUserProfile">Pais: </p><p><%= users.country %></p>
              </div>
                           <div class = "camposregistro">
-                <p class= "fieldUserProfile">Categoria: </p><p><%= users.category %></p>
+                <p class= "fieldUserProfile">Categoria: </p><p><%= users.category.name %></p>
              </div>
             </div> 
         </div>

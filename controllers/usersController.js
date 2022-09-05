@@ -2,12 +2,7 @@ const fs                  = require('fs');
 const path                = require('path');
 const bcryptjs            = require("bcryptjs")
 const {	validationResult} = require('express-validator');
-// const user                = require('../models/user');
 const { localsName }      = require('ejs');
-
-
-// const usersFilePath = path.join(__dirname, '../data/Users.json');
-// const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
 const db = require('../database/models');
 const sequelize = db.sequelize;
@@ -27,9 +22,7 @@ const usersController = {
             include: [{model:categories}, {model:imagesusers}]
         })
             .then(users => {
-				//console.log(users)
                 res.render('users/list.ejs', {users}) 
-				//res.json(users)
 				
             })},
 
@@ -46,8 +39,14 @@ const usersController = {
 		users.findAll({include: [{model:categories}, {model:imagesusers}]
 		})
 			.then(users => {
+
+			if (req.session.userLogged) {
+				res.json(req.session.userLogged)
+			}
+			else {
 				res.render('users/login', {users})
-				
+			}
+
 			})},
 	
 	loginProcess: async (req, res) => {
@@ -62,7 +61,7 @@ const usersController = {
 						res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 60 })
 						}
 			
-					return res.redirect('profile');
+					return res.redirect('login');
 					} 
 					return res.render('users/login', {
 					errors: {
@@ -112,44 +111,61 @@ const usersController = {
 		},
 				
 	detail: (req, res) => {
-		let idUser = req.params.id;
-		let user = users.findByPk(product => product.id == idUser)
-		res.render("users/myProfile", { users:user })
-	},
+		
+		users
+			.findByPk(req.params.id, {include: [{model:categories}, {model:imagesusers}]
+			})
+			.then(users => {
+				return res.render('users/myProfile', {
+					users});
+			})},
 
     editUser: (req, res) => {
-		let id = req.params.id
-		let editUser = users.findByPk(user => user.id == id)
-		res.render("users/editUser", { editUser })
-    },
+		users
+			.findByPk(req.params.id, {include: [{model:categories}, {model:imagesusers}]})
+			.then(users => {
+			return res.render('users/editUser', {editUser: users
+			})})},
 
-    // update: (req, res) => {
-	// 	let id = req.params.id 
-	// 	let editUser = users.find(user => user.id == id) 
-	// 	editUser = {
-	// 		id: editUser.id,
-	// 		...req.body,
-	// 		password: bcrypt.hashSync(req.body.password, 10),
-	// 		image: req.file ? req.file.filename : 'defaultuser.jfif'
-	// 	}; 
-	// 	let newUsers = users.map(user => {
-													 
-	// 		if (user.id === editUser.id) {
-	// 			return user = { ...editUser };  
-	// 		}
-	// 		    return user;
-	// 	})
-	// 	fs.writeFileSync(usersFilePath, JSON.stringify(newUsers, null, ' '));
-	// 	res.redirect("/users/list");
-	// },
+	update: (req,res) => {
 
-	// destroy: (req, res) => {
-	// 	let id = req.params.id  
-	// 	let finalUsers = users.filter(user => user.id != id) 
+		users.findByPk(req.params.id, {include: [{model:categories}, {model:imagesusers}]})
+            .then(users => {
+				users.update({ 
+					name: req.body.name,
+					last_name: req.body.last_name,
+					email: req.body.email,
+					password: req.body.password ? bcryptjs.hashSync(req.body.password, 10) : users.password,
+					phone: req.body.phone,
+					country: req.body.country,
+					id_category: req.body.category === "Administrador" ? 2 : 1,
+				},
+				{
+					where: {id: users.Id}
+				});
+				imagesusers.update({
+					profileImage: req.file ? req.file.filename : imagesusers.profileImage
+				},
+				{
+					where: {id: users.id_imageUsers}
+				});
+			});
+			res.redirect('/users'); 		
+		},
 
-  	// 	fs.writeFileSync(usersFilePath, JSON.stringify(finalUsers, null, ' '));
-	// 	res.redirect("/users/list")
-	// },
+	destroy: (req, res) => {
+			users
+				.findByPk(req.params.id, {include: [{model:categories}, {model:imagesusers}]})
+				.then(users => {
+					// product.removeCategories(product.imagesproducts);
+	
+					users.destroy(/* {
+						where: {id:req.params.id}
+					} */);
+					return res.redirect('/users');
+				})
+				.catch(error => res.send(error));
+		},
 
 }
 module.exports = usersController
