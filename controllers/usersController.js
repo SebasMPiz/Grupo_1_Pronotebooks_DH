@@ -30,10 +30,18 @@ const usersController = {
 				users.findAll({include: [{model:categories}, {model:imagesusers}]
 				})
 			.then(users => {
-				res.render('users/register', {users}) 
+				res.render('users/register', {users}); 
 				// res.json(brand.length)
-						
-			})},
+				
+					// let errores = validationResult (req);
+					// if (!errores.isEmpty()) {
+				
+					// 		return res.render ("formularioRegistro", {mensajeDeError: errores mapped ()})
+				
+					// }		
+			})
+	
+		},
 	
 	login: (req,res)=>{
 		users.findAll({include: [{model:categories}, {model:imagesusers}]
@@ -87,9 +95,9 @@ const usersController = {
 				},
 
 	store: async (req, res) => {
-		
+
 			let uploadImage = await imagesusers.create({
-				profileImage: req.file ? req.file.filename : 'ppdefecto.png', 		
+				profileImage: req.file ? req.file.filename : 'ppdefecto.png',
 			});	
 			users.create({ 
 				name: req.body.name,

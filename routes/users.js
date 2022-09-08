@@ -6,7 +6,7 @@ const usersController = require('../controllers/usersController')
 const validations     = require('../middlewares/validateRegisterMiddleware');
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware  = require('../middlewares/authMiddleware');
-
+const {	validationResult} = require('express-validator');
 
 /*** GET ALL USERS ***/
 router.get("/", usersController.list)
@@ -18,7 +18,13 @@ router.get('/logout/', usersController.logout)
 
 /*** CREATE ONE USER ***/ 
 router.get ("/register", usersController.register)
-router.post ('/register', uploadUserFile.single('image'), usersController.store);
+router.post ('/register', validations, uploadUserFile.single('image'),  
+    (req, res, next) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty())
+        return console.log("Error");
+    next();
+}, usersController.store);
 
 /*** DETAIL MY PROFILE ***/ 
 router.get("/profile", authMiddleware, usersController.profile)

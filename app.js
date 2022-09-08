@@ -8,6 +8,7 @@ const methodOverride =  require('method-override');
 const rutasUsers = require ("./routes/users");
 const session = require ("express-session");
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
+const validateRegisterMiddleware = require('./middlewares/validateRegisterMiddleware');
 
 //Creamos la carpeta estática
 app.use(express.static('public'));
@@ -21,7 +22,7 @@ app.use(session( {secret: "Nuestro mensaje secreto", resave: false, saveUninitia
 app.use(cookieParser())
 app.use(methodOverride('_method'))
 app.use(userLoggedMiddleware);
-
+app.use(validateRegisterMiddleware);
 
 app.use('/', rutasMain);
 app.use("/products", rutasProducts);
