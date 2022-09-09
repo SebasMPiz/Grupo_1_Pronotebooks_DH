@@ -95,21 +95,24 @@ const usersController = {
 				},
 
 	store: async (req, res) => {
-
-			let uploadImage = await imagesusers.create({
-				profileImage: req.file ? req.file.filename : 'ppdefecto.png',
-			});	
-			users.create({ 
-				name: req.body.name,
-				last_name: req.body.last_name,
-				email: req.body.email,
-				password: bcryptjs.hashSync(req.body.password, 10),
-				phone: req.body.phone, 
-				country: req.body.country,
-				id_category: req.body.category === "Administrador" ? 2 : 1,
-				id_imageUsers: uploadImage.null,
-			}),
-			res.redirect("/users")	
+			let errors = validationResult(req);
+			if (errors.isEmpty()){
+				let uploadImage = await imagesusers.create({
+					profileImage: req.file ? req.file.filename : 'ppdefecto.png',
+				});	
+				users.create({ 
+					name: req.body.name,
+					last_name: req.body.last_name,
+					email: req.body.email,
+					password: bcryptjs.hashSync(req.body.password, 10),
+					phone: req.body.phone, 
+					country: req.body.country,
+					id_category: req.body.category === "Administrador" ? 2 : 1,
+					id_imageUsers: uploadImage.null,
+				}),
+				res.redirect("/users")
+			} else{res.send(errors)}
+			
 		},
 
 	profile: (req, res) => {

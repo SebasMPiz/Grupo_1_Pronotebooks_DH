@@ -18,13 +18,7 @@ router.get('/logout/', usersController.logout)
 
 /*** CREATE ONE USER ***/ 
 router.get ("/register", usersController.register)
-router.post ('/register', validations, uploadUserFile.single('image'),  
-    (req, res, next) => {
-    const errors = validationResult(req);
-    if (!errors.isEmpty())
-        return console.log("Error");
-    next();
-}, usersController.store);
+router.post ('/register', uploadUserFile.single('image'), validations, usersController.store);
 
 /*** DETAIL MY PROFILE ***/ 
 router.get("/profile", authMiddleware, usersController.profile)
