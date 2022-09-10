@@ -19,7 +19,10 @@
 <h2>Completa tus datos</h2>
 </div>
 <form class = "listadoregistro" action="/users/register" method="POST" enctype="multipart/form-data">
-    <h2>Registro</h2>    
+    <h2>Registro</h2>
+    <% errors.forEach(errors =>{%>
+       <p class = "camposregistro"></p>></p> <%= errors.msg %>
+       <%}) %>
     <div class = "cajaregistro">
         <div class = "camposregistro">
             <label for="name">Nombre</label><br>

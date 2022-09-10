@@ -33,12 +33,12 @@ const usersController = {
 				res.render('users/register', {users}); 
 				// res.json(brand.length)
 				
-					// let errores = validationResult (req);
-					// if (!errores.isEmpty()) {
+					let errores = validationResult (req);
+					if (!errores.isEmpty()) {
 				
-					// 		return res.render ("formularioRegistro", {mensajeDeError: errores mapped ()})
+							return res.render ("users/register", {mensajeDeError: errores.array ()})
 				
-					// }		
+					}		
 			})
 	
 		},
@@ -110,9 +110,9 @@ const usersController = {
 					id_category: req.body.category === "Administrador" ? 2 : 1,
 					id_imageUsers: uploadImage.null,
 				}),
-				res.redirect("/users")
-			} else{res.send(errors)}
-			
+				res.redirect("/users", {errors:errors.array()});
+			} 
+			else{res.send("errors")}
 		},
 
 	profile: (req, res) => {

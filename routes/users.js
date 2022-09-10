@@ -6,7 +6,7 @@ const usersController = require('../controllers/usersController')
 const validations     = require('../middlewares/validateRegisterMiddleware');
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware  = require('../middlewares/authMiddleware');
-const {	validationResult} = require('express-validator');
+const {	validationResult } = require('express-validator');
 
 /*** GET ALL USERS ***/
 router.get("/", usersController.list)
