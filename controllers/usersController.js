@@ -33,12 +33,12 @@ const usersController = {
 				res.render('users/register', {users}); 
 				// res.json(brand.length)
 				
-					let errores = validationResult (req);
-					if (!errores.isEmpty()) {
+					// let errores = validationResult (req);
+					// if (!errores.isEmpty()) {
 				
-							return res.render ("users/register", {mensajeDeError: errores.array ()})
+					// 		return res.render ("users/register", {mensajeDeError: errores.array ()})
 				
-					}		
+					// }		
 			})
 	
 		},
@@ -95,8 +95,10 @@ const usersController = {
 				},
 
 	store: async (req, res) => {
-			let errors = validationResult(req);
-			if (errors.isEmpty()){
+			let result = validationResult(req);
+			console.log(result.errors)
+			
+			if (result.errors.lenght == 0){
 				let uploadImage = await imagesusers.create({
 					profileImage: req.file ? req.file.filename : 'ppdefecto.png',
 				});	
@@ -110,9 +112,9 @@ const usersController = {
 					id_category: req.body.category === "Administrador" ? 2 : 1,
 					id_imageUsers: uploadImage.null,
 				}),
-				res.redirect("/users", {errors:errors.array()});
+				res.redirect("/users/login");
 			} 
-			else{res.send("errors")}
+			else{res.render("users/register", {errors: result.errors})}
 		},
 
 	profile: (req, res) => {

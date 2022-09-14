@@ -20,9 +20,13 @@
 </div>
 <form class = "listadoregistro" action="/users/register" method="POST" enctype="multipart/form-data">
     <h2>Registro</h2>
-    <% errors.forEach(errors =>{%>
-       <p class = "camposregistro"></p>></p> <%= errors.msg %>
-       <%}) %>
+    
+    <% if (locals.errors) {%>
+    <% errors.forEach(error =>{%>
+        <p class = "camposregistro"></p> <%= error.msg %>
+    <%})} %>
+ 
+
     <div class = "cajaregistro">
         <div class = "camposregistro">
             <label for="name">Nombre</label><br>
@@ -55,7 +59,7 @@
         </div> 
         <div class = "camposregistro">
             <input type="button" onclick= "document.getElementById('imageInput').click()" value="Agregar foto de Perfil" class ="botonEditImage" />
-            <input type="file" id="imageInput" name = "image"/>
+            <input type="file" id="imageInput" name = "imageInput"/>
         </div> 
     </div>
        <div class ="cajabotones">

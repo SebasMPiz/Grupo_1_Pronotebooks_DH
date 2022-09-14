@@ -11,6 +11,8 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const mainController = {
     home: (req,res)=>{
+        console.log("entrando")
+
     const inSaleProducts = products.filter ( (product) => {
 		return product.oferta === "si";
 	});
