@@ -2,7 +2,7 @@
                     window.addEventListener("load", function(){
                        
                        let formulario = document.querySelector("form.listadoregistro")
-                       
+                    
                        formulario.addEventListener("submit", function(e){
                         let errores = []
 
@@ -36,11 +36,7 @@
                             errores.push ("La contraseña debe tener al menos 8 caracteres")
                         }
 
-                        // if (campoImagen.value == ""){
-                        //     erores.push ("Debe ingresar una contraseña")
-                        // } else if (campoPassword.value.length < 4){
-                        //     errores.push ("La contraseña debe tener al menos 4 caracteres")
-                        // }
+                        
 
                         if (errores.length > 0){
                             e.preventDefault();

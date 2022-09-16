@@ -15,7 +15,15 @@
                         let campoPrecio = document.getElementById  ("precio");
                         let campoCategory = document.querySelector( "input[name='category']:checked" )
                         ;
-                        let campoImagen = document.getElementById  ("image");
+
+                        let campoImagen = document.getElementById('image');
+                        let foto = campoImagen.files[0];
+                        let c = 0;
+                      
+                        if (campoImagen.files.length == 0 || !(/\.(jpg|png|jpeg)$/i).test(foto.name)) {
+                          c = 1;
+                          alert('Ingrese una imagen con alguno de los siguientes formatos: .jpeg/.jpg/.png.');
+                        } 
 
                         if (campoDescription.value == ""){
                             errores.push ("Debe describir el producto")
@@ -32,6 +40,8 @@
                         if (campoPrecio.value == ""){
                             errores.push ("Debe indicar un precio")
                         } 
+
+                        console.log(campoImagen)
 
 
                         if (campoCategory == null){
