@@ -14,6 +14,9 @@
 <%- include ("../partials/header") -%>
 
     <div class="flexDeskL">
+
+      
+      
         <article class="bordeLogin2">
                 <h1>¿No tienes cuenta?</h1> 
                 <p><a href="/users/register">¡Regístrate!</a></p>
@@ -22,6 +25,11 @@
         <main class="ajusteWidth">
         <article class="bordeLogin1">
             <h1>Inicia sesión</h1>
+            <div class = "errores">
+
+                <ul></ul> 
+                
+            </div>
             <form action="/users/login" method="POST">
                 <div class="formulario">
                     <div class="centrado">
@@ -62,5 +70,6 @@
     
     <!-- COMIENZO FOOTER -->
     <%- include ("../partials/footer") -%>
+    <script src="/js/validationLogin.js"></script>
     </body>
 </html>

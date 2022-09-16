@@ -7,7 +7,7 @@ module.exports = [
 	check('email').notEmpty().withMessage('Tienes que escribir un correo electrónico').bail()
 		.isEmail().withMessage('Debes escribir un formato de correo válido'),
 	check('phone').notEmpty().withMessage('Tienes que escribir un telefono'),
-	check('password').notEmpty().isLength({min:5, max:8}).withMessage('Tienes que escribir una contraseña'),
+	check('password').notEmpty().isLength({min:5, max:10}).withMessage('Tienes que escribir una contraseña'),
 	check('country').notEmpty().withMessage('Tienes que elegir un país'),
 	check('category').notEmpty().withMessage('Debes definir una categoria de usuario'),
 	// check('imageInput').notEmpty().withMessage('Debes cargar una foto de usuario')	

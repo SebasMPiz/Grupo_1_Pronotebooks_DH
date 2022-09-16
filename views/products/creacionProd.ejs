@@ -15,9 +15,23 @@
     <div class = "tituloregistro">
     <h2>Completa tus datos</h2>
     </div>
-    <form class = "listadoregistro" action = "/products/" method="POST" enctype="multipart/form-data">
+    <form class = "listadoregistroproductos" action = "/products/" method="POST" enctype="multipart/form-data">
+            
+        <div class = "errores">
+
+            <ul></ul> 
+            
+        </div>
+        
             <div class = "cajaregistro">
             <div class = "camposregistro">
+
+
+                <% if (locals.errors) {%>
+                    <% errors.forEach(error =>{%>
+                        <p class = "camposregistro"></p> <%= error.msg %>
+                    <%})} %>
+                 
                 <label for="marca">Marca</label><br>
                <select class = "ingresodato"name = "marca" id = "marca">
                 <% for (i=0; i < brand.length;i++) { %>
@@ -28,12 +42,16 @@
              </div>        
             <div class = "camposregistro">
                 <label for="serie">Serie</label><br>
-                <input class="ingresodato" placeholder = "Ej: ThinkPad, Pavilion" type="text" id="serie" name="serie" required>
+                <input class="ingresodato" placeholder = "Ej: ThinkPad, Pavilion" type="text" id="serie" name="serie">
             </div> 
             <div class = "camposregistro">
                 <label for="modelo">Modelo</label><br>
-                <input class="ingresodato" placeholder = "Modelo" type="text" id="modelo" name="modelo" required>
+                <input class="ingresodato" placeholder = "Modelo" type="text" id="modelo" name="modelo">
             </div>
+            <div class = "camposregistro">
+                <label for="descripcion">Descripcion</label><br>
+                <input class="ingresodato" placeholder = "Descripcion"  type="text" id="descripcion" name="descripcion">
+            </div> 
             <div class = "camposregistro">
                 <label for="procesador">Procesador</label><br>
                 <input class="ingresodato" placeholder = "Ej: AMD, Intel, Otros" type="text" id="procesador" name="procesador">
@@ -82,7 +100,7 @@
             </div> 
             <div  class = "camposregistro" style ="display:flex; flex-direction:column">
                 <label style="margin-bottom:7px" for="slotExpansion">Categoria</label>
-                <p><input type="radio" value="Gaming" name ="category"> Gaming</p>
+                <p><input type="radio" value="Gaming" name ="category" > Gaming</p>
                 <p><input type="radio" value="Business" name ="category"> Business</p>
                 <p><input type="radio" value="Home" name ="category"> Home</p>
                 <p><input type="radio" value="Industrial" name ="category"> Industrial</p>
@@ -108,6 +126,6 @@
     <!-- COMIENZO FOOTER -->
 
 <%- include ("../partials/footer") -%>
-
+<script src="/js/validationProducts.js"></script> 
     </body>
 </html>

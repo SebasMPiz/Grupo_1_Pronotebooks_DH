@@ -25,7 +25,12 @@
     <% errors.forEach(error =>{%>
         <p class = "camposregistro"></p> <%= error.msg %>
     <%})} %>
- 
+    
+    <div class = "errores">
+
+        <ul></ul> 
+        
+    </div>
 
     <div class = "cajaregistro">
         <div class = "camposregistro">
@@ -83,6 +88,6 @@
             </div> -->
             
 <%- include ("../partials/footer") -%>
-
+<script src="/js/validationRegister.js"></script>
     </body>
 </html>

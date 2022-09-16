@@ -96,7 +96,6 @@ const usersController = {
 
 	store: async (req, res) => {
 			let result = validationResult(req);
-			console.log(result.errors)
 			
 			if (result.errors.lenght == 0){
 				let uploadImage = await imagesusers.create({

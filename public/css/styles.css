@@ -170,6 +170,17 @@ body .listadoregistro {
     border-radius: 1rem;
     margin-bottom: 25px;
 }
+body .listadoregistroproductos {
+    text-align: center;
+    margin: 0 auto;
+    font-size: 12px;
+    max-width: 600px;
+    background-color: lightblue;
+    border: 1px solid grey;
+    padding: 25px;
+    border-radius: 1rem;
+    margin-bottom: 25px;
+}
 body .camposregistro{
     padding:10px;
     width: 33%

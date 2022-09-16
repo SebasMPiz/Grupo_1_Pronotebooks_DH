@@ -21,7 +21,7 @@ app.use(session( {secret: "Nuestro mensaje secreto", resave: false, saveUninitia
 app.use(cookieParser())
 app.use(methodOverride('_method'))
 app.use(userLoggedMiddleware);
-// app.use(validateRegisterMiddleware);
+
 
 app.use('/', rutasMain);
 app.use("/products", rutasProducts);

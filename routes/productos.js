@@ -3,6 +3,7 @@ const router             = express.Router();
 const multer             = require("multer")
 const uploadFile         = require('../middlewares/uploadImage');
 const productsController = require('../controllers/productController')
+const validationsProduct     = require('../middlewares/validateProductRegisterMiddleware');
 
 
 /*** GET ALL PRODUCTS ***/ 
@@ -10,7 +11,7 @@ router.get("/", productsController.list)
 
 // ** CREATE ONE PRODUCT ***/ 
 router.get ("/create", productsController.create)
-router.post ('/', uploadFile.single('image'), productsController.store);
+router.post ('/', uploadFile.single('image'), validationsProduct, productsController.store);
 
 // /*** DETAIL ONE PRODUCT ***/ 
 router.get("/:id", productsController.detail)

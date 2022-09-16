@@ -1,11 +1,6 @@
 const fs   = require('fs');
 const path = require('path');
-
-// const productsFilePath = path.join(__dirname, '../data/products.json');
-// const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-// const imagesFilePath = path.join(__dirname, '../data/images.json');
-// const images = JSON.parse(fs.readFileSync(imagesFilePath, 'utf-8'));---------------Json
-
+const {	validationResult} = require('express-validator');
 const db = require('../database/models');
 const sequelize = db.sequelize;
 const { Op }    = require("sequelize");
@@ -36,39 +31,45 @@ const productsController = {
         })
             .then(brand => {
             	res.render('products/creacionProd', {brand, toThousand}) 
-				// res.json(brand.length)
 				
             })},
 
 	store: async (req, res) => {
-		
-		let uploadImage = await imagesproducts.create({
-			mainImage: req.file ? req.file.filename : 'defaultproduct.jfif', 
-			bannerImage: "defaultproduct.jfif",
-			image2: "defaultproduct.jfif",
-			image3: "defaultproduct.jfif",
-			image4: "defaultproduct.jfif",
-		});
-		let brandCreate = await brand.create({ 
-			brand: req.body.marca,
-			serie: req.body.serie,
-			model: req.body.modelo,
-		});
-		products.create({ 
-			processor: req.body.procesador,
-			graphics: req.body.graficos,
-			memory: req.body.memoria,
-			soldQuantity: 0,
-			discount: 0,
-			operativeSystem: req.body.sistemaOperativo,
-			screenSize: req.body.pantalla,
-			computerCategory: req.body.category,
-			color: req.body.color,
-			price: req.body.precio,
-			id_imageProducts: uploadImage.null,
-			id_brand: brandCreate.null,
-		}),
+
+		let result = validationResult(req);
+			
+			if (result.errors.length == 0){
+	
+				let uploadImage = await imagesproducts.create({
+					mainImage: req.file ? req.file.filename : 'defaultproduct.jfif', 
+					bannerImage: "defaultproduct.jfif",
+					image2: "defaultproduct.jfif",
+					image3: "defaultproduct.jfif",
+					image4: "defaultproduct.jfif",
+				});
+				let brandCreate = await brand.create({ 
+					brand: req.body.marca,
+					serie: req.body.serie,
+					model: req.body.modelo,
+				});
+				products.create({ 
+					description: req.body.description,
+					processor: req.body.procesador,
+					graphics: req.body.graficos,
+					memory: req.body.memoria,
+					soldQuantity: 0,
+					discount: 0,
+					operativeSystem: req.body.sistemaOperativo,
+					screenSize: req.body.pantalla,
+					computerCategory: req.body.category,
+					color: req.body.color,
+					price: req.body.precio,
+					id_imageProducts: uploadImage.null,
+					id_brand: brandCreate.null,
+				}),
 			res.redirect("/products/")
+		} 
+		else{res.render("products/creacionProd", {brand, toThousand, errors: result.errors})}
 	},
 	
 	detail: (req, res) => {
@@ -102,6 +103,7 @@ const productsController = {
             .then(product => {
 				products.update({ 
 					processor: req.body.procesador,
+					description: req.body.descripcion,
 					graphics: req.body.graficos,
 					memory: req.body.memoria,
 					operativeSystem: req.body.sistemaOperativo,
