@@ -10,6 +10,8 @@ module.exports = [
 	check('password').notEmpty().isLength({min:5, max:10}).withMessage('Tienes que escribir una contraseña'),
 	check('country').notEmpty().withMessage('Tienes que elegir un país'),
 	check('category').notEmpty().withMessage('Debes definir una categoria de usuario'),
+	
+	
 	// check('imageInput').notEmpty().withMessage('Debes cargar una foto de usuario')	
 	// // custom((value, { req }) => {
 	// 	let file = req.file;

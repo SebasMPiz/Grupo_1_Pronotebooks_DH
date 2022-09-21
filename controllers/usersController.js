@@ -1,3 +1,39 @@
+const { json } = require('body-parser');
+const db = require('../database/models');
+const { includes } = require('../middlewares/validateRegisterMiddleware');
+const Op = db.Sequelize.Op
+
+const users = db.users
+const imagesusers = db.imagesusers
+
+module.exports={
+	list: async(req, res) => {
+		 
+		await users.findAll()
+            .then(users => {
+                return res.json({
+					total: users.length,
+					data: users,
+					status: 200 
+				}) 
+            }
+	)},
+	detail: async(req, res) => {
+		 
+		await users.findByPk(req.params.id, {include:imagesusers})
+            .then(users => {
+				let urlimagen = users.imagesuser.profileImage
+                return res.status(200).json({
+					data: users,
+					URLimagen: 'http://localhost:3040/img/users/'+urlimagen,
+					status: 200
+				}) 
+            }
+	)},
+
+}
+
+/*
 const fs                  = require('fs');
 const path                = require('path');
 const bcryptjs            = require("bcryptjs")
@@ -172,7 +208,7 @@ const usersController = {
 	
 					users.destroy(/* {
 						where: {id:req.params.id}
-					} */);
+					} *//*);
 					return res.redirect('/users');
 				})
 				.catch(error => res.send(error));
@@ -180,3 +216,4 @@ const usersController = {
 
 }
 module.exports = usersController
+*/
