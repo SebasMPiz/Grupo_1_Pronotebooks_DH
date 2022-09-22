@@ -26,6 +26,9 @@ let config = {
     
      const Brand = sequelize.define (alias, cols, config);
 
+     return Brand
+    }
+
 //     // Brand.associate = function (models){    
 //     //     Brand.hasMany(models.Products,{
 //     //         as: "Brand",
@@ -34,5 +37,3 @@ let config = {
 //     //     })
 //     // }
 
-return Brand
-}

@@ -6,6 +6,7 @@ const rutasMain = require('./routes/main');
 const rutasProducts = require('./routes/productos');
 const methodOverride =  require('method-override');
 const rutasUsers = require ("./routes/users");
+const rutasApiUsers= require ("./routes/api/APIusers");
 const session = require ("express-session");
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
 
@@ -26,6 +27,7 @@ app.use(userLoggedMiddleware);
 app.use('/', rutasMain);
 app.use("/products", rutasProducts);
 app.use("/users", rutasUsers);
+app.use("/api/users", rutasApiUsers);
 
 
 app.listen(3040, ()=>{
