@@ -12,9 +12,10 @@
 
                         if (campoEmail.value == ""){
                             errores.push ("Incluir el mail")
-                        } else if (campoEmail  ){
-                            errores.push ("Debe ser un email valido")
-                        }
+                            } 
+                        // else if (campoEmail  ){
+                        //     errores.push ("Debe ser un email valido")
+                        // }
 
                         if (campoPassword.value == ""){
                             errores.push ("Debe ingresar una contraseña")
