@@ -38,7 +38,11 @@ const productsController = {
 	store: async (req, res) => {
 
 		let result = validationResult(req);
-			
+
+		console.log(result.errors)		
+
+		return true
+
 			if (result.errors.length == 0){
 	
 				let uploadImage = await imagesproducts.create({

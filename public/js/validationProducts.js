@@ -1,8 +1,7 @@
                     window.addEventListener("load", function(){
 
                        let formulario = document.querySelector("form.listadoregistroproductos")
-                       
-                         console.log(formulario)   
+                         
 
                        formulario.addEventListener("submit", function(e){
 
@@ -27,8 +26,8 @@
 
                         if (campoDescription.value == ""){
                             errores.push ("Debe describir el producto")
-                        } else if (campoNombre.value.length < 20){
-                            errores.push ("El nombre debe tener al menos 20 caracteres")
+                        } else if (campoDescription.value.length < 10){
+                            errores.push ("El nombre debe tener al menos 10 caracteres")
                         }
 
                         if (campoMarca.value == ""){
@@ -41,19 +40,10 @@
                             errores.push ("Debe indicar un precio")
                         } 
 
-                        console.log(campoImagen)
-
-
-                        if (campoCategory == null){
-                            errores.push ("Debe indicar una categoria valida")
-                        } 
+                        // if (campoCategory == null){
+                        //     errores.push ("Debe indicar una categoria valida")
+                        // } 
                     
-                    
-                        // if (campoImagen.value == ""){
-                        //     erores.push ("Debe ingresar una contraseña")
-                        // } else if (campoPassword.value.length < 4){
-                        //     errores.push ("La contraseña debe tener al menos 4 caracteres")
-                        // }
 
                         if (errores.length > 0){
                            

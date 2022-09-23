@@ -97,7 +97,7 @@ const usersController = {
 	store: async (req, res) => {
 			let result = validationResult(req);
 			
-			if (result.errors.lenght == 0){
+			if (result.errors.length == 0){
 				let uploadImage = await imagesusers.create({
 					profileImage: req.file ? req.file.filename : 'ppdefecto.png',
 				});	
