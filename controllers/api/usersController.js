@@ -42,7 +42,11 @@ module.exports={
 
 	detail: async(req, res) => {
 		 
-		await users.findByPk(req.params.id, {include:imagesusers})
+		await users.findByPk(req.params.id, {
+			include:imagesusers,
+			attributes: {
+			   exclude: ['password','id_category','id_imageUsers']
+			}})
             .then(users => {
 				let urlimagen = users.imagesuser.profileImage
                 return res.status(200).json({
