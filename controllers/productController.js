@@ -20,7 +20,7 @@ const productsController = {
             include: [{model:brand}, {model:imagesproducts}]
         })
             .then(products => {
-                res.render('products/list.ejs',{products, toThousand
+                res.render('products/list.ejs',{products, session: req.session, toThousand
 				})
 				// res.json(products)
 				
@@ -84,7 +84,7 @@ const productsController = {
 			})
 			.then(product => {
 				return res.render('products/detail', {
-					product, toThousand
+					product, toThousand,session : req.session
 				});
 			})
     },
@@ -95,7 +95,7 @@ const productsController = {
 			})
 			.then(product => {
 				return res.render('products/edicionProd', {
-					product
+					product, session : req.session
 				});
 			})
 	},

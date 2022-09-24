@@ -17,7 +17,7 @@
                 <article class="sliderCenter">
                     <ul class="slider-container">
                         <% inSaleProducts.forEach(function (product) { %>
-                        <li><a href = "/products/<%=product.id%>"><img src="/img/carrousel/<%=product.imagenBanner%>" style="max-width: 100%;height: auto"/></a></li>
+                        <li><a href = "/products/<%=product.Id%>"><img src="/img/carrousel/<%=product.imagesproduct.bannerImage%>" style="max-width: 100%;height: auto"/></a></li>
                         <% }) %>
                     </ul>
                 
@@ -45,11 +45,11 @@
                 
                 <% topCincoVendidos.forEach(function (product) { %>
                <div class="masVendidosFlex"> 
-                    <a href = "/products/<%=product.id%>">
-                    <img class="imagenMV" src="/img/products/<%=product.image%>">
+                    <a href = "/products/<%=product.Id%>">
+                    <img class="imagenMV" src="/img/products/<%=product.imagesproduct.mainImage%>">
                     <ul class="Lista">
-                        <div class="Marca"><%=product.marca%> <%=product.modelo%></div>
-                        <div class="precio">$ <%=toThousand(product.precio)%></div>
+                        <div class="Marca"><%=product.brand.brand%> <%=product.brand.model%></div>
+                        <div class="precio">$ <%=toThousand(product.price)%></div>
                         <div class="descuento">20% off</div>
                         <div class="camion"><div i class="fas fa-truck"></i></div></div>
                     </ul>

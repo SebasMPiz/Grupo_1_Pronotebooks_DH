@@ -14,6 +14,9 @@ module.exports = (sequelize, dataTypes) => {
         quantity: {
             type: dataTypes.INTEGER,
         },
+        id_Products: {
+            type: dataTypes.INTEGER,
+        },
         };
         
     let config = {

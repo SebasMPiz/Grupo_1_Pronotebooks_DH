@@ -1,28 +1,37 @@
 const fs = require('fs');
 const path = require('path');
+const db = require('../database/models');
 
-const productsFilePath = path.join(__dirname, '../data/products.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-const imagesFilePath = path.join(__dirname, '../data/images.json');
-const images = JSON.parse(fs.readFileSync(imagesFilePath, 'utf-8'));
 
+const products       = db.products;
+const brand          = db.brand;
+const imagesproducts = db.imagesproducts
+const cart          = db.cart;
+const users          = db.users;
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const mainController = {
-    home: (req,res)=>{
-        console.log("entrando")
+    home: async (req,res)=>{
 
-    const inSaleProducts = products.filter ( (product) => {
-		return product.oferta === "si";
-	});
+    products.findAll({
+        include: [{model:brand}, {model:imagesproducts}],
+        })
+        .then(products => {
 
-    const masVendidosProducts = products.sort(function (a, b){
-        return (b.cantVendida - a.cantVendida)
-    })
-    const topCincoVendidos = masVendidosProducts.slice(0,5)
+        const inSaleProducts = products.filter ( (product) => {
+            return product.expansionSlot == 1;
+        });
+        const masVendidosProducts = products.sort(function (a, b){
+            return (b.soldQuantity - a.soldQuantity)
+        })
+        const topCincoVendidos = masVendidosProducts.slice(0,5)
+
        
-    res.render('home',{ products, inSaleProducts, topCincoVendidos, toThousand });
+
+        res.render('home',{ products, inSaleProducts, topCincoVendidos, toThousand, session : req.session })
+
+        })        
 	},
     
     carrito: (req,res)=>{

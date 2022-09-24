@@ -13,9 +13,10 @@
 <%- include ("../partials/header") -%>
 
         <main>
-
+            <% if (locals.isLogged && session.userLogged.id_category == 2) { %>
             <a href = "/products/create"><button class = "boton">Agregar Producto</button></a>
-
+            <% } %>
+            
         <section>
             <div class="listadoproductos">      
                 <% products.forEach(function (product) { %>

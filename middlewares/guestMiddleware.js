@@ -8,7 +8,8 @@ async function guestMiddleware (req, res, next) {
 
 		let userLoggeds = await users.findByPk( req.session.userLogged.Id,{include: [{model:categories}, {model:imagesusers}]
 		})
-		return res.render("users/myProfile", {users: userLoggeds})
+
+		return res.render("users/myProfile", {users: userLoggeds, session : req.session})
 	}
 	next();
 	}

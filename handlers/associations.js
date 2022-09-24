@@ -30,13 +30,19 @@ module.exports = function( db ) {
     db[ 'users' ].belongsTo( db[ 'imagesusers' ], {
         foreignKey: 'id_imageUsers'
     });
-    
 
     db[ 'users' ].hasOne( db[ 'cart' ], {
         foreignKey: 'id_Users'
     });
      db[ 'cart' ].belongsTo( db[ 'users' ], {
         foreignKey: 'id_Users'
+    });
+
+    db[ 'products' ].hasMany( db[ 'cart' ], {
+        foreignKey: 'id_Products'
+    });
+     db[ 'cart' ].belongsTo( db[ 'products' ], {
+        foreignKey: 'id_Products'
     });
    
     return db;

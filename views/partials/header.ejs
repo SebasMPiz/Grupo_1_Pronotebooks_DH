@@ -16,7 +16,9 @@
         <a href="/" class="Logo"> <img src="/img/Logo_pronotebooks.jpg" alt="Logo" width="40%"></a>
             
         <a class = "fontsHeader" href = "/products">Productos</a>
+        <% if (locals.isLogged && session.userLogged.id_category == 2) { %>
         <a class = "fontsHeader" href = "/users">Usuarios</a>
+        <% } %>
         <a class = "fontsHeader" href = "/products">Elegi tu PC</a>
         <a class = "fontsHeader" href = "/products">Consejos</a>
         <a class = "fontsHeader" href = "/products">Links</a>

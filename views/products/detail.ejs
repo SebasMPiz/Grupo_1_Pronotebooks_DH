@@ -35,6 +35,7 @@
                  <div class = "precio">
                     Precio: ARS <%=toThousand(product.price)%>
                 </div>
+                <% if (locals.isLogged && session.userLogged.id_category == 2) { %>
                 <div class = "botones_detalle">
                     <a href = "/products/<%=product.Id%>/editImage"><button class = "boton">Editar Imagenes</button></a>
                     <a href = "/products/<%=product.Id%>/edit"><button class = "boton">Editar Producto</button></a>
@@ -42,6 +43,8 @@
                         <button type="submit" class = "boton">Eliminar</button>
                     </form>
                 </div>
+                <% } %>
+            
             </section>
             </div>
             <div class = "detalleymarcas">

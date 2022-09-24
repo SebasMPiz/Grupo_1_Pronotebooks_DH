@@ -42,18 +42,6 @@ list: async(req, res) => {
 				products: "not found"
 			});
 	})}, 
-	  
-	detail: async (req, res) => {
-		await products
-			.findByPk(req.params.id, {
-				include: [{model:brand}, {model:imagesproducts}]
-			})
-			.then(product => {
-				return res.render('products/detail', {
-					product, toThousand
-				});
-			})
-    },
 
 	detail: async(req, res) => {
 		 

@@ -6,8 +6,9 @@ const rutasMain = require('./routes/main');
 const rutasProducts = require('./routes/productos');
 const methodOverride =  require('method-override');
 const rutasUsers = require ("./routes/users");
-const rutasApiUsers= require ("./routes/api/APIusers");
-const rutasApiProducts= require ("./routes/api/productos");
+const rutasApiUsers = require ("./routes/api/APIusers");
+const rutasApiProducts = require ("./routes/api/productos");
+const rutasCarts = require ("./routes/carts");
 const session = require ("express-session");
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
 
@@ -30,7 +31,7 @@ app.use("/products", rutasProducts);
 app.use("/users", rutasUsers);
 app.use("/api/users", rutasApiUsers);
 app.use("/api/products", rutasApiProducts);
-
+app.use("/carts", rutasCarts);
 
 app.listen(3040, ()=>{
     console.log('Servidor corriendo en puerto 3040');

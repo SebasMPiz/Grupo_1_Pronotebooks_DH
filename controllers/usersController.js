@@ -22,7 +22,7 @@ const usersController = {
             include: [{model:categories}, {model:imagesusers}]
         })
             .then(users => {
-                res.render('users/list.ejs', {users}) 
+                res.render('users/list.ejs', {users, session : req.session}) 
 				
             })},
 
@@ -30,7 +30,7 @@ const usersController = {
 				users.findAll({include: [{model:categories}, {model:imagesusers}]
 				})
 			.then(users => {
-				res.render('users/register', {users}); 
+				res.render('users/register', {users, session : req.session}); 
 				// res.json(brand.length)
 				
 					// let errores = validationResult (req);
@@ -52,7 +52,7 @@ const usersController = {
 				res.json(req.session.userLogged)
 			}
 			else {
-				res.render('users/login', {users})
+				res.render('users/login', {users, session : req.session})
 			}
 
 			})},
@@ -76,7 +76,8 @@ const usersController = {
 					email: {
 					msg: 'Las credenciales son inválidas'
 						}
-					}
+					},
+					session : req.session
 					});
 					}
 					return res.render('users/login', {
@@ -84,14 +85,15 @@ const usersController = {
 					email: {
 					msg: 'No se encuentra este email en nuestra base de datos'
 							}
-						}
+						},
+					session : req.session
 					});
 	},
 
 	logout: (req, res) => {
 		res.clearCookie('userEmail');
 			req.session.destroy();
-			return res.redirect('/users');
+			return res.redirect('/users/login');
 				},
 
 	store: async (req, res) => {
@@ -113,12 +115,12 @@ const usersController = {
 				}),
 				res.redirect("/users/login");
 			} 
-			else{res.render("users/register", {errors: result.errors})}
+			else{res.render("users/register", {errors: result.errors, session : req.session})}
 		},
 
 	profile: (req, res) => {
 			return res.render('users/myProfile', {
-			users: req.session.userLogged
+			users: req.session.userLogged, session : req.session
 				});
 		},
 				
@@ -128,14 +130,14 @@ const usersController = {
 			})
 			.then(users => {
 				return res.render('users/myProfile', {
-					users});
+					users, session : req.session});
 			})},
 
     editUser: (req, res) => {
 		users
 			.findByPk(req.params.id, {include: [{model:categories}, {model:imagesusers}]})
 			.then(users => {
-			return res.render('users/editUser', {editUser: users})
+			return res.render('users/editUser', {editUser: users, session : req.session})
 		})},
 
 	update: (req,res) => {
