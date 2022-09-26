@@ -17,6 +17,7 @@ list: async(req, res) => {
 		})
         .then(async products => {
             let listProducts=[];
+			let cuentaCategory=[]
 			products.forEach((product) => {
 				let data = {};
 				data['id'] = product.Id

@@ -22,7 +22,6 @@ const productsController = {
             .then(products => {
                 res.render('products/list.ejs',{products, session: req.session, toThousand
 				})
-				// res.json(products)
 				
             })},
 	
@@ -31,17 +30,13 @@ const productsController = {
             
         })
             .then(brand => {
-            	res.render('products/creacionProd', {brand, toThousand}) 
+            	res.render('products/creacionProd',  {brand,session : req.session, toThousand}) 
 				
             })},
 
 	store: async (req, res) => {
 
 		let result = validationResult(req);
-
-		console.log(result.errors)		
-
-		return true
 
 			if (result.errors.length == 0){
 	
@@ -74,7 +69,9 @@ const productsController = {
 				}),
 			res.redirect("/products/")
 		} 
-		else{res.render("products/creacionProd", {brand, toThousand, errors: result.errors})}
+		else{
+
+			res.render("products/creacionProd", {brand, toThousand,session: req.session, errors: result.errors})}
 	},
 	
 	detail: (req, res) => {

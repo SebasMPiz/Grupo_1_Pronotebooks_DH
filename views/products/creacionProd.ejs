@@ -84,19 +84,10 @@
                 <label for="precio">Precio</label><br>
                 <input class="ingresodato"  placeholder = "Precio"  type="text" id="precio" name="precio">
             </div> 
-            <div class = "camposregistro">
-                <label for="codigomodelo">Codigo</label><br>
-                <input class="ingresodato"  placeholder = "Codigo de Fabricante"  type="text" id="codigomodelo" name="codigomodelo">
-            </div> 
             <div  class = "camposregistro" style ="display:flex; flex-direction:column">
-                <label style="margin-bottom:7px" for="slotExpansion">Posee Slot de expansion</label>
+                <label style="margin-bottom:7px" for="slotExpansion">Esta en Oferta:</label>
                 <p><input type="radio" value="Si" name ="slotExpansion"> Si</p>
                 <p><input type="radio" value="No" name ="slotExpansion"> No</p>
-            </div> 
-            <div  class = "camposregistro" style ="display:flex; flex-direction:column">
-                <label style="margin-bottom:7px" for="oferta">Esta en Oferta:</label>
-                <p><input type="radio" value="Si" name ="oferta"> Si</p>
-                <p><input type="radio" value="No" name ="oferta"> No</p>
             </div> 
             <div  class = "camposregistro" style ="display:flex; flex-direction:column">
                 <label style="margin-bottom:7px" for="slotExpansion">Categoria</label>
@@ -110,22 +101,18 @@
                 <input type="file" name="image" id="image">
             </div> 
         </div>
-
-
             <div class ="cajabotones">
                 <div>
                     <button type="submit" class="boton">Guardar producto</button>
-                </div> 
-                <div>
-                    <a href = "/products/create"><button class = "boton">Regresar</button></a>
                 </div>
-                </div> 
-                       
-    </form>
- 
+            </div>    
+        </form>        
+            <div>
+                <a href = "/products/"><button class = "boton">Regresar</button></a>
+            </div>    
+    
     <!-- COMIENZO FOOTER -->
 
 <%- include ("../partials/footer") -%>
-<script src="/js/validationProducts.js"></script> 
     </body>
 </html>

@@ -840,6 +840,11 @@ footer .bordesArriba{
     size: 30%;
     margin: 0% auto;
 }
+.errores{
+    size: 30%;
+    margin: 0% auto;
+    color:red
+}
 
 .custom-input-file {
     background-color: var(--darkblue);

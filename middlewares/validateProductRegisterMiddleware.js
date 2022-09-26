@@ -14,7 +14,7 @@ module.exports = [
 	check('color').notEmpty().withMessage('indicar el color'),
 	check('precio').notEmpty().withMessage('ingrese un precio'),
 	check('precio').isNumeric().withMessage('ingrese un numero'),
-	check('slotExpansion').notEmpty().withMessage('indique si posee slot de expansion'),
+	check('slotExpansion').notEmpty().withMessage('indique si está en oferta'),
 	check('category').notEmpty().withMessage('indicar categoria de laptop'),
 ]
 
